@@ -1,0 +1,49 @@
+project:
+  type: website
+
+website:
+  title: "R for MSBA"
+  navbar:
+    style: "default"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: "Introduction"
+      - href: data_types.qmd
+        text: "Data Types"
+        contents:
+          - href: data_types.qmd#vectors
+            text: "Vectors"
+          - href: data_types.qmd#matrices
+            text: "Matrices"
+      - href: functions.qmd
+        text: Functions
+        contents:
+          - href: functions.qmd#using-functions
+            text: "Using functions"
+          - href: functions.qmd#making-functions
+            text: "Making your own functions"     
+      - href: import_export.qmd
+        text: "Importing and Exporting Data"
+        contents:
+          - href: import_export.qmd#text-based-formats
+            text: "Text-based formats"
+          - href: import_export.qmd#excel
+            text: "Excel"
+          - href: import_export.qmd#other-statistical-software
+            text: "Other Statistical Software"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    include-after-body: theme-toggle.js
+    toc: true
+    toc-location: left
+    toc-title: Contents
+    html-math-method: katex
+
+editor: visual
+

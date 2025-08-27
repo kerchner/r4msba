@@ -1,0 +1,228 @@
+/* css styles */
+/* ---------- Import Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono&display=swap');
+
+/* ---------- Base Styles ---------- */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------- Light Theme ---------- */
+body.light {
+  background-color: #fafafa;
+  color: #222;
+}
+
+body.light h1, body.light h2, body.light h3, body.light h4 {
+  color: #2b3a42;
+}
+
+body.light pre code {
+  background: #f6f8fa;  /* GitHub style */
+  color: #24292e;
+}
+
+body.light code {
+  background: #f0f0f0;
+  color: #d6336c;
+}
+
+/* ---------- Dark Theme ---------- */
+body.dark {
+  background-color: #1e1e1e;
+  color: #e6e6e6;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
+  color: #f0c808;
+}
+
+body.dark pre code {
+  background: #2d2d2d;
+  color: #f8f8f2;
+}
+
+body.dark code {
+  background: #444;
+  color: #ffb86c;
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
+
+/* ---------- Links ---------- */
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+body.light a { color: #0066cc; }
+body.light a:hover { color: #004c99; text-decoration: underline; }
+
+body.dark a { color: #4dabf7; }
+body.dark a:hover { color: #82cfff; text-decoration: underline; }
+
+/* ---------- Code Blocks ---------- */
+pre code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95em;
+  display: block;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "JetBrains Mono", monospace;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ---------- Syntax Highlighting ---------- */
+
+/* Comments */
+body.light code span.co,
+body.light code span.c1 { color: #6a737d; }
+body.dark code span.co,
+body.dark code span.c1 { color: #75715e; }
+
+/* Keywords (if, else, function, for, while) */
+body.light code span.kw { color: #d73a49; font-weight: 600; }
+body.dark code span.kw { color: #f92672; font-weight: 600; }
+
+/* Numbers */
+body.light code span.mf,
+body.light code span.m,
+body.light code span.mi { color: #005cc5; }
+body.dark code span.mf,
+body.dark code span.m,
+body.dark code span.mi { color: #ae81ff; }
+
+/* Strings */
+body.light code span.s,
+body.light code span.s2,
+body.light code span.sb { color: #032f62; }
+body.dark code span.s,
+body.dark code span.s2,
+body.dark code span.sb { color: #e6db74; }
+
+/* Functions */
+body.light code span.nf { color: #6f42c1; }
+body.dark code span.nf { color: #66d9ef; }
+
+/* Operators (+, -, <-, etc.) */
+body.light code span.o { color: #d73a49; }
+body.dark code span.o { color: #f92672; }
+
+/* Variables / identifiers */
+body.light code span.v { color: #005cc5; }
+body.dark code span.v { color: #f8f8f2; }
+
+/* ---------- Blockquotes ---------- */
+blockquote {
+  border-left: 5px solid #888;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  font-style: italic;
+}
+
+/* ---------- Tables ---------- */
+table {
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.6em;
+  text-align: left;
+}
+
+body.dark th, body.dark td {
+  border: 1px solid #555;
+}
+
+th {
+  font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 3em;
+  padding: 1.5em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* ---------- Theme Toggle Button ---------- */
+#theme-toggle {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #f0c808;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+  z-index: 1000;
+}
+
+body.dark #theme-toggle {
+  background: #444;
+  color: #eee;
+}
+
+#top-bar {
+  width: 100%;
+  background-color: #2b3a42;
+  color: #f0c808;
+  padding: 0.8em 2em;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#top-bar h1 {
+  margin: 0;
+}
+
+/* Navbar background and text color */
+.navbar, .navbar .navbar-inner {
+  background-color: #033c5a !important;  /* change this to any color you want */
+  color: #f8e08e !important;
+}
+
+/* Navbar links */
+.navbar a {
+  color: #f8e08e !important;  /* link color */
+  font-weight: 600;
+}
+
+/* Navbar links hover */
+.navbar a:hover {
+  color: #ffffff !important;  /* hover color */
+  text-decoration: underline;
+}

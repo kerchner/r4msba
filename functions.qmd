@@ -1,0 +1,14 @@
+---
+title: "Functions"
+format:
+  html:
+    toc: false
+---
+
+# Using Functions
+
+Blah blah blah
+
+# Making your own functions
+
+blah

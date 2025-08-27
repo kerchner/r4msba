@@ -1,0 +1,19 @@
+---
+title: "Introduction"
+format:
+  html:
+    toc: false
+    css: styles.css
+---
+
+# Welcome to R for MSBA!
+
+Please use the navigation links on the left
+
+# Instructor
+
+Dan Kerchner
+
+```{r}
+1 + 1
+```

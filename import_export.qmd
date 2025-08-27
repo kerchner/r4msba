@@ -1,0 +1,12 @@
+---
+title: "About"
+format:
+  html:
+    toc: false
+---
+
+# Text-based formats
+
+# Excel
+
+# Other statistical software
