@@ -212,3 +212,12 @@ body.dark #theme-toggle {
   color: #ffffff !important;
   text-decoration: underline;
 }
+
+/* Sidebar: collapse everything except the active section */
+.sidebar .sidebar-section .collapse {
+  display: none;
+}
+
+.sidebar .sidebar-section .collapse.show {
+  display: block;
+}
