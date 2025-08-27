@@ -212,3 +212,8 @@ body.dark #theme-toggle {
   color: #ffffff !important;
   text-decoration: underline;
 }
+
+/* Only expand the active group */
+.sidebar .sidebar-section .collapse:not(.show) {
+  display: none;
+}
