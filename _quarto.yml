@@ -1,16 +1,19 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "R for MSBA"
   navbar:
-    style: "default"
+    left: []
   sidebar:
     style: "docked"
     search: true
     contents:
       - href: index.qmd
         text: "Introduction"
+      - href: preface.qmd
+        text: "Beginning a Project"
       - href: data_types.qmd
         text: "Data Types"
         contents:
@@ -37,6 +40,7 @@ website:
 
 format:
   html:
+    logo: images/gw_horizontal_2c_rev.png
     theme: cosmo
     css: styles.css
     include-after-body: theme-toggle.js

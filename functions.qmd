@@ -7,8 +7,32 @@ format:
 
 # Using Functions
 
-Blah blah blah
+R can be described as primarily (but not entirely) a "functional" programming language.  Most of what you will typically do in R involves using functions, and that is the usual style of R coding.  Functional programming can also be a good way to approach data analysis.
+
+## What does a function look like?
+
+### Arguments (a.k.a parameters), required and optional
+
+## How can I learn more about a function?
+
+At the Console, you can type `?` followed by the name of the function (with no space in between) to bring up the help documentation for a function.  For example, `?mean` will bring up the help page for the `mean` function.
 
 # Making your own functions
 
-blah
+In R, functions are objects too!  Just like data frames, vectors, lists, etc.  So it should not surprise you that you can define a function in the same way.  Here's an example:
+
+```r
+# Convert a temperature from Fahrenheit to Celsius
+# temp_f: numeric
+# returns: temp_f converted to Celsius
+f2c <- function(temp_f) {
+  temp_c <- (temp_f - 32)*(5/9)
+  return(temp_c)
+}
+```
+
+There are situations in R when you will want to define a small function locally.  In some languages, this is called a "lambda function" or an "anonymous function".  Notice that we never even give the function a name; it's only available in its limited local context:
+
+```r
+do_something(some_data, function = function(x) x*3)
+```

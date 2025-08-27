@@ -1,0 +1,17 @@
+---
+title: "Beginning a Project"
+format:
+  html:
+    toc: false
+---
+
+# Step 0: Make an RStudio project
+
+## In RStudio, always use projects!
+
+I cannot emphasize this enough.  RStudio projects allow you to keep each project separate from your other projects.
+
+### Benefits of using projects
+
+- Your project has its own folder, so your files don't mix with other projects.
+- Another benefit

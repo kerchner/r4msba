@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Importing and Exporting Data"
 format:
   html:
     toc: false
@@ -7,6 +7,24 @@ format:
 
 # Text-based formats
 
+## Challenge:
+
+Write code to read in a file from a file named `mydata.csv` located in your project's `data` folder.
+
+<details>
+<summary>Solution</summary>
+
+```r
+# Read a CSV file
+data <- read.csv("data/mydata.csv")
+head(data)
+```
+
+</details>
+
+
 # Excel
+
+
 
 # Other statistical software

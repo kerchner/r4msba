@@ -1,4 +1,3 @@
-/* css styles */
 /* ---------- Import Fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=JetBrains+Mono&display=swap');
 
@@ -22,7 +21,7 @@ body.light h1, body.light h2, body.light h3, body.light h4 {
 }
 
 body.light pre code {
-  background: #f6f8fa;  /* GitHub style */
+  background: #f6f8fa;
   color: #24292e;
 }
 
@@ -41,14 +40,55 @@ body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
   color: #f0c808;
 }
 
-body.dark pre code {
-  background: #2d2d2d;
-  color: #f8f8f2;
+/* ---------- Code Blocks ---------- */
+pre code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95em;
+  display: block;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
 }
 
-body.dark code {
-  background: #444;
+code {
+  font-family: "JetBrains Mono", monospace;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Dark mode code block */
+body.dark pre,
+body.dark .sourceCode pre {
+  background-color: #2d2d2d;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+body.dark pre code,
+body.dark .sourceCode pre code {
+  color: #f8f8f2;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95em;
+}
+
+/* Syntax highlighting for R code 99bf9c */
+body.dark pre.sourceCode span.co  { color: #99bf9c  !important; font-style: italic; }  /* comments */
+body.dark .sourceCode .cf  { color: #f92672; }  /* functions */
+body.dark .sourceCode .fu  { color: #f1fa8c; }  /* keywords like return */
+body.dark .sourceCode .ot  { color: #f92672; }  /* operators */
+body.dark .sourceCode .nn  { color: #66d9ef; }  /* numbers */
+body.dark .sourceCode pre code span:not(.co):not(.cf):not(.fu):not(.ot):not(.nn) {
+  color: #ffb86c;  /* bright orange for variables */
+}
+
+/* Inline code in dark mode */
+body.dark code:not(pre code) {
+  background-color: #444;
   color: #ffb86c;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
 }
 
 /* ---------- Headings ---------- */
@@ -75,63 +115,6 @@ body.light a:hover { color: #004c99; text-decoration: underline; }
 
 body.dark a { color: #4dabf7; }
 body.dark a:hover { color: #82cfff; text-decoration: underline; }
-
-/* ---------- Code Blocks ---------- */
-pre code {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.95em;
-  display: block;
-  padding: 1em;
-  border-radius: 6px;
-  overflow-x: auto;
-}
-
-code {
-  font-family: "JetBrains Mono", monospace;
-  padding: 0.15em 0.35em;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
-
-/* ---------- Syntax Highlighting ---------- */
-
-/* Comments */
-body.light code span.co,
-body.light code span.c1 { color: #6a737d; }
-body.dark code span.co,
-body.dark code span.c1 { color: #75715e; }
-
-/* Keywords (if, else, function, for, while) */
-body.light code span.kw { color: #d73a49; font-weight: 600; }
-body.dark code span.kw { color: #f92672; font-weight: 600; }
-
-/* Numbers */
-body.light code span.mf,
-body.light code span.m,
-body.light code span.mi { color: #005cc5; }
-body.dark code span.mf,
-body.dark code span.m,
-body.dark code span.mi { color: #ae81ff; }
-
-/* Strings */
-body.light code span.s,
-body.light code span.s2,
-body.light code span.sb { color: #032f62; }
-body.dark code span.s,
-body.dark code span.s2,
-body.dark code span.sb { color: #e6db74; }
-
-/* Functions */
-body.light code span.nf { color: #6f42c1; }
-body.dark code span.nf { color: #66d9ef; }
-
-/* Operators (+, -, <-, etc.) */
-body.light code span.o { color: #d73a49; }
-body.dark code span.o { color: #f92672; }
-
-/* Variables / identifiers */
-body.light code span.v { color: #005cc5; }
-body.dark code span.v { color: #f8f8f2; }
 
 /* ---------- Blockquotes ---------- */
 blockquote {
@@ -170,11 +153,34 @@ footer {
   font-size: 0.9em;
 }
 
+/* ---------- Top Bar ---------- */
+#top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 2em;
+  background-color: #2b3a42;
+  color: #f0c808;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+#top-bar h1 {
+  margin: 0;
+}
+
 /* ---------- Theme Toggle Button ---------- */
+/* Fixed above top bar so it never hides and does not overlap search */
 #theme-toggle {
   position: fixed;
-  top: 1em;
-  right: 1em;
+  top: 0.8em;       /* match top-bar padding */
+  right: 4em;       /* enough space from search */
   padding: 0.5em 1em;
   border-radius: 6px;
   border: none;
@@ -183,7 +189,7 @@ footer {
   background: #f0c808;
   color: #222;
   transition: background 0.3s, color 0.3s;
-  z-index: 1000;
+  z-index: 1002;    /* above top-bar */
 }
 
 body.dark #theme-toggle {
@@ -191,38 +197,18 @@ body.dark #theme-toggle {
   color: #eee;
 }
 
-#top-bar {
-  width: 100%;
-  background-color: #2b3a42;
-  color: #f0c808;
-  padding: 0.8em 2em;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#top-bar h1 {
-  margin: 0;
-}
-
-/* Navbar background and text color */
+/* ---------- Navbar ---------- */
 .navbar, .navbar .navbar-inner {
-  background-color: #033c5a !important;  /* change this to any color you want */
+  background-color: #033c5a !important;
   color: #f8e08e !important;
 }
 
-/* Navbar links */
 .navbar a {
-  color: #f8e08e !important;  /* link color */
+  color: #f8e08e !important;
   font-weight: 600;
 }
 
-/* Navbar links hover */
 .navbar a:hover {
-  color: #ffffff !important;  /* hover color */
+  color: #ffffff !important;
   text-decoration: underline;
 }

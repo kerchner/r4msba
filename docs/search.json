@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introduction",
     "section": "",
-    "text": "Welcome to R for MSBA!\nPlease use the navigation links on the left\n\n\nInstructor\nDan Kerchner\n\n1 + 1\n\n[1] 2",
+    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this course,\n\n\nInstructor\nDan Kerchner\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Introduction"
     ]
@@ -12,9 +12,9 @@
   {
     "objectID": "import_export.html",
     "href": "import_export.html",
-    "title": "About",
+    "title": "Importing and Exporting Data",
     "section": "",
-    "text": "Text-based formats\n\n\nExcel\n\n\nOther statistical software",
+    "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
     "crumbs": [
       "Importing and Exporting Data"
     ]
@@ -44,7 +44,7 @@
     "href": "functions.html",
     "title": "Functions",
     "section": "",
-    "text": "Using Functions\nBlah blah blah\n\n\nMaking your own functions\nblah",
+    "text": "R can be described as primarily (but not entirely) a “functional” programming language. Most of what you will typically do in R involves using functions, and that is the usual style of R coding. Functional programming can also be a good way to approach data analysis.\n\n\n\n\n\n\n\n\nAt the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
     "crumbs": [
       "Functions"
     ]
@@ -55,5 +55,55 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "import_export.html#example-csv",
+    "href": "import_export.html#example-csv",
+    "title": "About",
+    "section": "",
+    "text": "# Read a CSV file\ndata &lt;- read.csv(\"data/my_data.csv\")\nhead(data)",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#challenge",
+    "href": "import_export.html#challenge",
+    "title": "Importing and Exporting Data",
+    "section": "",
+    "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Beginning a Project",
+    "section": "",
+    "text": "I cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.\n\n\n\nYour project has its own folder, so your files don’t mix with other projects.\nAnother benefit",
+    "crumbs": [
+      "Beginning a Project"
+    ]
+  },
+  {
+    "objectID": "preface.html#in-rstudio-always-use-projects",
+    "href": "preface.html#in-rstudio-always-use-projects",
+    "title": "Beginning a Project",
+    "section": "",
+    "text": "I cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.\n\n\n\nYour project has its own folder, so your files don’t mix with other projects.\nAnother benefit",
+    "crumbs": [
+      "Beginning a Project"
+    ]
+  },
+  {
+    "objectID": "functions.html#how-can-i-learn-more-about-a-function",
+    "href": "functions.html#how-can-i-learn-more-about-a-function",
+    "title": "Functions",
+    "section": "",
+    "text": "At the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
+    "crumbs": [
+      "Functions"
+    ]
   }
 ]
