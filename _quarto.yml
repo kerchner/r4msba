@@ -37,6 +37,8 @@ website:
             text: "Excel"
           - href: import_export.qmd#other-statistical-software
             text: "Other Statistical Software"
+      - href: data.qmd
+        text: "Data Downloads"
 
 format:
   html:
