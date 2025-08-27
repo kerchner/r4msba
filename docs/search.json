@@ -1,0 +1,59 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Welcome to R for MSBA!\nPlease use the navigation links on the left\n\n\nInstructor\nDan Kerchner\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "import_export.html",
+    "href": "import_export.html",
+    "title": "About",
+    "section": "",
+    "text": "Text-based formats\n\n\nExcel\n\n\nOther statistical software",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "data_types.html",
+    "href": "data_types.html",
+    "title": "About",
+    "section": "",
+    "text": "blah blah blah",
+    "crumbs": [
+      "Data Types"
+    ]
+  },
+  {
+    "objectID": "data_types.html#subsection-on-matrices",
+    "href": "data_types.html#subsection-on-matrices",
+    "title": "About",
+    "section": "Subsection on Matrices",
+    "text": "Subsection on Matrices\nmore blah",
+    "crumbs": [
+      "Data Types"
+    ]
+  },
+  {
+    "objectID": "functions.html",
+    "href": "functions.html",
+    "title": "Functions",
+    "section": "",
+    "text": "Using Functions\nBlah blah blah\n\n\nMaking your own functions\nblah",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
