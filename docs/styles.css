@@ -221,3 +221,89 @@ body.dark #theme-toggle {
 .sidebar .sidebar-section .collapse.show {
   display: block;
 }
+
+/* -------------------- */
+/* Sidebar light theme  */
+/* -------------------- */
+body.light .sidebar {
+  background-color: #f8f9fa;   /* light background */
+  color: #2b3a42;              /* dark text */
+}
+
+body.light .sidebar a {
+  color: #2b3a42;
+}
+
+body.light .sidebar .active,
+body.light .sidebar a:hover {
+  background-color: #e6e6e6;   /* subtle highlight */
+  color: #2b3a42;
+}
+
+/* -------------------- */
+/* Sidebar light theme  */
+/* -------------------- */
+body.light .sidebar,
+body.light .sidebar-content,
+body.light .sidebar-navigation {
+  background-color: #f8f9fa;   /* light background */
+  color: #2b3a42;
+}
+
+body.light .sidebar a {
+  color: #2b3a42;
+}
+
+body.light .sidebar .active,
+body.light .sidebar a:hover {
+  background-color: #e6e6e6;
+  color: #2b3a42;
+}
+
+/* ========= Sidebar theming that follows your light/dark toggle ========= */
+
+/* LIGHT */
+body.light #quarto-sidebar,
+body.light nav.sidebar,
+body.light .quarto-sidebar,
+body.light #quarto-sidebar .sidebar-menu-container,
+body.light nav.sidebar .sidebar-menu-container {
+  background-color: #f8f9fa !important;   /* light bg */
+  color: #2b3a42 !important;               /* dark text */
+}
+
+body.light #quarto-sidebar a {
+  color: #2b3a42 !important;
+}
+
+body.light #quarto-sidebar .active,
+body.light #quarto-sidebar a:hover {
+  background-color: #e6e6e6 !important;
+  color: #2b3a42 !important;
+}
+
+/* DARK */
+body.dark #quarto-sidebar,
+body.dark nav.sidebar,
+body.dark .quarto-sidebar,
+body.dark #quarto-sidebar .sidebar-menu-container,
+body.dark nav.sidebar .sidebar-menu-container {
+  background-color: #2b3a42 !important;    /* matches your top bar */
+  color: #f0c808 !important;               /* gold text */
+}
+
+body.dark #quarto-sidebar a {
+  color: #f0c808 !important;
+}
+
+body.dark #quarto-sidebar .active,
+body.dark #quarto-sidebar a:hover {
+  background-color: #3c4a52 !important;    /* subtle highlight */
+  color: #ffffff !important;
+}
+
+/* Optional: remove any stray inherited bg on items */
+body.dark #quarto-sidebar .sidebar-item-container,
+body.light #quarto-sidebar .sidebar-item-container {
+  background-color: transparent !important;
+}

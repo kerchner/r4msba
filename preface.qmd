@@ -5,6 +5,23 @@ format:
     toc: false
 ---
 
+# Choosing an app
+
+If you're working on your laptop, you have a few choices for apps that you can use to develop code:
+
+- RStudio Desktop.   RStudio is probably the most widely-used app for R coding at the moment.
+- [Positron](https://positron.posit.co/).  Positron is new, it's free, and it describes itself as a data science IDE.  It also works well with Python.
+- Notebooks such as Jupyter (for example, running with Anaconda) or Google Colab
+- [DataSpell](https://www.jetbrains.com/dataspell/) Free for students, teachers, and community, but not for others.
+- Other software development apps such as [VSCode](https://code.visualstudio.com/)
+
+You can also use a web-based R environment.  Choices include:
+
+- [posit.cloud](https://posit.cloud/){target="_blank"}.  There are limitations with the free version; you can pay more for more projects, more space, more computing power, etc.
+- If you (or your institution/orgainzation) has a web server, you can install RStudio Server and access it through the web browser.  You would then only be limited by the size of the server it's running on.
+
+If you're aware of other good options, please let me know!
+
 # Step 0: Make an RStudio project
 
 ## In RStudio, always use projects!

@@ -18,6 +18,3 @@ To maximize your learning in this course,
 
 I work as a Senior Sofware Developer for GW Libraries and Academic Innovation.  I'm also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.
 
-```{r}
-1 + 1
-```
