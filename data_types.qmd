@@ -7,7 +7,13 @@ format:
 
 # Basic data types
 
-TBD
+R has the following basic data types:
+
+-   **Numeric** to represent numbers that may contain decimal points
+-   **Integer** to represent integer (whole number) values
+-   **Complex** to represent numbers with both a real and imaginary part: for example, $5 + 3i$ where $i = \sqrt{-1}$
+-   **Logical** to represent `TRUE` and `FALSE` 
+-   **Character** to represent text data: for example, `"abc"` or `'123'`.  Note that the single or double quotes aren't part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.
 
 # Vectors
 

@@ -101,6 +101,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -338,7 +381,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="basic-data-types" class="level1">
 <h1>Basic data types</h1>
-<p>TBD</p>
+<p>R has the following basic data types:</p>
+<ul>
+<li><strong>Numeric</strong> to represent numbers that may contain decimal points</li>
+<li><strong>Integer</strong> to represent integer (whole number) values</li>
+<li><strong>Complex</strong> to represent numbers with both a real and imaginary part: for example, <span class="math inline">5 + 3i</span> where <span class="math inline">i = \sqrt{-1}</span></li>
+<li><strong>Logical</strong> to represent <code>TRUE</code> and <code>FALSE</code></li>
+<li><strong>Character</strong> to represent text data: for example, <code>"abc"</code> or <code>'123'</code>. Note that the single or double quotes aren’t part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.</li>
+</ul>
 </section>
 <section id="vectors" class="level1">
 <h1>Vectors</h1>
