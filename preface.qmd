@@ -9,10 +9,10 @@ format:
 
 If you're working on your laptop, you have a few choices for apps that you can use to develop code:
 
--   RStudio Desktop. RStudio is probably the most widely-used app for R coding at the moment.
+-   [RStudio Desktop](https://posit.co/download/rstudio-desktop/){target="_blank"}. RStudio is probably the most widely-used app for R coding at the moment.
 -   [Positron](https://positron.posit.co/){target="_blank"}. Positron is new, it's free, and it describes itself as a data science IDE. It also works well with Python.
 -   Notebooks such as Jupyter (for example, running with Anaconda) or Google Colab
--   [DataSpell](https://www.jetbrains.com/dataspell/){target="_blank"} Free for students, teachers, and community, but not for others.
+-   [DataSpell](https://www.jetbrains.com/dataspell/){target="_blank"}. Free for students, teachers, and community, but not for others.
 -   Other software development apps such as [VSCode](https://code.visualstudio.com/){target="_blank"}
 
 You can also use a web-based R environment. Choices include:
@@ -30,11 +30,17 @@ I cannot emphasize this enough. RStudio projects allow you to keep each project 
 
 ### Benefits of using projects
 
-- Your project has its own folder, so your files don't mix with other projects.
-- Your code's context is this folder, so file paths can be *relative*, not *absolute*.  For example, this will allow you to read a file from `data/myfile.csv` rather than from `/Users/dan/projects/project1/data/myfile.csv`.  This way, it doesn't matter where your project folder is located within your computer -- or the computer of anyone else who might use your code.
-- Rstudio remembers your open files, plots, and environment when you close a project.  When you reopen it, everything is right where you left off.
-- You'll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder. 
+-   Your project has its own folder, so your files don't mix with other projects.
+-   Your code's context is this folder, so file paths can be *relative*, not *absolute*. For example, this will allow you to read a file from `data/myfile.csv` rather than from `/Users/dan/projects/project1/data/myfile.csv`. This way, it doesn't matter where your project folder is located within your computer -- or the computer of anyone else who might use your code.
+-   Rstudio remembers your open files, plots, and environment when you close a project. When you reopen it, everything is right where you left off.
+-   You'll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder.
 
-There are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio!  There should be a similar notion in other apps you might use to write your code.
+There are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio! There should be a similar notion in other apps you might use to write your code.
 
-# Step 2: 
+### How to make an RStudio project
+
+From the `File` menu, select `New Project...` RStudio will then ask you whether to start a project in a new directory, an existing directory, or to check out a project from a version control repository (such as GitHub).
+
+![](images/clipboard-3079142475.png)
+
+# Step 2:
