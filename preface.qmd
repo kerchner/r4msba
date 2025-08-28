@@ -41,6 +41,6 @@ There are other benefits as well, but these alone should sufficiently convince y
 
 From the `File` menu, select `New Project...` RStudio will then ask you whether to start a project in a new directory, an existing directory, or to check out a project from a version control repository (such as GitHub).
 
-![](images/clipboard-3079142475.png)
+![](images/rstudio-create-project.png)
 
 # Step 2:
