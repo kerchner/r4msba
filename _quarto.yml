@@ -66,7 +66,8 @@ format:
     logo: images/gw_horizontal_2c_rev.png
     theme: cosmo
     css: styles.css
-    include-after-body: theme-toggle.js
+    include-after-body:
+      - theme-toggle.js
     toc: true
     toc-location: left
     toc-title: Contents
