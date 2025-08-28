@@ -9,26 +9,32 @@ format:
 
 If you're working on your laptop, you have a few choices for apps that you can use to develop code:
 
-- RStudio Desktop.   RStudio is probably the most widely-used app for R coding at the moment.
-- [Positron](https://positron.posit.co/).  Positron is new, it's free, and it describes itself as a data science IDE.  It also works well with Python.
-- Notebooks such as Jupyter (for example, running with Anaconda) or Google Colab
-- [DataSpell](https://www.jetbrains.com/dataspell/) Free for students, teachers, and community, but not for others.
-- Other software development apps such as [VSCode](https://code.visualstudio.com/)
+-   RStudio Desktop. RStudio is probably the most widely-used app for R coding at the moment.
+-   [Positron](https://positron.posit.co/){target="_blank"}. Positron is new, it's free, and it describes itself as a data science IDE. It also works well with Python.
+-   Notebooks such as Jupyter (for example, running with Anaconda) or Google Colab
+-   [DataSpell](https://www.jetbrains.com/dataspell/){target="_blank"} Free for students, teachers, and community, but not for others.
+-   Other software development apps such as [VSCode](https://code.visualstudio.com/){target="_blank"}
 
-You can also use a web-based R environment.  Choices include:
+You can also use a web-based R environment. Choices include:
 
-- [posit.cloud](https://posit.cloud/){target="_blank"}.  There are limitations with the free version; you can pay more for more projects, more space, more computing power, etc.
-- If you (or your institution/orgainzation) has a web server, you can install RStudio Server and access it through the web browser.  You would then only be limited by the size of the server it's running on.
+-   [posit.cloud](https://posit.cloud/){target="_blank"}. There are limitations with the free version; you can pay more for more projects, more space, more computing power, etc.
+-   If you (or your institution/orgainzation) has a web server, you can install RStudio Server and access it through the web browser. You would then only be limited by the size of the server it's running on.
 
 If you're aware of other good options, please let me know!
 
-# Step 0: Make an RStudio project
+# Step 1: Make an RStudio project
 
 ## In RStudio, always use projects!
 
-I cannot emphasize this enough.  RStudio projects allow you to keep each project separate from your other projects.
+I cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.
 
 ### Benefits of using projects
 
 - Your project has its own folder, so your files don't mix with other projects.
-- Another benefit
+- Your code's context is this folder, so file paths can be *relative*, not *absolute*.  For example, this will allow you to read a file from `data/myfile.csv` rather than from `/Users/dan/projects/project1/data/myfile.csv`.  This way, it doesn't matter where your project folder is located within your computer -- or the computer of anyone else who might use your code.
+- Rstudio remembers your open files, plots, and environment when you close a project.  When you reopen it, everything is right where you left off.
+- You'll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder. 
+
+There are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio!  There should be a similar notion in other apps you might use to write your code.
+
+# Step 2: 

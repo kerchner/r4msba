@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introduction",
     "section": "",
-    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this course,\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Sofware Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.",
+    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this workshop, I recommend that you spend most of your time in RStudio trying to replicate the code that I’m showing you, and of course trying the coding challenges. The value of this site is mainly for you to have something to refer back to later.\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Sofware Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.\n\n\n\nOther resources\nI maintain GW Libraries’ “best-of” list of R resources, which you can find at https://libguides.gwu.edu/Rstats. Let me know if you have any suggestions.",
     "crumbs": [
       "Introduction"
     ]
@@ -91,7 +91,7 @@
     "href": "preface.html#in-rstudio-always-use-projects",
     "title": "Beginning a Project",
     "section": "In RStudio, always use projects!",
-    "text": "In RStudio, always use projects!\nI cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.\n\nBenefits of using projects\n\nYour project has its own folder, so your files don’t mix with other projects.\nAnother benefit",
+    "text": "In RStudio, always use projects!\nI cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.\n\nBenefits of using projects\n\nYour project has its own folder, so your files don’t mix with other projects.\nYour code’s context is this folder, so file paths can be relative, not absolute. For example, this will allow you to read a file from data/myfile.csv rather than from /Users/dan/projects/project1/data/myfile.csv. This way, it doesn’t matter where your project folder is located within your computer – or the computer of anyone else who might use your code.\nRstudio remembers your open files, plots, and environment when you close a project. When you reopen it, everything is right where you left off.\nYou’ll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder.\n\nThere are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio! There should be a similar notion in other apps you might use to write your code.",
     "crumbs": [
       "Beginning a Project"
     ]

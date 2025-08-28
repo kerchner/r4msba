@@ -14,15 +14,24 @@ website:
         text: "Introduction"
       - href: preface.qmd
         text: "Beginning a Project"
+        contents:
+          - href: preface.qmd#choosing-an-app
+            text: "Choosing an app"
+          - href: preface.qmd#step-1-make-an-rstudio-project
+            text: "Step 1: Make an RStudio Project"
+      - href: syntax.qmd
+        text: "Quick intro to R syntax"
       - href: data_types.qmd
         text: "Data Types and Data Structures"
         contents:
           - href: data_types.qmd#basic-data-types
-            text: "Basic Data Types"
+            text: "Basic data types"
           - href: data_types.qmd#vectors
             text: "Vectors"
           - href: data_types.qmd#matrices
             text: "Matrices"
+      - href: logical_tests.qmd
+        text: "Logical tests"
       - href: functions.qmd
         text: Functions
         contents:
@@ -39,6 +48,16 @@ website:
             text: "Excel"
           - href: import_export.qmd#other-statistical-software
             text: "Other Statistical Software"
+      - href: data_wrangling.qmd
+        text: "Data wrangling"
+        contents:
+          - href: data_wrangling.qmd#
+          - text: "TBD"
+      - href: data_cleaning.qmd
+        text: "Data cleaning"
+        contents:
+          - href: data_cleaning.qmd#missing_data
+          - text: "Missing data"
       - href: data.qmd
         text: "Data Downloads"
 

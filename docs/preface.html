@@ -125,12 +125,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link active">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./preface.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Beginning a Project</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html#choosing-an-app" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Choosing an app</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html#step-1-make-an-rstudio-project" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Step 1: Make an RStudio Project</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./data_types.html" class="sidebar-item-text sidebar-link">
@@ -264,8 +281,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>If you’re aware of other good options, please let me know!</p>
 </section>
-<section id="step-0-make-an-rstudio-project" class="level1">
-<h1>Step 0: Make an RStudio project</h1>
+<section id="step-1-make-an-rstudio-project" class="level1">
+<h1>Step 1: Make an RStudio project</h1>
 <section id="in-rstudio-always-use-projects" class="level2">
 <h2 class="anchored" data-anchor-id="in-rstudio-always-use-projects">In RStudio, always use projects!</h2>
 <p>I cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.</p>
@@ -273,8 +290,11 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="benefits-of-using-projects">Benefits of using projects</h3>
 <ul>
 <li>Your project has its own folder, so your files don’t mix with other projects.</li>
-<li>Another benefit</li>
+<li>Your code’s context is this folder, so file paths can be <em>relative</em>, not <em>absolute</em>. For example, this will allow you to read a file from <code>data/myfile.csv</code> rather than from <code>/Users/dan/projects/project1/data/myfile.csv</code>. This way, it doesn’t matter where your project folder is located within your computer – or the computer of anyone else who might use your code.</li>
+<li>Rstudio remembers your open files, plots, and environment when you close a project. When you reopen it, everything is right where you left off.</li>
+<li>You’ll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder.</li>
 </ul>
+<p>There are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio! There should be a similar notion in other apps you might use to write your code.</p>
 
 
 </section>
