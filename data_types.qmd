@@ -5,14 +5,39 @@ format:
     toc: false
 ---
 
+# Basic data types
+
+TBD
+
 # Vectors
 
-blah blah blah
+A vector is an ordered collection of data values that are all the same data type.
+
+We can use the `c()` ("combine") function in R to combine a sequence of values into a vector. For example:
+
+```{r}
+vector1 <- c(5, 5, 9)
+vector1
+```
+
+By default, the index of each item is its numbered position (i.e.). But if we want, we can also label each position as well:
+
+```{r}
+vector2 <- c(a = 5, b = 5, c = 9)
+vector2
+```
+
+Remember that vectors contain values that are *all the same type*. What happens if we try to combine differently-typed values into a vector using `c()`?
 
 # Matrices
 
-blah blah blah
+A matrix is a 2-dimensional structure that contains data that are all the same data type.
 
-## Subsection on Matrices
+We can use the `matrix()` function in R to create a matrix from a sequence of values. For example:
 
-more blah
+```{r}
+matrix1 <- matrix(c(5, 5, 9, 7, NA, 3), nrow = 3, ncol = 2)
+matrix1
+```
+
+# Lists

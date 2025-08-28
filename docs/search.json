@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introduction",
     "section": "",
-    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this course,\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Sofware Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.\n\n1 + 1\n\n[1] 2",
+    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this course,\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Sofware Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.",
     "crumbs": [
       "Introduction"
     ]
@@ -24,9 +24,9 @@
     "href": "data_types.html",
     "title": "About",
     "section": "",
-    "text": "blah blah blah",
+    "text": "Basic data types\nTBD\n\n\nVectors\nA vector is an ordered collection of data values that are all the same data type.\nWe can use the c() (“combine”) function in R to combine a sequence of values into a vector. For example:\n\nvector1 &lt;- c(5, 5, 9)\nvector1\n\n[1] 5 5 9\n\n\nBy default, the index of each item is its numbered position (i.e.). But if we want, we can also label each position as well:\n\nvector2 &lt;- c(a = 5, b = 5, c = 9)\nvector2\n\na b c \n5 5 9 \n\n\nRemember that vectors contain values that are all the same type. What happens if we try to combine differently-typed values into a vector using c()?\n\n\nMatrices\nA matrix is a 2-dimensional structure that contains data that are all the same data type.\nWe can use the matrix() function in R to create a matrix from a sequence of values. For example:\n\nmatrix1 &lt;- matrix(c(5, 5, 9, 7, NA, 3), nrow = 3, ncol = 2)\nmatrix1\n\n     [,1] [,2]\n[1,]    5    7\n[2,]    5   NA\n[3,]    9    3\n\n\n\n\nLists",
     "crumbs": [
-      "Data Types"
+      "Data Types and Data Structures"
     ]
   },
   {

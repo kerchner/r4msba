@@ -15,8 +15,10 @@ website:
       - href: preface.qmd
         text: "Beginning a Project"
       - href: data_types.qmd
-        text: "Data Types"
+        text: "Data Types and Data Structures"
         contents:
+          - href: data_types.qmd#basic-data-types
+            text: "Basic Data Types"
           - href: data_types.qmd#vectors
             text: "Vectors"
           - href: data_types.qmd#matrices
@@ -26,7 +28,7 @@ website:
         contents:
           - href: functions.qmd#using-functions
             text: "Using functions"
-          - href: functions.qmd#making-functions
+          - href: functions.qmd#making-your-own-functions
             text: "Making your own functions"     
       - href: import_export.qmd
         text: "Importing and Exporting Data"
