@@ -307,3 +307,27 @@ body.dark #quarto-sidebar .sidebar-item-container,
 body.light #quarto-sidebar .sidebar-item-container {
   background-color: transparent !important;
 }
+
+/* Smooth transition for sidebar collapsible sections */
+.sidebar-section.collapse {
+  transition: height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* Optional: fade effect when expanding */
+.sidebar-section.collapse.show {
+  opacity: 1;
+}
+
+.sidebar-section.collapse:not(.show) {
+  opacity: 0;
+}
+
+.sidebar-item-toggle[aria-expanded="true"] i {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-item-toggle i {
+  transition: transform 0.3s ease;
+}

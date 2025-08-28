@@ -41,6 +41,22 @@ There are other benefits as well, but these alone should sufficiently convince y
 
 From the `File` menu, select `New Project...` RStudio will then ask you whether to start a project in a new directory, an existing directory, or to check out a project from a version control repository (such as GitHub).
 
-![](images/rstudio-create-project.png)
+![Create New Project Wizard](images/rstudio-create-project.png)
 
-# Step 2:
+Now you'll select which *type* of project to create. There is a long list here worth exploring! But for today, we'll select the first option, `New Project` since we'll be using R to focus on data analysis and visualization.
+
+![New Project Type Wizard](images/project-type-wizard.png)
+
+Before RStudio creates the new folder for your project, it asks you *where* to create the new folder on your computer. Since we don't have any pre-existing assets for this project, choose `New Directory`. Here you get to choose the *parent* folder inside which the new project folder will be created. Which parent folder you choose really depends on how you like to organize your projects on your computer.
+
+![New Project Location Wizard](images/project-location-wizard.png)
+
+Enter the name of the project, which will be the name of the new directory (folder), in the `Directory name:` box.
+
+Click the `Browse...` button to select a different parent folder. `~` represents your home folder, which will usually be something like `/Users/YourName` or `C:\User\YourName` depending on your operating system.
+
+# Step 2: Start an R file
+
+Congratulations, you have a brand new, empty project! Now you'll need a place to write your code.  From the `File` menu in your RStudio menu bar, select `New File`.  Look how many choices you have!  For the purpose of this tutorial, select `R Script`.
+
+Now a new R Script window opens.  This is where you'll write your code.  Before proceeding, note that the tab for the new window shows its name as `Untitled1`.  Save the file by choosing `File`-->`Save` from the menu bar; when prompted by RStudio, give the file a name ending in `.R`, such as `basics.R`.  The name should relate to what the R code is inteded to do.

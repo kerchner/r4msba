@@ -10,19 +10,21 @@ website:
     style: "docked"
     search: true
     contents:
-      - href: index.qmd
-        text: "Introduction"
-      - href: preface.qmd
-        text: "Beginning a Project"
+      - section: "Introduction"
+        href: index.qmd
+      - section: "Beginning a Project"
+        href: preface.qmd
         contents:
           - href: preface.qmd#choosing-an-app
             text: "Choosing an app"
           - href: preface.qmd#step-1-make-an-rstudio-project
             text: "Step 1: Make an RStudio Project"
-      - href: syntax.qmd
-        text: "Quick intro to R syntax"
-      - href: data_types.qmd
-        text: "Data Types and Data Structures"
+          - href: preface.qmd#step-2-start-an-r-file
+            text: "Step 2: Start an R File"            
+      - section: "Quick intro to R syntax"
+        href: syntax.qmd
+      - section: "Data Types and Data Structures"
+        href: data_types.qmd
         contents:
           - href: data_types.qmd#basic-data-types
             text: "Basic data types"
@@ -30,17 +32,17 @@ website:
             text: "Vectors"
           - href: data_types.qmd#matrices
             text: "Matrices"
-      - href: logical_tests.qmd
-        text: "Logical tests"
-      - href: functions.qmd
-        text: Functions
+      - section: "Logical tests"
+        href: logical_tests.qmd
+      - section: "Functions"
+        href: functions.qmd
         contents:
           - href: functions.qmd#using-functions
             text: "Using functions"
           - href: functions.qmd#making-your-own-functions
             text: "Making your own functions"     
-      - href: import_export.qmd
-        text: "Importing and Exporting Data"
+      - section: "Importing and Exporting Data"
+        href: import_export.qmd
         contents:
           - href: import_export.qmd#text-based-formats
             text: "Text-based formats"
@@ -48,26 +50,27 @@ website:
             text: "Excel"
           - href: import_export.qmd#other-statistical-software
             text: "Other Statistical Software"
-      - href: data_wrangling.qmd
-        text: "Data wrangling"
+      - section: "Data wrangling"
+        href: data_wrangling.qmd
         contents:
           - href: data_wrangling.qmd#
           - text: "TBD"
-      - href: data_cleaning.qmd
-        text: "Data cleaning"
+      - section: "Data cleaning"
+        href: data_cleaning.qmd
         contents:
           - href: data_cleaning.qmd#missing_data
           - text: "Missing data"
-      - href: data.qmd
-        text: "Data Downloads"
-
+      - section: "Data downloads"
+        href: data.qmd
+        
 format:
   html:
     logo: images/gw_horizontal_2c_rev.png
     theme: cosmo
     css: styles.css
     include-after-body:
-      - theme-toggle.js
+      - scripts/theme-toggle.js
+      - scripts/sidebar-fix.js
     toc: true
     toc-location: left
     toc-title: Contents
