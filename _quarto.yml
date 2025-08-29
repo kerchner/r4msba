@@ -38,6 +38,9 @@ website:
             text: "Lists"
       - section: "Data Frames"
         href: data_frames.qmd
+        contents:
+          - href: data_frames.qmd
+            text: "Section 1"
       - section: "Logical tests"
         href: logical_tests.qmd
       - section: "Functions"
@@ -66,8 +69,8 @@ website:
         contents:
           - href: data_cleaning.qmd#missing_data
           - text: "Missing data"
-      - section: "Data downloads"
-        href: data.qmd
+      - href: data.qmd
+        text: "Data downloads"
         
 format:
   html:

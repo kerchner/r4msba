@@ -8,7 +8,7 @@ format:
 # Downloads for this workshop
 
 | File | Description | Format | Download |
-|------|-------------|--------|----------|
+|----|----|----|----|
 | `wdi.csv` | World Development Indicators | CSV | <a href="data/wdi.csv" download>Download</a> |
 | `analysis.R` | R script for the assignment | R | <a href="files/analysis.R" download>Download</a> |
 | `sample.pdf` | Example PDF instructions | PDF | <a href="files/sample.pdf" download>Download</a> |
