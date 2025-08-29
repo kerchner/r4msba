@@ -69,8 +69,8 @@ website:
         contents:
           - href: data_cleaning.qmd#missing_data
           - text: "Missing data"
-      - href: data.qmd
-        text: "Data downloads"
+      - text: "Data downloads"
+        href: data.qmd
         
 format:
   html:
