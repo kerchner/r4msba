@@ -21,3 +21,4 @@ I work as a Senior Sofware Developer for GW Libraries and Academic Innovation. I
 # Other resources
 
 I maintain GW Libraries' "best-of" list of R resources, which you can find at [https://libguides.gwu.edu/Rstats](https://libguides.gwu.edu/Rstats){target="_blank"}. Let me know if you have any suggestions.
+

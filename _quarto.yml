@@ -56,6 +56,11 @@ sidebar:
       contents:
         - href: data_wrangling.qmd#
           text: "TBD"
+    - text: "Data downloads"
+      href: data.qmd
+      contents:
+         - href: data.qmd#downloads-for-this-workshop
+           text: "Workshop downloads"
     - text: "Data cleaning"
       href: data_cleaning.qmd
       contents:
