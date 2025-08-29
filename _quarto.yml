@@ -63,12 +63,12 @@ website:
         href: data_wrangling.qmd
         contents:
           - href: data_wrangling.qmd#
-          - text: "TBD"
+            text: "TBD"
       - section: "Data cleaning"
         href: data_cleaning.qmd
         contents:
           - href: data_cleaning.qmd#missing_data
-          - text: "Missing data"
+            text: "Missing data"
       - text: "Data downloads"
         href: data.qmd
         
