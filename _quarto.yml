@@ -63,3 +63,6 @@ sidebar:
           text: "Missing data"
     - text: "Data downloads"
       href: data.qmd
+      contents:
+         - href: data.qmd#downloads-for-this-workshop
+           text: "Workshop downloads"
