@@ -11,3 +11,4 @@ format:
 |----------------|-----------------------|----------------|------------------|
 | `wdi.csv` | World Development Indicators | CSV | <a href="data/wdi.csv" download>Download</a> |
 | `analysis.R` | R script for the assignment | R | <a href="files/analysis.R" download>Download</a> |
+
