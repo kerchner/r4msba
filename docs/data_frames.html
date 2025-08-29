@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Beginning a Project – R for MSBA</title>
+<title>Data Frames – R for MSBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./preface.html">Beginning a Project</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_frames.html">Data Frames</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./preface.html" class="sidebar-item-text sidebar-link active">
+            <a href="./preface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beginning a Project</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -199,17 +199,21 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Data Frames</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Logical tests</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./functions.html#using-functions" class="sidebar-item-text sidebar-link">
@@ -228,11 +232,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./import_export.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Importing and Exporting Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./import_export.html#text-based-formats" class="sidebar-item-text sidebar-link">
@@ -257,11 +261,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./data_wrangling.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data wrangling</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
  <span class="menu-text">TBD</span>
   </li>
@@ -271,11 +275,11 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./data_cleaning.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data cleaning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
  <span class="menu-text">Missing data</span>
   </li>
@@ -297,7 +301,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Beginning a Project</h1>
+<h1 class="title">Data Frames</h1>
 </div>
 
 
@@ -314,70 +318,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="choosing-an-app" class="level1">
-<h1>Choosing an app</h1>
-<p>If you’re working on your laptop, you have a few choices for apps that you can use to develop code:</p>
-<ul>
-<li><a href="https://posit.co/download/rstudio-desktop/" target="_blank">RStudio Desktop</a>. RStudio is probably the most widely-used app for R coding at the moment.</li>
-<li><a href="https://positron.posit.co/" target="_blank">Positron</a>. Positron is new, it’s free, and it describes itself as a data science IDE. It also works well with Python.</li>
-<li>Notebooks such as Jupyter (for example, running with Anaconda) or Google Colab</li>
-<li><a href="https://www.jetbrains.com/dataspell/" target="_blank">DataSpell</a>. Free for students, teachers, and community, but not for others.</li>
-<li>Other software development apps such as <a href="https://code.visualstudio.com/" target="_blank">VSCode</a></li>
-</ul>
-<p>You can also use a web-based R environment. Choices include:</p>
-<ul>
-<li><a href="https://posit.cloud/" target="_blank">posit.cloud</a>. There are limitations with the free version; you can pay more for more projects, more space, more computing power, etc.</li>
-<li>If you (or your institution/orgainzation) has a web server, you can install RStudio Server and access it through the web browser. You would then only be limited by the size of the server it’s running on.</li>
-</ul>
-<p>If you’re aware of other good options, please let me know!</p>
-</section>
-<section id="step-1-make-an-rstudio-project" class="level1">
-<h1>Step 1: Make an RStudio project</h1>
-<section id="in-rstudio-always-use-projects" class="level2">
-<h2 class="anchored" data-anchor-id="in-rstudio-always-use-projects">In RStudio, always use projects!</h2>
-<p>I cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.</p>
-<section id="benefits-of-using-projects" class="level3">
-<h3 class="anchored" data-anchor-id="benefits-of-using-projects">Benefits of using projects</h3>
-<ul>
-<li>Your project has its own folder, so your files don’t mix with other projects.</li>
-<li>Your code’s context is this folder, so file paths can be <em>relative</em>, not <em>absolute</em>. For example, this will allow you to read a file from <code>data/myfile.csv</code> rather than from <code>/Users/dan/projects/project1/data/myfile.csv</code>. This way, it doesn’t matter where your project folder is located within your computer – or the computer of anyone else who might use your code.</li>
-<li>Rstudio remembers your open files, plots, and environment when you close a project. When you reopen it, everything is right where you left off.</li>
-<li>You’ll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder.</li>
-</ul>
-<p>There are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio! There should be a similar notion in other apps you might use to write your code.</p>
-</section>
-<section id="how-to-make-an-rstudio-project" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-make-an-rstudio-project">How to make an RStudio project</h3>
-<p>From the <code>File</code> menu, select <code>New Project...</code> RStudio will then ask you whether to start a project in a new directory, an existing directory, or to check out a project from a version control repository (such as GitHub).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/rstudio-create-project.png" class="img-fluid figure-img"></p>
-<figcaption>Create New Project Wizard</figcaption>
-</figure>
-</div>
-<p>Now you’ll select which <em>type</em> of project to create. There is a long list here worth exploring! But for today, we’ll select the first option, <code>New Project</code> since we’ll be using R to focus on data analysis and visualization.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/project-type-wizard.png" class="img-fluid figure-img"></p>
-<figcaption>New Project Type Wizard</figcaption>
-</figure>
-</div>
-<p>Before RStudio creates the new folder for your project, it asks you <em>where</em> to create the new folder on your computer. Since we don’t have any pre-existing assets for this project, choose <code>New Directory</code>. Here you get to choose the <em>parent</em> folder inside which the new project folder will be created. Which parent folder you choose really depends on how you like to organize your projects on your computer.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/project-location-wizard.png" class="img-fluid figure-img"></p>
-<figcaption>New Project Location Wizard</figcaption>
-</figure>
-</div>
-<p>Enter the name of the project, which will be the name of the new directory (folder), in the <code>Directory name:</code> box.</p>
-<p>Click the <code>Browse...</code> button to select a different parent folder. <code>~</code> represents your home folder, which will usually be something like <code>/Users/YourName</code> or <code>C:\User\YourName</code> depending on your operating system.</p>
-</section>
-</section>
-</section>
-<section id="step-2-start-an-r-file" class="level1">
-<h1>Step 2: Start an R file</h1>
-<p>Congratulations, you have a brand new, empty project! Now you’ll need a place to write your code. From the <code>File</code> menu in your RStudio menu bar, select <code>New File</code>. Look how many choices you have! For the purpose of this tutorial, select <code>R Script</code>.</p>
-<p>Now a new R Script window opens. This is where you’ll write your code. Before proceeding, note that the tab for the new window shows its name as <code>Untitled1</code>. Save the file by choosing <code>File</code>–&gt;<code>Save</code> from the menu bar; when prompted by RStudio, give the file a name ending in <code>.R</code>, such as <code>basics.R</code>. The name should relate to what the R code is inteded to do.</p>
+<section id="data-frames" class="level1">
+<h1>Data Frames</h1>
+<p>TBD</p>
 
 
 </section>

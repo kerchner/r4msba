@@ -14,7 +14,7 @@
     "href": "import_export.html",
     "title": "Importing and Exporting Data",
     "section": "",
-    "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
+    "text": "Text-based data formats are very common, because they are human-readable, they don’t require any special software to read, and they can be read in by many different programming languages. Text-based formats include CSV (comma-separated values) and its variants such as TSV (tab-separated values), JSON (JavaScript Object Notation), YAML, and XML.\nWe’re going to focus on tabular formats such as CSV; by tabular, we mean that the data represented in the file is in a table format, with rows and columns. In a CSV, values going across a row are separated by commas; there can be other variants (such as TSV) that use a different character as a separator.\nA raw CSV file might look something like this:\nTime,Country Name,Country Code,GDP (current US$) [NY.GDP.MKTP.CD],\"Population, total [SP.POP.TOTL]\",\"Life expectancy at birth, total (years) [SP.DYN.LE00.IN]\"\n2014,Gabon,GAB,18203966896,1978399,66.07\n2014,\"Gambia, The\",GMB,1229461721,2164528,62.576\n2014,Georgia,GEO,17966015109,3719414,73.105\n...\nIn R, we can read such a file into our environment using the read.csv() function. Here’s how it might look:\n\n\nWrite code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
     "crumbs": [
       "Importing and Exporting Data"
     ]
@@ -24,7 +24,7 @@
     "href": "data_types.html",
     "title": "Data Types and Data Structures",
     "section": "",
-    "text": "Basic data types\nR has the following basic data types:\n\nNumeric to represent numbers that may contain decimal points\nInteger to represent integer (whole number) values\nComplex to represent numbers with both a real and imaginary part: for example, 5 + 3i where i = \\sqrt{-1}\nLogical to represent TRUE and FALSE\nCharacter to represent text data: for example, \"abc\" or '123'. Note that the single or double quotes aren’t part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.\n\n\n\nVectors\nA vector is an ordered collection of data values that are all the same data type.\nWe can use the c() (“combine”) function in R to combine a sequence of values into a vector. For example:\n\nvector1 &lt;- c(5, 5, 9)\nvector1\n\n[1] 5 5 9\n\n\nBy default, the index of each item is its numbered position (i.e.). But if we want, we can also label each position as well:\n\nvector2 &lt;- c(a = 5, b = 5, c = 9)\nvector2\n\na b c \n5 5 9 \n\n\nRemember that vectors contain values that are all the same type. What happens if we try to combine differently-typed values into a vector using c()?\n\n\nMatrices\nA matrix is a 2-dimensional structure that contains data that are all the same data type.\nWe can use the matrix() function in R to create a matrix from a sequence of values. For example:\n\nmatrix1 &lt;- matrix(c(5, 5, 9, 7, NA, 3), nrow = 3, ncol = 2)\nmatrix1\n\n     [,1] [,2]\n[1,]    5    7\n[2,]    5   NA\n[3,]    9    3\n\n\n\n\nLists",
+    "text": "R has the following basic data types:\n\nNumeric to represent numbers that may contain decimal points\nInteger to represent integer (whole number) values\nComplex to represent numbers with both a real and imaginary part: for example, 5 + 3i where i = \\sqrt{-1}\nLogical to represent TRUE and FALSE\nCharacter to represent text data: for example, \"abc\" or '123'. Note that the single or double quotes aren’t part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.",
     "crumbs": [
       "Data Types and Data Structures"
     ]
@@ -122,5 +122,25 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "data_types.html#coercion",
+    "href": "data_types.html#coercion",
+    "title": "Data Types and Data Structures",
+    "section": "Coercion",
+    "text": "Coercion\nWe’ve used the term “coercion” to describe when a value is forced to another data type. R has many functions beginning with as. that you can use to coerce data to other types.\nFor example, to coerce any value to text, we can use as.character. For example:\n\nas.character(32.5)\n\n[1] \"32.5\"\n\n\nWhen feasible, we can also convert data to more restrictive types. So for example, we can convert 0s and 1s to logical, using as.logical():\n\nas.logical(c(1, 0, 0, NA, 1, 2))\n\n[1]  TRUE FALSE FALSE    NA  TRUE  TRUE\n\n\nNotice in this case that any number other than 0 becomes TRUE.\nAnother example:\n\nas.numeric(c('32.5', '-5', 'some text'))\n\nWarning: NAs introduced by coercion\n\n\n[1] 32.5 -5.0   NA\n\n\nNote the warning, caused by the fact that 'some text' cannot be converted to numeric.",
+    "crumbs": [
+      "Data Types and Data Structures"
+    ]
+  },
+  {
+    "objectID": "data_frames.html",
+    "href": "data_frames.html",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Data Frames\nTBD",
+    "crumbs": [
+      "Data Frames"
+    ]
   }
 ]

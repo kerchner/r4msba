@@ -32,6 +32,12 @@ website:
             text: "Vectors"
           - href: data_types.qmd#matrices
             text: "Matrices"
+          - href: data_types.qmd#mixing-types-in-vectors-or-matrices
+            text: "Mixing types in vectors or matrices"
+          - href: data_types.qmd#lists
+            text: "Lists"
+      - section: "Data Frames"
+        href: data_frames.qmd
       - section: "Logical tests"
         href: logical_tests.qmd
       - section: "Functions"

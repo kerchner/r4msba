@@ -46,4 +46,45 @@ matrix1 <- matrix(c(5, 5, 9, 7, NA, 3), nrow = 3, ncol = 2)
 matrix1
 ```
 
+# Mixing types in Vectors or Matrices
+
+What happens if we try to create a vector or matrix with mixed types?
+
+```{r}
+vector2 <- c('a', 1, TRUE)
+vector2
+```
+
+We see here (by the quotes) that all of the values were converted to `character` (text) type.  When you try to mix types, R will coerce all of the values to the "least restrictive" type that can accommodate all of the values.  The order of coercion would be:
+
+`logical >> integer >> numeric >> complex >> character`
+
+## Coercion
+
+We've used the term "coercion" to describe when a value is forced to another data type.  R has many functions beginning with `as.` that you can use to coerce data to other types.
+
+For example, to coerce any value to text, we can use `as.character`.  For example:
+
+```{r}
+as.character(32.5)
+```
+
+When feasible, we can also convert data to *more* restrictive types.  So for example, we can convert 0s and 1s to logical, using `as.logical()`:
+
+```{r}
+as.logical(c(1, 0, 0, NA, 1, 2))
+```
+
+Notice in this case that any number other than `0` becomes TRUE.
+
+Another example:
+
+```{r}
+as.numeric(c('32.5', '-5', 'some text'))
+```
+
+Note the warning, caused by the fact that `'some text'` cannot be converted to `numeric`.
+
 # Lists
+
+Unlike vectors and matrices, lists allow mixing of types.  Not only that, lists may have any structure that you like.
