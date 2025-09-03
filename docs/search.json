@@ -1,79 +1,22 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Introduction",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Downloads",
     "section": "",
-    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this workshop, I recommend that you spend most of your time in RStudio trying to replicate the code that I’m showing you, and of course trying the coding challenges. The value of this site is mainly for you to have something to refer back to later.\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Software Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.\n\n\n\nOther resources\nI maintain GW Libraries’ “best-of” list of R resources, which you can find at https://libguides.gwu.edu/Rstats. Let me know if you have any suggestions.\n\n\nWorkshop materials",
+    "text": "Downloads for this workshop\n\n\n\n\n\n\n\n\n\nFile\nDescription\nFormat\nDownload\n\n\n\n\nwdi.csv\nWorld Development Indicators\nCSV\nDownload\n\n\nanalysis.R\nR script for the assignment\nR\nDownload",
     "crumbs": [
-      "Introduction"
+      "Data downloads"
     ]
   },
   {
-    "objectID": "import_export.html",
-    "href": "import_export.html",
-    "title": "Importing and Exporting Data",
+    "objectID": "data_frames.html",
+    "href": "data_frames.html",
+    "title": "Data Frames",
     "section": "",
-    "text": "Text-based data formats are very common, because they are human-readable, they don’t require any special software to read, and they can be read in by many different programming languages. Text-based formats include CSV (comma-separated values) and its variants such as TSV (tab-separated values), JSON (JavaScript Object Notation), YAML, and XML.\nWe’re going to focus on tabular formats such as CSV; by tabular, we mean that the data represented in the file is in a table format, with rows and columns. In a CSV, values going across a row are separated by commas; there can be other variants (such as TSV) that use a different character as a separator.\nA raw CSV file might look something like this:\nTime,Country Name,Country Code,GDP (current US$) [NY.GDP.MKTP.CD],\"Population, total [SP.POP.TOTL]\",\"Life expectancy at birth, total (years) [SP.DYN.LE00.IN]\"\n2014,Gabon,GAB,18203966896,1978399,66.07\n2014,\"Gambia, The\",GMB,1229461721,2164528,62.576\n2014,Georgia,GEO,17966015109,3719414,73.105\n...\nIn R, we can read such a file into our environment using the read.csv() function. Here’s how it might look:\n\n\nWrite code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
+    "text": "Data Frames\nTBD",
     "crumbs": [
-      "Importing and Exporting Data"
-    ]
-  },
-  {
-    "objectID": "data_types.html",
-    "href": "data_types.html",
-    "title": "Data Types and Data Structures",
-    "section": "",
-    "text": "R has the following basic data types:\n\nNumeric to represent numbers that may contain decimal points\nInteger to represent integer (whole number) values\nComplex to represent numbers with both a real and imaginary part: for example, 5 + 3i where i = \\sqrt{-1}\nLogical to represent TRUE and FALSE\nCharacter to represent text data: for example, \"abc\" or '123'. Note that the single or double quotes aren’t part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.",
-    "crumbs": [
-      "Data Types and Data Structures"
-    ]
-  },
-  {
-    "objectID": "data_types.html#subsection-on-matrices",
-    "href": "data_types.html#subsection-on-matrices",
-    "title": "About",
-    "section": "Subsection on Matrices",
-    "text": "Subsection on Matrices\nmore blah",
-    "crumbs": [
-      "Data Types"
-    ]
-  },
-  {
-    "objectID": "functions.html",
-    "href": "functions.html",
-    "title": "Functions",
-    "section": "",
-    "text": "R can be described as primarily (but not entirely) a “functional” programming language. Most of what you will typically do in R involves using functions, and that is the usual style of R coding. Functional programming can also be a good way to approach data analysis.\n\n\n\n\n\n\n\n\nAt the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
-    "crumbs": [
-      "Functions"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "import_export.html#example-csv",
-    "href": "import_export.html#example-csv",
-    "title": "About",
-    "section": "",
-    "text": "# Read a CSV file\ndata &lt;- read.csv(\"data/my_data.csv\")\nhead(data)",
-    "crumbs": [
-      "Importing and Exporting Data"
-    ]
-  },
-  {
-    "objectID": "import_export.html#challenge",
-    "href": "import_export.html#challenge",
-    "title": "Importing and Exporting Data",
-    "section": "",
-    "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
-    "crumbs": [
-      "Importing and Exporting Data"
+      "Data Frames"
     ]
   },
   {
@@ -97,50 +40,13 @@
     ]
   },
   {
-    "objectID": "functions.html#how-can-i-learn-more-about-a-function",
-    "href": "functions.html#how-can-i-learn-more-about-a-function",
-    "title": "Functions",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
     "section": "",
-    "text": "At the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
+    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this workshop, I recommend that you spend most of your time in RStudio trying to replicate the code that I’m showing you, and of course trying the coding challenges. The value of this site is mainly for you to have something to refer back to later.\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Software Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.\n\n\n\nOther resources\nI maintain GW Libraries’ “best-of” list of R resources, which you can find at https://libguides.gwu.edu/Rstats. Let me know if you have any suggestions.\n\n\nWorkshop materials",
     "crumbs": [
-      "Functions"
-    ]
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data Downloads",
-    "section": "",
-    "text": "Downloads for this workshop\n\n\n\n\n\n\n\n\n\nFile\nDescription\nFormat\nDownload\n\n\n\n\nwdi.csv\nWorld Development Indicators\nCSV\nDownload\n\n\nanalysis.R\nR script for the assignment\nR\nDownload",
-    "crumbs": [
-      "Data downloads"
-    ]
-  },
-  {
-    "objectID": "commenting.html",
-    "href": "commenting.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "data_types.html#coercion",
-    "href": "data_types.html#coercion",
-    "title": "Data Types and Data Structures",
-    "section": "Coercion",
-    "text": "Coercion\nWe’ve used the term “coercion” to describe when a value is forced to another data type. R has many functions beginning with as. that you can use to coerce data to other types.\nFor example, to coerce any value to text, we can use as.character. For example:\n\nas.character(32.5)\n\n[1] \"32.5\"\n\n\nWhen feasible, we can also convert data to more restrictive types. So for example, we can convert 0s and 1s to logical, using as.logical():\n\nas.logical(c(1, 0, 0, NA, 1, 2))\n\n[1]  TRUE FALSE FALSE    NA  TRUE  TRUE\n\n\nNotice in this case that any number other than 0 becomes TRUE.\nAnother example:\n\nas.numeric(c('32.5', '-5', 'some text'))\n\nWarning: NAs introduced by coercion\n\n\n[1] 32.5 -5.0   NA\n\n\nNote the warning, caused by the fact that 'some text' cannot be converted to numeric.",
-    "crumbs": [
-      "Data Types and Data Structures"
-    ]
-  },
-  {
-    "objectID": "data_frames.html",
-    "href": "data_frames.html",
-    "title": "Data Frames",
-    "section": "",
-    "text": "Data Frames\nTBD",
-    "crumbs": [
-      "Data Frames"
+      "Introduction"
     ]
   },
   {
@@ -194,14 +100,58 @@
     ]
   },
   {
-    "objectID": "syntax.html#comparison-operators",
-    "href": "syntax.html#comparison-operators",
-    "title": "Logical Tests",
+    "objectID": "commenting.html",
+    "href": "commenting.html",
+    "title": "About",
     "section": "",
-    "text": "Certain logical tests (but not all) involve the use of comparison operators. The most common comparison operators are:\n\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nResult\n\n\n\n\n==\nEqual to\nx == 5\nTRUE if x is 5, otherwise FALSE\n\n\n!=\nNot equal to\nx != 5\nTRUE if x is not 5, otherwise FALSE\n\n\n&lt;\nLess than\nx &lt; 5\nTRUE if x is less than 5, otherwise FALSE\n\n\n&gt;\nGreater than\nx &gt; 5\nTRUE if x is greater than 5, otherwise FALSE\n\n\n&lt;=\nLess than or equal to\nx &lt;= 5\nTRUE if x is less than or equal to 5, otherwise FALSE\n\n\n&gt;=\nGreater than or equal to\nx &gt;= 5\nTRUE if x is greater than or equal to 5, otherwise FALSE\n\n\n\nLet’s pick apart a few of these for a moment:\n== – Why can’t we just use =? Although we’ve been using &lt;- for assignment in R, but = can also be used for assignment. So, we need a different operator, ==, when we want to compare whether two values are equal.\n!= – This operator checks if two values are not equal. It is the opposite of ==. Notice that ! is used to indicate negation, and we can also use it to turn TRUE into FALSE and vice versa.\n&lt;, &gt;, &lt;=, &gt;= – These operators are used not only to compare numerical values, but they can also be used to compare character data (for example, 'aa' &lt; 'ab' is TRUE) and date values (for example, as.Date('2025-01-01') &gt; as.Date('2023-07-06') is TRUE)\n%in% | Value is in a set of values | x %in% c(1, 2, 3) | TRUE if x is 1, 2, or 3, otherwise FALSE |\nLogical tests are used in conditional statements, such as if statements, and in loops, such as for and while loops. They are also used in subsetting data frames and vectors.",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "functions.html",
+    "href": "functions.html",
+    "title": "Functions",
+    "section": "",
+    "text": "R can be described as primarily (but not entirely) a “functional” programming language. Most of what you will typically do in R involves using functions, and that is the usual style of R coding. Functional programming can also be a good way to approach data analysis.\n\n\n\n\n\n\n\n\nAt the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
     "crumbs": [
-      "Quick intro to R syntax"
+      "Functions"
     ]
+  },
+  {
+    "objectID": "functions.html#how-can-i-learn-more-about-a-function",
+    "href": "functions.html#how-can-i-learn-more-about-a-function",
+    "title": "Functions",
+    "section": "",
+    "text": "At the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "data_types.html",
+    "href": "data_types.html",
+    "title": "Data Types and Data Structures",
+    "section": "",
+    "text": "R has the following basic data types:\n\nNumeric to represent numbers that may contain decimal points\nInteger to represent integer (whole number) values\nComplex to represent numbers with both a real and imaginary part: for example, 5 + 3i where i = \\sqrt{-1}\nLogical to represent TRUE and FALSE\nCharacter to represent text data: for example, \"abc\" or '123'. Note that the single or double quotes aren’t part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.",
+    "crumbs": [
+      "Data Types and Data Structures"
+    ]
+  },
+  {
+    "objectID": "data_types.html#coercion",
+    "href": "data_types.html#coercion",
+    "title": "Data Types and Data Structures",
+    "section": "Coercion",
+    "text": "Coercion\nWe’ve used the term “coercion” to describe when a value is forced to another data type. R has many functions beginning with as. that you can use to coerce data to other types.\nFor example, to coerce any value to text, we can use as.character. For example:\n\nas.character(32.5)\n\n[1] \"32.5\"\n\n\nWhen feasible, we can also convert data to more restrictive types. So for example, we can convert 0s and 1s to logical, using as.logical():\n\nas.logical(c(1, 0, 0, NA, 1, 2))\n\n[1]  TRUE FALSE FALSE    NA  TRUE  TRUE\n\n\nNotice in this case that any number other than 0 becomes TRUE.\nAnother example:\n\nas.numeric(c('32.5', '-5', 'some text'))\n\nWarning: NAs introduced by coercion\n\n\n[1] 32.5 -5.0   NA\n\n\nNote the warning, caused by the fact that 'some text' cannot be converted to numeric.",
+    "crumbs": [
+      "Data Types and Data Structures"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "logical_tests.html",
@@ -209,46 +159,6 @@
     "title": "Logical Tests",
     "section": "",
     "text": "Logical tests are used extensively in coding in general, and coding in R is no exception. By a logical test, we mean an expression that evaluates to either TRUE or FALSE (or sometimes NA).\n\n\nCertain logical tests (but not all) involve the use of comparison operators. The most common comparison operators are:\n\nColumn details\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nResult\n\n\n\n\n==\nEqual to\nx == 5\nTRUE if x is 5, otherwise FALSE\n\n\n!=\nNot equal to\nx != 5\nTRUE if x is not 5, otherwise FALSE\n\n\n&lt;\nLess than\nx &lt; 5\nTRUE if x is less than 5, otherwise FALSE\n\n\n&gt;\nGreater than\nx &gt; 5\nTRUE if x is greater than 5, otherwise FALSE\n\n\n&lt;=\nLess than or equal to\nx &lt;= 5\nTRUE if x is less than or equal to 5, otherwise FALSE\n\n\n&gt;=\nGreater than or equal to\nx &gt;= 5\nTRUE if x is greater than or equal to 5, otherwise FALSE\n\n\n\nLet’s pick apart a few of these for a moment:\n== – Why can’t we just use =? Although we’ve been using &lt;- for assignment in R, but = can also be used for assignment. So, we need a different operator, ==, when we want to compare whether two values are equal.\n!= – This operator checks if two values are not equal. It is the opposite of ==. Notice that ! is used to indicate negation, and we can also use it to turn TRUE into FALSE and vice versa.\n&lt;, &gt;, &lt;=, &gt;= – These operators are used not only to compare numerical values, but they can also be used to compare character data (for example, 'aa' &lt; 'ab' is TRUE) and date values (for example, as.Date('2025-01-01') &gt; as.Date('2023-07-06') is TRUE)\n\n\n\nWhen we use comparison operators on vectors or matrices, R will perform the comparison element-wise. For example:\n\n# Vector example\nx &lt;- c(1, 2, 3, 4, 5)\nx &gt; 3\n\n[1] FALSE FALSE FALSE  TRUE  TRUE\n\n\n\n# Matrix example - first create the matrix\nx &lt;- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2)\nx\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n# Matrix example - perform the test\nx &gt;= 4\n\n      [,1]  [,2] [,3]\n[1,] FALSE FALSE TRUE\n[2,] FALSE  TRUE TRUE\n\n\nThere’s also a special operator, %in%, that we can use to return a TRUE or FALSE depending on whether a particular value is or is not present in a vector or matrix:\n\nnames &lt;- c('Ali', 'Bob', 'Charlotta')\n'Divya' %in% names\n\n[1] FALSE\n\n\n\n\nLogical tests are used in conditional statements, such as if statements, and in loops, such as for and while loops. They are also used in subsetting data frames and vectors.",
-    "crumbs": [
-      "Logical tests"
-    ]
-  },
-  {
-    "objectID": "logical_tests.html#basics",
-    "href": "logical_tests.html#basics",
-    "title": "Quick intro to R syntax",
-    "section": "",
-    "text": "R code is composed of statements and expressions:\n\nStatements perform actions. The most common statements would be:\n\nAssignment statements, which assign values to variables. For example, the statement x &lt;- 5 assigns the value 5 to the variable x. Note that &lt;- is the assignment operator in R. It assigns the value on the right to the variable, or object, on the left. If x already had a value, that value will be replaced, or overwritten, by the new value.\nFunction calls, which execute functions. For example, the statement print(x) calls the print function to display the value of x. We’ll delve more into what functions look like shortly.\n\nExpressions are blocks of code that, when evaluated, have some value. For example, 3 + 4 is an expression that evaluates to 7. If x currently has the value of 2, then the expression x &gt; 1 evaluates to TRUE.\n\nExpressions are often embedded in assignment statements, such as in the assignment statement y &lt;- 3 + 4. When R sees an assignment statement, first it evaluates the right side, then it assigns that result to the variable named on the left. So in this case, R would evaluate the expression 3 + 4 to get 7, then it would assign that value to the variable y.",
-    "crumbs": [
-      "Logical tests"
-    ]
-  },
-  {
-    "objectID": "logical_tests.html#variables-a.k.a.-objects",
-    "href": "logical_tests.html#variables-a.k.a.-objects",
-    "title": "Quick intro to R syntax",
-    "section": "",
-    "text": "Variables allow us to use names (such as x or patient_data) to refer to data that is stored in our R environment. The data that a variable or object name refers to can be of many different types, such as an individual number, a sequence of text values, a matrix of numbers, or a complicated structure that holds multiple types of data.\nVariable names can contain letters, numbers, periods, and underscores. They must start with a letter or a period (but not a period followed by a number). Variable names are case-sensitive, so year and Year would be considered different variables.",
-    "crumbs": [
-      "Logical tests"
-    ]
-  },
-  {
-    "objectID": "logical_tests.html#comments",
-    "href": "logical_tests.html#comments",
-    "title": "Quick intro to R syntax",
-    "section": "",
-    "text": "Comments are lines of text that are not executed as code. You can use them to explain and document the code, making it easier to understand. It can also be handy to “comment out” a line of code in order to temporarily disable it.\nIn R, comments start with the # symbol. Everything on a line after the # is considered a comment and is ignored by R when the code is run. So the entire line might start with #, or there might be code first and then a comment at the end of the line starting with #. For example:\n# This is a comment, but the next line is code that will run\nx &lt;- 5\n\ny &lt;- x + 2  # The code to the left will run, but everything after the # is a comment and will not be run",
-    "crumbs": [
-      "Logical tests"
-    ]
-  },
-  {
-    "objectID": "logical_tests.html#functions",
-    "href": "logical_tests.html#functions",
-    "title": "Quick intro to R syntax",
-    "section": "",
-    "text": "We tend to use a lot of functions in R. Functions are blocks of code that perform specific tasks. They take inputs (called arguments or parameters), process them, and usually* return an output (* some functions, by design, don’t return an output). A function might be used like this:\n# Call add_two_numbers and assign the result to sum_of_two_numbers\nsum_of_two_numbers &lt;- add_two_numbers(5, 9)\nLater we will explain how to create your very own functions!",
     "crumbs": [
       "Logical tests"
     ]
@@ -271,6 +181,26 @@
     "text": "When we use comparison operators on vectors or matrices, R will perform the comparison element-wise. For example:\n\n# Vector example\nx &lt;- c(1, 2, 3, 4, 5)\nx &gt; 3\n\n[1] FALSE FALSE FALSE  TRUE  TRUE\n\n\n\n# Matrix example - first create the matrix\nx &lt;- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2)\nx\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n# Matrix example - perform the test\nx &gt;= 4\n\n      [,1]  [,2] [,3]\n[1,] FALSE FALSE TRUE\n[2,] FALSE  TRUE TRUE\n\n\nThere’s also a special operator, %in%, that we can use to return a TRUE or FALSE depending on whether a particular value is or is not present in a vector or matrix:\n\nnames &lt;- c('Ali', 'Bob', 'Charlotta')\n'Divya' %in% names\n\n[1] FALSE\n\n\n\n\nLogical tests are used in conditional statements, such as if statements, and in loops, such as for and while loops. They are also used in subsetting data frames and vectors.",
     "crumbs": [
       "Logical tests"
+    ]
+  },
+  {
+    "objectID": "import_export.html",
+    "href": "import_export.html",
+    "title": "Importing and Exporting Data",
+    "section": "",
+    "text": "Text-based data formats are very common, because they are human-readable, they don’t require any special software to read, and they can be read in by many different programming languages. Text-based formats include CSV (comma-separated values) and its variants such as TSV (tab-separated values), JSON (JavaScript Object Notation), YAML, and XML.\nWe’re going to focus on tabular formats such as CSV; by tabular, we mean that the data represented in the file is in a table format, with rows and columns. In a CSV, values going across a row are separated by commas; there can be other variants (such as TSV) that use a different character as a separator.\nA raw CSV file might look something like this:\nTime,Country Name,Country Code,GDP (current US$) [NY.GDP.MKTP.CD],\"Population, total [SP.POP.TOTL]\",\"Life expectancy at birth, total (years) [SP.DYN.LE00.IN]\"\n2014,Gabon,GAB,18203966896,1978399,66.07\n2014,\"Gambia, The\",GMB,1229461721,2164528,62.576\n2014,Georgia,GEO,17966015109,3719414,73.105\n...\nIn R, we can read such a file into our environment using the read.csv() function. Here’s how it might look:\n\n\nWrite code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#challenge",
+    "href": "import_export.html#challenge",
+    "title": "Importing and Exporting Data",
+    "section": "",
+    "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)",
+    "crumbs": [
+      "Importing and Exporting Data"
     ]
   }
 ]

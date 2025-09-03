@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Frames</title>
+<title>Data Frames – R for MSBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,76 +66,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const sidebar = document.querySelector(".sidebar");
-
-  // Collapse all sections
-  sidebar?.querySelectorAll("ul.collapse").forEach((section) => {
-    section.classList.remove("show");
-  });
-
-  // Get the saved section ID from localStorage
-  const savedSectionId = localStorage.getItem("activeSidebarSection");
-
-  if (savedSectionId) {
-    const sectionToShow = document.getElementById(savedSectionId);
-    if (sectionToShow) {
-      sectionToShow.classList.add("show");
-
-      // Optional: update toggle icon state
-      const toggle = sidebar.querySelector(`[data-bs-target="#${savedSectionId}"]`);
-      if (toggle) {
-        toggle.setAttribute("aria-expanded", "true");
-      }
-    }
-  }
-
-  // Add click listeners to sidebar links to save the section ID
-  sidebar?.querySelectorAll("a.sidebar-link").forEach((link) => {
-    link.addEventListener("click", function () {
-      const parentSection = link.closest("ul.collapse");
-      if (parentSection && parentSection.id) {
-        localStorage.setItem("activeSidebarSection", parentSection.id);
-      } else {
-        localStorage.removeItem("activeSidebarSection");
-      }
-    });
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const toggleBtn = document.createElement("button");
-  toggleBtn.id = "theme-toggle";
-  toggleBtn.innerText = "🌙 Dark";
-  document.body.appendChild(toggleBtn);
-
-  // Load saved preference
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-    toggleBtn.innerText = "☀️ Light";
-  } else {
-    document.body.classList.add("light");
-  }
-
-  toggleBtn.addEventListener("click", function() {
-    if (document.body.classList.contains("light")) {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      toggleBtn.innerText = "☀️ Light";
-    } else {
-      document.body.classList.remove("dark");
-      document.body.classList.add("light");
-      localStorage.setItem("theme", "light");
-      toggleBtn.innerText = "🌙 Dark";
-    }
-  });
-});
-</script>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked fullcontent">
@@ -160,6 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">R for MSBA</a> 
+    </div>
+      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -202,12 +140,41 @@ document.addEventListener("DOMContentLoaded", function() {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./syntax.qmd" class="sidebar-item-text sidebar-link">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quick intro to R syntax</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax.html#basics" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax.html#variables-a.k.a.-objects" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax.html#comments" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./syntax.html#functions" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./data_types.html" class="sidebar-item-text sidebar-link">
@@ -268,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function() {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./logical_tests.qmd" class="sidebar-item-text sidebar-link">
+  <a href="./logical_tests.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Logical tests</span></a>
   </div>
 </li>
@@ -377,6 +344,7 @@ document.addEventListener("DOMContentLoaded", function() {
   </li>
     </ul>
     </div>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -411,6 +379,100 @@ document.addEventListener("DOMContentLoaded", function() {
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggleBtn = document.createElement("button");
+  toggleBtn.id = "theme-toggle";
+  toggleBtn.innerText = "🌙 Dark";
+  document.body.appendChild(toggleBtn);
+
+  // Load saved preference
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    toggleBtn.innerText = "☀️ Light";
+  } else {
+    document.body.classList.add("light");
+  }
+
+  toggleBtn.addEventListener("click", function() {
+    if (document.body.classList.contains("light")) {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      toggleBtn.innerText = "☀️ Light";
+    } else {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      localStorage.setItem("theme", "light");
+      toggleBtn.innerText = "🌙 Dark";
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarSections = document.querySelectorAll(".sidebar-item-section");
+
+  sidebarSections.forEach((section, index) => {
+    const toggle = section.querySelector(".sidebar-item-toggle");
+    const content = section.querySelector("ul");
+
+    if (toggle && content) {
+      // Generate a unique ID for the collapsible content
+      const id = `sidebar-section-${index}`;
+      content.id = id;
+
+      // Link the toggle to the collapsible content
+      toggle.setAttribute("data-bs-target", `#${id}`);
+      toggle.setAttribute("aria-controls", id);
+
+      // Optional: collapse all sections by default
+      content.classList.remove("show");
+      toggle.setAttribute("aria-expanded", "false");
+
+      // Add click handler to toggle visibility
+      toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        const isOpen = content.classList.contains("show");
+        content.classList.toggle("show", !isOpen);
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarSections = document.querySelectorAll(".sidebar-item-section");
+
+  sidebarSections.forEach((section, index) => {
+    const toggle = section.querySelector(".sidebar-item-toggle");
+    const content = section.querySelector("ul");
+    const activeLink = section.querySelector("a.sidebar-link.active");
+
+    if (toggle && content) {
+      // Assign unique ID if missing
+      const id = `sidebar-section-${index}`;
+      content.id = id;
+      toggle.setAttribute("data-bs-target", `#${id}`);
+      toggle.setAttribute("aria-controls", id);
+
+      // Expand only the section with the active link
+      const isActive = !!activeLink;
+      content.classList.toggle("show", isActive);
+      toggle.setAttribute("aria-expanded", String(isActive));
+
+      // Add click handler for manual toggling
+      toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        const isOpen = content.classList.contains("show");
+        content.classList.toggle("show", !isOpen);
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+    }
+  });
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
