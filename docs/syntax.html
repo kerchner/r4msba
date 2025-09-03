@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – R for MSBA</title>
+<title>Quick intro to R syntax – R for MSBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -80,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syntax.html">Quick intro to R syntax</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -107,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -142,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./syntax.html" class="sidebar-item-text sidebar-link">
+            <a href="./syntax.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Quick intro to R syntax</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -354,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">Quick intro to R syntax</h1>
 </div>
 
 
@@ -371,26 +405,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="welcome-to-r-for-msba" class="level1">
-<h1>Welcome to R for MSBA!</h1>
-<p>This is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.</p>
-<p>To maximize your learning in this workshop, I recommend that you spend most of your time in RStudio trying to replicate the code that I’m showing you, and of course trying the coding challenges. The value of this site is mainly for you to have something to refer back to later.</p>
+<section id="syntax" class="level1">
+<h1>Syntax</h1>
+<section id="basics" class="level2">
+<h2 class="anchored" data-anchor-id="basics">Basics</h2>
+<p>R code is composed of <em>statements</em> and <em>expressions</em>:</p>
+<ul>
+<li><em>Statements</em> perform actions. The most common statements would be:
+<ul>
+<li>Assignment statements, which assign values to variables. For example, the statement <code>x &lt;- 5</code> assigns the value <code>5</code> to the variable <code>x</code>. Note that <code>&lt;-</code> is the <strong>assignment operator</strong> in R. It assigns the value on the right to the variable, or object, on the left. If <code>x</code> already had a value, that value will be replaced, or overwritten, by the new value.</li>
+<li>Function calls, which execute functions. For example, the statement <code>print(x)</code> calls the <code>print</code> function to display the value of <code>x</code>. We’ll delve more into what functions look like shortly.</li>
+</ul></li>
+<li><em>Expressions</em> are blocks of code that, when evaluated, have some value. For example, <code>3 + 4</code> is an expression that evaluates to <code>7</code>. If <code>x</code> currently has the value of <code>2</code>, then the expression <code>x &gt; 1</code> evaluates to <code>TRUE</code>.</li>
+</ul>
+<p>Expressions are often embedded in assignment statements, such as in the assignment statement <code>y &lt;- 3 + 4</code>. When R sees an assignment statement, first it evaluates the right side, then it assigns that result to the variable named on the left. So in this case, R would evaluate the expression <code>3 + 4</code> to get <code>7</code>, then it would assign that value to the variable <code>y</code>.</p>
 </section>
-<section id="instructor" class="level1">
-<h1>Instructor</h1>
-<section id="dan-kerchner" class="level3">
-<h3 class="anchored" data-anchor-id="dan-kerchner">Dan Kerchner</h3>
-<p>I work as a Senior Software Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.</p>
+<section id="variables-a.k.a.-objects" class="level2">
+<h2 class="anchored" data-anchor-id="variables-a.k.a.-objects">Variables (a.k.a. objects)</h2>
+<p>Variables allow us to use names (such as <code>x</code> or <code>patient_data</code>) to refer to data that is stored in our R environment. The data that a variable or object name refers to can be of many different types, such as an individual number, a sequence of text values, a matrix of numbers, or a complicated structure that holds multiple types of data.</p>
+<p>Variable names can contain letters, numbers, periods, and underscores. They <strong>must</strong> start with a letter or a period (but not a period followed by a number). <strong>Variable names are case-sensitive</strong>, so <code>year</code> and <code>Year</code> would be considered different variables.</p>
 </section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>Comments are lines of text that are not executed as code. You can use them to explain and document the code, making it easier to understand. It can also be handy to “comment out” a line of code in order to temporarily disable it.</p>
+<p>In R, comments start with the <code>#</code> symbol. Everything on a line after the <code>#</code> is considered a comment and is ignored by R when the code is run. So the entire line might start with <code>#</code>, or there might be code first and then a comment at the end of the line starting with <code>#</code>. For example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is a comment, but the next line is code that will run</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span>  <span class="co"># The code to the left will run, but everything after the # is a comment and will not be run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="other-resources" class="level1">
-<h1>Other resources</h1>
-<p>I maintain GW Libraries’ “best-of” list of R resources, which you can find at <a href="https://libguides.gwu.edu/Rstats" target="_blank">https://libguides.gwu.edu/Rstats</a>. Let me know if you have any suggestions.</p>
-</section>
-<section id="workshop-materials" class="level1">
-<h1>Workshop materials</h1>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>We tend to use a lot of functions in R. Functions are blocks of code that perform specific tasks. They take inputs (called <em>arguments</em> or <em>parameters</em>), process them, and usually* return an output (* some functions, by design, don’t return an output). A function might be used like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Call add_two_numbers and assign the result to sum_of_two_numbers</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sum_of_two_numbers <span class="ot">&lt;-</span> <span class="fu">add_two_numbers</span>(<span class="dv">5</span>, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Later we will explain how to create your very own functions!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

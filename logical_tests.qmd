@@ -1,0 +1,64 @@
+---
+title: "Logical Tests"
+format:
+  html:
+    toc: false
+---
+
+# Logical tests
+
+Logical tests are used extensively in coding in general, and coding in R is no exception. By a logical test, we mean an expression that evaluates to either `TRUE` or `FALSE` (or sometimes `NA`).
+
+## Comparison operators
+
+Certain logical tests (but not all) involve the use of comparison operators. The most common comparison operators are:
+
+| Operator | Description | Example | Result |
+|-------------|----------------|-----------|------------------------------------|
+| `==` | Equal to | `x == 5` | `TRUE` if `x` is 5, otherwise `FALSE` |
+| `!=` | Not equal to | `x != 5` | `TRUE` if `x` is not 5, otherwise `FALSE` |
+| `<` | Less than | `x < 5` | `TRUE` if `x` is less than 5, otherwise `FALSE` |
+| `>` | Greater than | `x > 5` | `TRUE` if `x` is greater than 5, otherwise `FALSE` |
+| `<=` | Less than or equal to | `x <= 5` | `TRUE` if `x` is less than or equal to 5, otherwise `FALSE` |
+| `>=` | Greater than or equal to | `x >= 5` | `TRUE` if `x` is greater than or equal to 5, otherwise `FALSE` |
+: Column details {.tbl-colwidths="15,20,30,35"}
+
+Let's pick apart a few of these for a moment:
+
+`==` -- Why can't we just use `=`? Although we've been using `<-` for assignment in R, but `=` *can* also be used for assignment. So, we need a different operator, `==`, when we want to compare whether two values are equal.
+
+`!=` -- This operator checks if two values are *not* equal. It is the opposite of `==`. Notice that `!` is used to indicate negation, and we can also use it to turn `TRUE` into `FALSE` and vice versa.
+
+`<`, `>`, `<=`, `>=` -- These operators are used not only to compare numerical values, but they can also be used to compare character data (for example, `'aa' < 'ab'` is `TRUE`) and date values (for example, `as.Date('2025-01-01') > as.Date('2023-07-06')` is `TRUE`)
+
+## Logical tests on vectors and matrices
+
+When we use comparison operators on vectors or matrices, R will perform the comparison element-wise. For example:
+
+```{r}
+# Vector example
+x <- c(1, 2, 3, 4, 5)
+x > 3
+```
+
+```{r}
+# Matrix example - first create the matrix
+x <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2)
+x
+```
+
+```{r}
+# Matrix example - perform the test
+x >= 4
+```
+
+There's also a special operator, `%in%`, that we can use to return a `TRUE` or `FALSE` depending on whether a particular value is or is not present in a vector or matrix:
+
+```{r}
+names <- c('Ali', 'Bob', 'Charlotta')
+'Divya' %in% names
+```
+
+### The many uses of logical tests
+
+Logical tests are used in conditional statements, such as `if` statements, and in loops, such as `for` and `while` loops. They are also used in subsetting data frames and vectors.
