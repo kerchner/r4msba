@@ -9,7 +9,8 @@ format:
     css: styles.css
     include-after-body:
       - scripts/theme-toggle.js
-#      - scripts/collapse-active-section.js
+      - scripts/sidebar-collapse.js
+      - scripts/collapse-active-section.js
     toc: true
     toc-location: left
     toc-title: Contents

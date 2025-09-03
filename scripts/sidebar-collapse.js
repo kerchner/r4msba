@@ -5,21 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
   sidebarSections.forEach((section, index) => {
     const toggle = section.querySelector(".sidebar-item-toggle");
     const content = section.querySelector("ul");
-    const activeLink = section.querySelector("a.sidebar-link.active");
 
     if (toggle && content) {
-      // Assign unique ID if missing
+      // Generate a unique ID for the collapsible content
       const id = `sidebar-section-${index}`;
       content.id = id;
+
+      // Link the toggle to the collapsible content
       toggle.setAttribute("data-bs-target", `#${id}`);
       toggle.setAttribute("aria-controls", id);
 
-      // Expand only the section with the active link
-      const isActive = !!activeLink;
-      content.classList.toggle("show", isActive);
-      toggle.setAttribute("aria-expanded", String(isActive));
+      // Optional: collapse all sections by default
+      content.classList.remove("show");
+      toggle.setAttribute("aria-expanded", "false");
 
-      // Add click handler for manual toggling
+      // Add click handler to toggle visibility
       toggle.addEventListener("click", function (e) {
         e.preventDefault();
         const isOpen = content.classList.contains("show");
