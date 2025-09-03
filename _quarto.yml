@@ -37,6 +37,15 @@ website:
             text: "Step 2: Start an R File"            
       - text: "Quick intro to R syntax"
         href: syntax.qmd
+        contents:
+          - href: syntax.qmd#basics
+            text: "Basics"
+          - href: syntax.qmd#variables-a.k.a.-objects
+            text: "Assignments"
+          - href: syntax.qmd#comments
+            text: "Comments"
+          - href: syntax.qmd#functions
+            text: "Functions"
       - text: "Data Types and Data Structures"
         href: data_types.qmd
         contents:

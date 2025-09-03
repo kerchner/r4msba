@@ -43,6 +43,7 @@ body.dark h1, body.dark h2, body.dark h3, body.dark h4 {
 /* ---------- Code Blocks ---------- */
 pre code {
   font-family: "JetBrains Mono", monospace;
+  font-variant-ligatures: none;
   font-size: 0.95em;
   display: block;
   padding: 1em;
@@ -52,6 +53,7 @@ pre code {
 
 code {
   font-family: "JetBrains Mono", monospace;
+  font-variant-ligatures: none;
   padding: 0.15em 0.35em;
   border-radius: 4px;
   font-size: 0.9em;
