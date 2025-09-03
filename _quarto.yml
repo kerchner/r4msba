@@ -1,74 +1,90 @@
-sidebar:
-  style: "docked"
-  search: true
-  contents:
-    - text: "Introduction"
-      href: index.qmd
-    - text: "Beginning a Project"
-      href: preface.qmd
-      contents:
-        - href: preface.qmd#choosing-an-app
-          text: "Choosing an app"
-        - href: preface.qmd#step-1-make-an-rstudio-project
-          text: "Step 1: Make an RStudio Project"
-        - href: preface.qmd#step-2-start-an-r-file
-          text: "Step 2: Start an R File"            
-    - text: "Quick intro to R syntax"
-      href: syntax.qmd
-    - text: "Data Types and Data Structures"
-      href: data_types.qmd
-      contents:
-        - href: data_types.qmd#basic-data-types
-          text: "Basic data types"
-        - href: data_types.qmd#vectors
-          text: "Vectors"
-        - href: data_types.qmd#matrices
-          text: "Matrices"
-        - href: data_types.qmd#mixing-types-in-vectors-or-matrices
-          text: "Mixing types in vectors or matrices"
-        - href: data_types.qmd#lists
-          text: "Lists"
-    - text: "Data Frames"
-      href: data_frames.qmd
-      contents:
-        - href: data_frames.qmd
-          text: "Section 1"
-    - text: "Logical tests"
-      href: logical_tests.qmd
-    - text: "Functions"
-      href: functions.qmd
-      contents:
-        - href: functions.qmd#using-functions
-          text: "Using functions"
-        - href: functions.qmd#making-your-own-functions
-          text: "Making your own functions"     
-    - text: "Importing and Exporting Data"
-      href: import_export.qmd
-      contents:
-        - href: import_export.qmd#text-based-formats
-          text: "Text-based formats"
-        - href: import_export.qmd#excel
-          text: "Excel"
-        - href: import_export.qmd#other-statistical-software
-          text: "Other Statistical Software"
-    - text: "Data wrangling"
-      href: data_wrangling.qmd
-      contents:
-        - href: data_wrangling.qmd#
-          text: "TBD"
-    - text: "Data downloads"
-      href: data.qmd
-      contents:
-         - href: data.qmd#downloads-for-this-workshop
-           text: "Workshop downloads"
-    - text: "Data cleaning"
-      href: data_cleaning.qmd
-      contents:
-        - href: data_cleaning.qmd#missing_data
-          text: "Missing data"
-    - text: "Data downloads"
-      href: data.qmd
-      contents:
-         - href: data.qmd#downloads-for-this-workshop
-           text: "Workshop downloads"
+project:
+  type: website
+  output-dir: docs  # Publishes to /docs for GitHub Pages
+  
+format:
+  html:
+    logo: images/gw_horizontal_2c_rev.png
+    theme: cosmo
+    css: styles.css
+    include-after-body:
+      - scripts/theme-toggle.js
+#      - scripts/collapse-active-section.js
+    toc: true
+    toc-location: left
+    toc-title: Contents
+    html-math-method: katex
 
+editor: visual
+      
+website:
+  title: "R for MSBA"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Introduction"
+        href: index.qmd
+      - text: "Beginning a Project"
+        href: preface.qmd
+        contents:
+          - href: preface.qmd#choosing-an-app
+            text: "Choosing an app"
+          - href: preface.qmd#step-1-make-an-rstudio-project
+            text: "Step 1: Make an RStudio Project"
+          - href: preface.qmd#step-2-start-an-r-file
+            text: "Step 2: Start an R File"            
+      - text: "Quick intro to R syntax"
+        href: syntax.qmd
+      - text: "Data Types and Data Structures"
+        href: data_types.qmd
+        contents:
+          - href: data_types.qmd#basic-data-types
+            text: "Basic data types"
+          - href: data_types.qmd#vectors
+            text: "Vectors"
+          - href: data_types.qmd#matrices
+            text: "Matrices"
+          - href: data_types.qmd#mixing-types-in-vectors-or-matrices
+            text: "Mixing types in vectors or matrices"
+          - href: data_types.qmd#lists
+            text: "Lists"
+      - text: "Data Frames"
+        href: data_frames.qmd
+        contents:
+          - href: data_frames.qmd
+            text: "Section 1"
+      - text: "Logical tests"
+        href: logical_tests.qmd
+      - text: "Functions"
+        href: functions.qmd
+        contents:
+          - href: functions.qmd#using-functions
+            text: "Using functions"
+          - href: functions.qmd#making-your-own-functions
+            text: "Making your own functions"     
+      - text: "Importing and Exporting Data"
+        href: import_export.qmd
+        contents:
+          - href: import_export.qmd#text-based-formats
+            text: "Text-based formats"
+          - href: import_export.qmd#excel
+            text: "Excel"
+          - href: import_export.qmd#other-statistical-software
+            text: "Other Statistical Software"
+      - text: "Data wrangling"
+        href: data_wrangling.qmd
+        contents:
+          - href: data_wrangling.qmd
+            text: "TBD"
+      - text: "Data cleaning"
+        href: data_cleaning.qmd
+        contents:
+          - href: data_cleaning.qmd#missing_data
+            text: "Missing data"
+      - text: "Data downloads"
+        href: data.qmd
+        contents:
+           - href: data.qmd#downloads-for-this-workshop
+             text: "Workshop downloads"
+  
