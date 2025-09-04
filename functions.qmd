@@ -11,7 +11,26 @@ R can be described as primarily (but not entirely) a "functional" programming la
 
 ## What does a function look like?
 
-### Arguments (a.k.a parameters), required and optional
+A function consists of the name of the function, followed by parentheses `()`, which may contain arguments (also called parameters).  For example, here is a function call to the `mean` function, which computes the mean of a numeric vector:
+
+```{r}
+my_numbers <- c(-50, 1, 2, 3, 4, 5, 100, 101, 600)
+mean(my_numbers)
+```
+
+Functions may have many parameters, in which case we generally name the parameters when we call the function.  For example, the `mean` function has a second parameter called `trim`, which specifies how much of the data to "trim" from each end before computing the mean.  The default value is 0, meaning no trimming.  But we can specify a different value if we want:
+
+```{r}
+mean(my_numbers, trim = 0.2)
+```
+
+Parameters are implicitly passed "in order" based on the way the function is defined, which you can see in the documentation (see the next section!).  So if you don't name the parameters, you have to pass them in the correct order.  For example, this is equivalent to the previous call:
+
+```{r}
+mean(my_numbers, 0.2)
+```
+
+However, it's usually better style to name the parameters, especially if there are many of them.
 
 ## How can I learn more about a function?
 
@@ -21,18 +40,70 @@ At the Console, you can type `?` followed by the name of the function (with no s
 
 In R, functions are objects too!  Just like data frames, vectors, lists, etc.  So it should not surprise you that you can define a function in the same way.  Here's an example:
 
-```r
+```{r}
 # Convert a temperature from Fahrenheit to Celsius
 # temp_f: numeric
 # returns: temp_f converted to Celsius
-f2c <- function(temp_f) {
+f2c <- function(temp_f, round_digits = 2) {
+  # compute temp_c
   temp_c <- (temp_f - 32)*(5/9)
+  # round temp_c
+  temp_c <- round(temp_c, digits = round_digits)
   return(temp_c)
 }
 ```
 
-There are situations in R when you will want to define a small function locally.  In some languages, this is called a "lambda function" or an "anonymous function".  Notice that we never even give the function a name; it's only available in its limited local context:
+Notice that we used the R function called `function`, followed by a block of code in curly braces `{}`, to specify the code that is run when a function is called.  The `return` statement is optional; if you leave it out, R will return the value of the last expression evaluated in the function, but it's probably better style to be clear by using the `return` statement.
+
+Let's now discuss the *parameters* that our function expects as inputs, inside the parentheses.  In this case, we have two parameters: `temp_f` and `round_digits`.
+
+We can see from the fact that `temp_f` has no default value that it is a *required* parameter.  This means that if you call the function without providing a value for `temp_f`, you will get an error.  Whereas the second parameter, `round_digits`, has a default value of 2.  This means that if you call the function without specifying a value for `round_digits`, that's fine, and `round_digits` will automatically be set to 2.  For example, these are all valid ways we can call our `f2c` function:
+
+
+```{r}
+f2c(100) # round_digits will be 2
+```
+
+```{r}
+f2c(100, round_digits = 4) # round_digits will be 4
+```
+
+By using the names of the parameters, we can pass them in any order.  For example:
+
+```{r}
+f2c(round_digits = 3, temp_f = 100)
+```
+
+## Anonymous functions
+
+There are situations in R when you may want to define a small function locally.  In some languages, this is called a "lambda function" or an "anonymous function".  Notice that we never even give the function a name; it's only available in its limited local context:
 
 ```r
 do_something(some_data, function = function(x) x*3)
+```
+
+# "Vectorized" functions in R
+
+One of the most powerful features of R is that many functions are "vectorized".  This means that they can efficiently operate on entire vectors (or matrices, or data frames) at once, without the need for an explicit loop.  For example, the `mean` function can take a vector of numbers and return their mean:
+
+```{r}
+v <- c(1, 9, 3, 2, 11, 4)
+mean(v)
+```
+And it can also take a matrix:
+
+```{r}
+m <- matrix(c(1:15), nrow = 5, ncol = 3)
+mean(m)
+```
+
+Many mathematical functions are vectorized, such as `sin`, `cos`, `log`, etc.  For example:
+```{r}
+log(v, base = 10)
+```
+
+Many other commonly-used functions such as `is.na()` are also vectorized:
+```{r}
+x <- c(1, 2, NA, 4, NA, 5)
+is.na(x)
 ```

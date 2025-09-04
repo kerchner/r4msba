@@ -85,6 +85,24 @@ as.numeric(c('32.5', '-5', 'some text'))
 
 Note the warning, caused by the fact that `'some text'` cannot be converted to `numeric`.
 
+# Vector and Matrix operations
+
+Vectors and matrices allow us to perform mathematical operations on entire sets of values at once.  For example:
+
+```{r}
+v1 <- c(1, 2, 3)
+v2 <- c(4, 5, 6)
+v1 + v2
+```
+
+or for a matrix:
+```{r}
+m1 <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)
+m1**2 # square each element
+```
+
 # Lists
 
-Unlike vectors and matrices, lists allow mixing of types.  Not only that, lists may have any structure that you like.
+Unlike vectors and matrices, lists allow mixing of types.  Not only that, lists may have any structure that you like.  For example, a list may contain vectors, matrices, and even other lists.
+
+

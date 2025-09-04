@@ -111,7 +111,7 @@
     "href": "functions.html",
     "title": "Functions",
     "section": "",
-    "text": "R can be described as primarily (but not entirely) a “functional” programming language. Most of what you will typically do in R involves using functions, and that is the usual style of R coding. Functional programming can also be a good way to approach data analysis.\n\n\n\n\n\n\n\n\nAt the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
+    "text": "R can be described as primarily (but not entirely) a “functional” programming language. Most of what you will typically do in R involves using functions, and that is the usual style of R coding. Functional programming can also be a good way to approach data analysis.\n\n\nA function consists of the name of the function, followed by parentheses (), which may contain arguments (also called parameters). For example, here is a function call to the mean function, which computes the mean of a numeric vector:\n\nmy_numbers &lt;- c(-50, 1, 2, 3, 4, 5, 100, 101, 600)\nmean(my_numbers)\n\n[1] 85.11111\n\n\nFunctions may have many parameters, in which case we generally name the parameters when we call the function. For example, the mean function has a second parameter called trim, which specifies how much of the data to “trim” from each end before computing the mean. The default value is 0, meaning no trimming. But we can specify a different value if we want:\n\nmean(my_numbers, trim = 0.2)\n\n[1] 30.85714\n\n\nParameters are implicitly passed “in order” based on the way the function is defined, which you can see in the documentation (see the next section!). So if you don’t name the parameters, you have to pass them in the correct order. For example, this is equivalent to the previous call:\n\nmean(my_numbers, 0.2)\n\n[1] 30.85714\n\n\nHowever, it’s usually better style to name the parameters, especially if there are many of them.\n\n\n\nAt the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
     "crumbs": [
       "Functions"
     ]
@@ -301,6 +301,26 @@
     "text": "A data variable can either be continuous or categorical. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.\nLet’s look for a moment at different types and subtypes of variables that we might have:\n\n\n\nData Types. Source: https://bookdown.org/ejvanholm/Textbook/displaying-data.html\n\n\nLet’s focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:\n\nText variables representing categorical data could look like:\n\n'control', 'treatment'\n'red', 'blue', 'green'\n'good', 'better', 'best'\n\nNumbers can also be used to represent categories:\n\n0, 1 (e.g. for control and treatment)\n1, 4, 2 (e.g. for red, blue, green)\n1, 2, 3 (e.g. for good, better, best)\n\n\nIn R, categorical variables are called factors. Factors can be either ordered or unordered. So 'control', 'treatment' would be an unordered factor, while 'good', 'better', 'best' would be an ordered factor.",
     "crumbs": [
       "Factors"
+    ]
+  },
+  {
+    "objectID": "functions.html#what-does-a-function-look-like",
+    "href": "functions.html#what-does-a-function-look-like",
+    "title": "Functions",
+    "section": "",
+    "text": "A function consists of the name of the function, followed by parentheses (), which may contain arguments (also called parameters). For example, here is a function call to the mean function, which computes the mean of a numeric vector:\n\nmy_numbers &lt;- c(-50, 1, 2, 3, 4, 5, 100, 101, 600)\nmean(my_numbers)\n\n[1] 85.11111\n\n\nFunctions may have many parameters, in which case we generally name the parameters when we call the function. For example, the mean function has a second parameter called trim, which specifies how much of the data to “trim” from each end before computing the mean. The default value is 0, meaning no trimming. But we can specify a different value if we want:\n\nmean(my_numbers, trim = 0.2)\n\n[1] 30.85714\n\n\nParameters are implicitly passed “in order” based on the way the function is defined, which you can see in the documentation (see the next section!). So if you don’t name the parameters, you have to pass them in the correct order. For example, this is equivalent to the previous call:\n\nmean(my_numbers, 0.2)\n\n[1] 30.85714\n\n\nHowever, it’s usually better style to name the parameters, especially if there are many of them.",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "functions.html#anonymous-functions",
+    "href": "functions.html#anonymous-functions",
+    "title": "Functions",
+    "section": "Anonymous functions",
+    "text": "Anonymous functions\nThere are situations in R when you may want to define a small function locally. In some languages, this is called a “lambda function” or an “anonymous function”. Notice that we never even give the function a name; it’s only available in its limited local context:\ndo_something(some_data, function = function(x) x*3)",
+    "crumbs": [
+      "Functions"
     ]
   }
 ]
