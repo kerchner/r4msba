@@ -82,6 +82,15 @@ website:
             text: "Excel"
           - href: import_export.qmd#other-statistical-software
             text: "Other Statistical Software"
+      - text: "Packages in R"
+        href: packages.qmd
+        contents:
+          - href: packages.qmd#installing-packages
+            text: "Installing packages"
+          - href: packages.qmd#loading-packages
+            text: "Loading packages"
+          - href: packages.qmd#using-functions-from-packages
+            text: "Using functions from packages"
       - text: "Data wrangling"
         href: data_wrangling.qmd
         contents:
@@ -97,4 +106,6 @@ website:
         contents:
            - href: data.qmd#downloads-for-this-workshop
              text: "Workshop downloads"
+      - text: "Resources"
+        href: resources.qmd
   
