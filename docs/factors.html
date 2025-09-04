@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Frames – R for MSBA</title>
+<title>Factor Variables – R for MSBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -125,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_frames.html">Data Frames</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./factors.html">Factors</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -266,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./data_frames.html" class="sidebar-item-text sidebar-link active">
+            <a href="./data_frames.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Frames</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -295,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./factors.html" class="sidebar-item-text sidebar-link">
+  <a href="./factors.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Factors</span></a>
   </div>
 </li>
@@ -455,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Frames</h1>
+<h1 class="title">Factor Variables</h1>
 </div>
 
 
@@ -472,112 +438,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Data frames in R represent tabular data, where each column can contain one type of variable (e.g., numeric, character, factor). Each column has a text-based name; rows can also have a name, although by default they are numbered.</p>
-<section id="constructing-a-data-frame" class="level1">
-<h1>Constructing a data frame</h1>
-<p>We can either construct a data frame by using the <code>data.frame()</code> function, or we can also obtain a data frame as the result of a function that, for example, reads in a data file, such as <code>read.csv()</code>.</p>
-<p>Let’s use <code>data.frame()</code> to create a simple data frame:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="st">'P01'</span>, <span class="st">'P03'</span>, <span class="st">'P04'</span>, <span class="st">'P07'</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="fl">90.5</span>, <span class="fl">85.0</span>, <span class="fl">88.5</span>, <span class="fl">92.0</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># show the data frame</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   id    name age score
-1 P01   Alice  25  90.5
-2 P03     Bob  30  85.0
-3 P04 Charlie  35  88.5
-4 P07   David  40  92.0</code></pre>
+<p>A data variable can either be <em>continuous</em> or <em>categorical</em>. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.</p>
+<p>Let’s look for a moment at different types and subtypes of variables that we might have:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/data_types.png" class="img-fluid figure-img"></p>
+<figcaption>Data Types. Source: https://bookdown.org/ejvanholm/Textbook/displaying-data.html</figcaption>
+</figure>
 </div>
-</div>
-<p>We can get information about the data frame’s structure using the <code>str()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   4 obs. of  4 variables:
- $ id   : chr  "P01" "P03" "P04" "P07"
- $ name : chr  "Alice" "Bob" "Charlie" "David"
- $ age  : num  25 30 35 40
- $ score: num  90.5 85 88.5 92</code></pre>
-</div>
-</div>
-<p>And we can get the names of the columns using the <code>names()</code> (or <code>colnames()</code>) function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "id"    "name"  "age"   "score"</code></pre>
-</div>
-</div>
-<p>We can also get the row names using the <code>rownames()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "1" "2" "3" "4"</code></pre>
-</div>
-</div>
-<p>We can change the column or row names by assigning new values to them:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"Name"</span>, <span class="st">"Age"</span>, <span class="st">"Score"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   ID    Name Age Score
-1 P01   Alice  25  90.5
-2 P03     Bob  30  85.0
-3 P04 Charlie  35  88.5
-4 P07   David  40  92.0</code></pre>
-</div>
-</div>
-<p>…although generally it’s more convenient to use the <code>dplyr::rename()</code> function instead, as it allows you to rename specific columns without affecting the others.</p>
-</section>
-<section id="accessing-data-frame-elements" class="level1">
-<h1>Accessing data frame elements</h1>
-<p>We can access elements of a data frame using the <code>$</code> operator, which allows us to select a specific column by name. For example, to access the <code>Age</code> column:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 25 30 35 40</code></pre>
-</div>
-</div>
-<p>Note that each column of a data frame is an R vector, so when you access a column, you get back a vector.</p>
-</section>
-<section id="binding-data-frames-together" class="level1">
-<h1>“Binding” data frames together</h1>
-<p>We can also combine data frames using the <code>rbind()</code> and <code>cbind()</code> functions. The <code>rbind()</code> (“row bind”) function combines data frames by rows (i.e., it adds more rows), while the <code>cbind()</code> (“column bind”) function combines data frames by columns (i.e., it adds more columns).</p>
-<p>Note that when using <code>rbind()</code>, the data frames must have the same columns (i.e., the same exact names and types), and when using <code>cbind()</code>, the data frames must have the same number of rows.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="st">'P01'</span>, <span class="st">'P03'</span>),</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>),</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="fl">90.5</span>, <span class="fl">85.0</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="st">'P04'</span>, <span class="st">'P07'</span>),</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">35</span>, <span class="dv">40</span>),</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="fl">88.5</span>, <span class="fl">92.0</span>)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df1, df2)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   id    name age score
-1 P01   Alice  25  90.5
-2 P03     Bob  30  85.0
-3 P04 Charlie  35  88.5
-4 P07   David  40  92.0</code></pre>
-</div>
-</div>
+<p>Let’s focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:</p>
+<ul>
+<li>Text variables representing categorical data could look like:
+<ul>
+<li><code>'control'</code>, <code>'treatment'</code></li>
+<li><code>'red'</code>, <code>'blue'</code>, <code>'green'</code></li>
+<li><code>'good'</code>, <code>'better'</code>, <code>'best'</code></li>
+</ul></li>
+<li>Numbers can also be used to represent categories:
+<ul>
+<li><code>0</code>, <code>1</code> (e.g.&nbsp;for control and treatment)</li>
+<li><code>1</code>, <code>2</code>, <code>3</code> (e.g.&nbsp;for red, blue, green)</li>
+<li><code>1</code>, <code>2</code>, <code>3</code> (e.g.&nbsp;for good, better, best)</li>
+</ul></li>
+</ul>
+<p>In R, categorical variables are called <em>factors</em>. Factors can be either <em>ordered</em> or <em>unordered</em>. So <code>'control'</code>, <code>'treatment'</code> would be an unordered factor, while <code>'good'</code>, <code>'better'</code>, <code>'best'</code> would be an ordered factor.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>

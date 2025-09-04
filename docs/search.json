@@ -292,5 +292,15 @@
     "crumbs": [
       "Resources"
     ]
+  },
+  {
+    "objectID": "factors.html",
+    "href": "factors.html",
+    "title": "Factor Variables",
+    "section": "",
+    "text": "A data variable can either be continuous or categorical. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.\nLet’s look for a moment at different types and subtypes of variables that we might have:\n\n\n\nData Types. Source: https://bookdown.org/ejvanholm/Textbook/displaying-data.html\n\n\nLet’s focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:\n\nText variables representing categorical data could look like:\n\n'control', 'treatment'\n'red', 'blue', 'green'\n'good', 'better', 'best'\n\nNumbers can also be used to represent categories:\n\n0, 1 (e.g. for control and treatment)\n1, 2, 3 (e.g. for red, blue, green)\n1, 2, 3 (e.g. for good, better, best)\n\n\nIn R, categorical variables are called factors. Factors can be either ordered or unordered. So 'control', 'treatment' would be an unordered factor, while 'good', 'better', 'best' would be an ordered factor.",
+    "crumbs": [
+      "Factors"
+    ]
   }
 ]

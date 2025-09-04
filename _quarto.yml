@@ -72,6 +72,8 @@ website:
             text: "Accessing elements of a data frame"
           - href: data_frames.qmd#binding-data-frames-together
             text: "Binding data frames together"
+      - text: "Factors"
+        href: factors.qmd
       - text: "Logical tests"
         href: logical_tests.qmd
       - text: "Functions"

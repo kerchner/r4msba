@@ -14,6 +14,14 @@ Let's look for a moment at different types and subtypes of variables that we mig
 Let's focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:
 
 - Text variables representing categorical data could look like:
-   - `control`, `treatment`
-   - `red`, `blue`, `green`
-   - 
+   - `'control'`, `'treatment'`
+   - `'red'`, `'blue'`, `'green'`
+   - `'good'`, `'better'`, `'best'`
+
+- Numbers can also be used to represent categories:
+   - `0`, `1` (e.g. for control and treatment)
+   - `1`, `4`, `2` (e.g. for red, blue, green)
+   - `1`, `2`, `3` (e.g. for good, better, best)
+
+In R, categorical variables are called *factors*. Factors can be either *ordered* or *unordered*.  So `'control'`, `'treatment'` would be an unordered factor, while `'good'`, `'better'`, `'best'` would be an ordered factor.
+
