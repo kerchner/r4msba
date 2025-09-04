@@ -1,0 +1,64 @@
+---
+title: "Packages"
+format:
+  html:
+    toc: false
+---
+
+# What are packages?
+
+R comes with a core set of functions that allow you to do basic things like read data, manipulate data, and make simple plots. But R's real power comes from the thousands of packages that extend R's capabilities. Packages are collections of functions, data, and documentation that others have written to solve specific problems or perform specific tasks.
+
+# Installing packages
+
+To install a package, you can use the `install.packages()` function. For example, to install the `dplyr` package, you would run:
+
+```r
+install.packages("dplyr")
+```
+
+You only need to install a package once. After it's installed, you can load it into your R session using the `library()` function:
+
+```r
+library(dplyr)
+```
+You need to load the package every time you start a new R session and want to use it.  So if you close RStudio and reopen it later, you'll need to run all of the `library` statements in order to use the functions in those packages.
+
+## Other ways of installing packages
+
+When you install using `install.packages('somePackage')`, R will look for the package on CRAN (the Comprehensive R Archive Network).  This is the most common way to install packages, but there are other ways as well:
+
+-   **GitHub**: Some packages are hosted on GitHub rather than CRAN. You can install these packages using the `devtools` package. For example, to install the `ggplot2` package from GitHub, you would run:
+
+    ```r
+    install.packages("devtools")  # Install devtools if you haven't already
+    library(devtools)
+    install_github("tidyverse/ggplot2")
+    ```
+    
+- You can even develop your own packages and load them from your local computer.  This is a bit more advanced, but writing (and publishing) your own packages can be very useful and is a great way to share your work with others.
+
+# Loading packages
+
+Once a package is installed, you can load it into your R session using the `library()` function. For example, to load the `dplyr` package, you would run:
+```r
+library(dplyr)
+```
+
+A very useful, and common style in R coding is to put all of your `library()` statements at the top of your script.  This way, anyone reading your code can easily see which packages are required to run the code.
+
+# Using functions from packages
+
+Once a package is loaded, you can use its functions just like you would use any other R function. For example, the `dplyr` package provides a function called `filter()` that allows you to filter rows in a data frame based on certain conditions. Here's an example of how to use it:
+
+# Finding packages
+
+There are thousands of packages available for R, authored by many different people.  Here are a few resources to help you find packages:   
+
+-   **CRAN**: The Comprehensive R Archive Network (CRAN) is the primary repository for R packages. You can browse and search for packages on the CRAN website: https://cran.r-project.org/web/packages/available_packages_by_name.html.  
+
+-   **RDocumentation**: RDocumentation is a website that provides documentation for R packages and functions. You can search for packages and functions on the RDocumentation website: https://www.rdocumentation.org/.  
+
+-   **Runiverse**: Runiverse is a website that provides a curated list of R packages for data science and machine learning. You can browse and search for packages on the Runiverse website: https://www.runiverse.com/  
+
+
