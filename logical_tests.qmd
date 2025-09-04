@@ -5,8 +5,6 @@ format:
     toc: false
 ---
 
-# Logical tests
-
 Logical tests are used extensively in coding in general, and coding in R is no exception. By a logical test, we mean an expression that evaluates to either `TRUE` or `FALSE` (or sometimes `NA`).
 
 ## Comparison operators

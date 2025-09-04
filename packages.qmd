@@ -38,18 +38,28 @@ When you install using `install.packages('somePackage')`, R will look for the pa
     
 - You can even develop your own packages and load them from your local computer.  This is a bit more advanced, but writing (and publishing) your own packages can be very useful and is a great way to share your work with others.
 
+
 # Loading packages
 
 Once a package is installed, you can load it into your R session using the `library()` function. For example, to load the `dplyr` package, you would run:
-```r
-library(dplyr)
-```
 
-A very useful, and common style in R coding is to put all of your `library()` statements at the top of your script.  This way, anyone reading your code can easily see which packages are required to run the code.
+    ```r
+    library(dplyr)
+    ```
+
+A common style in R coding is to put all of your `library()` statements at the top of your script.  This way, anyone reading your code can easily see which packages are required to run the code.
 
 # Using functions from packages
 
-Once a package is loaded, you can use its functions just like you would use any other R function. For example, the `dplyr` package provides a function called `filter()` that allows you to filter rows in a data frame based on certain conditions. Here's an example of how to use it:
+Once a package is loaded, you can use its functions just like you would use any other R function.
+
+If your package is installed but not loaded, you can still use its functions by using the `::` operator. For example, to use the `filter()` function from the `dplyr` package without loading the entire package, you would run:
+
+      ```r
+      mydata %>% dplyr::filter(variable == "value")
+      ```
+      
+This can be useful if you only need to use a few functions from a package and don't want to load the entire package into your R session.
 
 # Finding packages
 

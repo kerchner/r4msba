@@ -5,9 +5,11 @@ project:
 format:
   html:
     logo: images/gw_horizontal_2c_rev.png
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: cosmo
     css: styles.css
-    include-before-body:
+    include-in-header:
       - scripts/default-dark.js
     include-after-body:
       - scripts/theme-toggle.js
@@ -64,8 +66,12 @@ website:
       - text: "Data Frames"
         href: data_frames.qmd
         contents:
-          - href: data_frames.qmd
-            text: "Section 1"
+          - href: data_frames.qmd#constructing-a-data-frame
+            text: "Constructing a data frame"
+          - href: data_frames.qmd#accessing-elements-of-a-data-frame
+            text: "Accessing elements of a data frame"
+          - href: data_frames.qmd#binding-data-frames-together
+            text: "Binding data frames together"
       - text: "Logical tests"
         href: logical_tests.qmd
       - text: "Functions"

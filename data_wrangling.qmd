@@ -5,8 +5,6 @@ format:
     toc: false
 ---
 
-# Data Wrangling
-
 "Data wrangling" is the process of reshaping and/or restructuring data.  The type of data wrangling you might do depends on what your next steps are.  For example, data wrangling to produce a summary table might require a different target "shape" than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization.  So, it all depends, and there is MUCH to talk about here.  But it's unusual to NOT have to do at least some data wrangling after you start with raw data.
 
 # R tools for data wrangling

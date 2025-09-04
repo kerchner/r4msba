@@ -1,0 +1,19 @@
+---
+title: "Factor Variables"
+format:
+  html:
+    toc: false
+---
+
+A data variable can either be *continuous* or *categorical*. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.
+
+Let's look for a moment at different types and subtypes of variables that we might have:
+
+![Data Types. Source: https://bookdown.org/ejvanholm/Textbook/displaying-data.html](images/data_types.png)
+
+Let's focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:
+
+- Text variables representing categorical data could look like:
+   - `control`, `treatment`
+   - `red`, `blue`, `green`
+   - 

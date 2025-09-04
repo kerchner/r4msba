@@ -39,11 +39,11 @@ head(data)
 
 </details>
 
-Let's read in the World Development Indicators (WDI) data that's available in the [Data downloads](data.html) section. The file is named `wdi.csv`.  Download it to your computer; for most people, the file will download to your Downloads folder.
+Let's read in the World Development Indicators (WDI) data that's available in the [Data downloads](data.html) section. The file is named `wdi.csv`. Download it to your computer; for most people, the file will download to your Downloads folder.
 
-Before we proceed, let's talk about using folders to organize the files in your R project (or any data analysis project).  We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well.  For example, your project might look like this:
+Before we proceed, let's talk about using folders to organize the files in your R project (or any data analysis project). We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well. For example, your project might look like this:
 
-```
+```         
 ├── wdi_analysis.R
 ├── wdi_summary.R
 ├── data
@@ -53,9 +53,10 @@ Before we proceed, let's talk about using folders to organize the files in your 
 │   ├── continents_gdp.pdf
 │   ├── gdp_longitudinal.pdf
 ```
+
 etc.
 
-We can make folders programmatically in R, using the `dir.create()` function.  Let's create a `data` folder in your project:
+We can make folders programmatically in R, using the `dir.create()` function. Let's create a `data` folder in your project:
 
 ```{r}
 dir.create('data')
@@ -67,10 +68,32 @@ Now, locate the `wdi.csv` file that you downloaded, and copy or move it to your 
 wdi <- read.csv('data/wdi.csv', na.strings = "..")
 ```
 
-
 ```{r}
 ```
 
 # Excel
 
+To load Excel files, you can use the `readxl` package. Install it if you haven't already:
+
+```{r}
+install.packages("readxl")
+```
+
+Then you can read in an Excel file like this:
+
+``` r
+library(readxl)
+my_excel_data <- read_excel("data/mydata.xlsx", sheet = "Sheet1")
+```
+
+Note that we specified the `sheet` argument, because Excel workbooks can have multiple sheets. **If you don't specify a sheet, `read_excel()` will read in the first sheet by default.**
+
 # Other statistical software
+
+You can read in data files from the Stata, SPSS and SAS statistical packages using the [`haven`](https://haven.tidyverse.org/){target="_blank"} package. The `haven` package is part of the tidyverse, so if you have the tidyverse installed, you already have `haven`. `haven` can read in files with the following extensions:
+
+-   Stata: `.dta` using `read_dta()`
+-   SPSS: `.sav` using `read_sav()`
+-   SAS: `.sas7bdat` and `.sas7bcat` using `read_sas()`
+
+`haven` can also write out files in these formats, with the `write_dta()`, `write_sav()` and `write_xpt()` functions.

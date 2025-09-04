@@ -5,6 +5,83 @@ format:
     toc: false
 ---
 
-# Data Frames
+Data frames in R represent tabular data, where each column can contain one type of variable (e.g., numeric, character, factor). Each column has a text-based name; rows can also have a name, although by default they are numbered.
 
-TBD
+# Constructing a data frame
+
+We can either construct a data frame by using the `data.frame()` function, or we can also obtain a data frame as the result of a function that, for example, reads in a data file, such as `read.csv()`.
+
+Let's use `data.frame()` to create a simple data frame:
+
+```{r}
+df <- data.frame(
+  id = c('P01', 'P03', 'P04', 'P07'),
+  name = c("Alice", "Bob", "Charlie", "David"),
+  age = c(25, 30, 35, 40),
+  score = c(90.5, 85.0, 88.5, 92.0)
+)
+
+# show the data frame
+df
+```
+
+We can get information about the data frame's structure using the `str()` function:
+
+```{r}
+str(df)
+```
+
+And we can get the names of the columns using the `names()` (or `colnames()`) function:
+```{r}
+names(df)
+```
+
+We can also get the row names using the `rownames()` function:
+
+```{r}
+rownames(df)
+```
+
+We can change the column or row names by assigning new values to them:
+```{r}
+colnames(df) <- c("ID", "Name", "Age", "Score")
+
+df
+```
+
+...although generally it's more convenient to use the `dplyr::rename()` function instead, as it allows you to rename specific columns without affecting the others.
+
+# Accessing data frame elements
+
+We can access elements of a data frame using the `$` operator, which allows us to select a specific column by name. For example, to access the `Age` column:
+
+```{r}
+df$Age
+```
+
+Note that each column of a data frame is an R vector, so when you access a column, you get back a vector.
+
+# "Binding" data frames together
+
+We can also combine data frames using the `rbind()` and `cbind()` functions. The `rbind()` ("row bind") function combines data frames by rows (i.e., it adds more rows), while the `cbind()` ("column bind") function combines data frames by columns (i.e., it adds more columns).
+
+Note that when using `rbind()`, the data frames must have the same columns (i.e., the same exact names and types), and when using `cbind()`, the data frames must have the same number of rows.
+
+```{r}
+df1 <- data.frame(
+  id = c('P01', 'P03'),
+  name = c("Alice", "Bob"),
+  age = c(25, 30),
+  score = c(90.5, 85.0)
+)
+df2 <- data.frame(
+  id = c('P04', 'P07'),
+  name = c("Charlie", "David"),
+  age = c(35, 40),
+  score = c(88.5, 92.0)
+)
+
+df <- rbind(df1, df2)
+
+df
+```
