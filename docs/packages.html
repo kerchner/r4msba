@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Importing and Exporting Data – R for MSBA</title>
+<title>Packages – R for MSBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./import_export.html">Importing and Exporting Data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./packages.html">Packages in R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -143,6 +143,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -298,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./import_export.html" class="sidebar-item-text sidebar-link active">
+            <a href="./import_export.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Importing and Exporting Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -327,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./packages.qmd" class="sidebar-item-text sidebar-link">
+            <a href="./packages.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Packages in R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -336,19 +342,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.qmd#installing-packages" class="sidebar-item-text sidebar-link">
+  <a href="./packages.html#installing-packages" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Installing packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.qmd#loading-packages" class="sidebar-item-text sidebar-link">
+  <a href="./packages.html#loading-packages" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Loading packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.qmd#using-functions-from-packages" class="sidebar-item-text sidebar-link">
+  <a href="./packages.html#using-functions-from-packages" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using functions from packages</span></a>
   </div>
 </li>
@@ -405,6 +411,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
     </ul>
     </div>
     
@@ -417,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Importing and Exporting Data</h1>
+<h1 class="title">Packages</h1>
 </div>
 
 
@@ -434,57 +446,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="text-based-formats" class="level1">
-<h1>Text-based formats</h1>
-<p>Text-based data formats are very common, because they are human-readable, they don’t require any special software to read, and they can be read in by many different programming languages. Text-based formats include CSV (comma-separated values) and its variants such as TSV (tab-separated values), JSON (JavaScript Object Notation), YAML, and XML.</p>
-<p>We’re going to focus on tabular formats such as CSV; by tabular, we mean that the data represented in the file is in a table format, with rows and columns. In a CSV, values going across a row are separated by commas; there can be other variants (such as TSV) that use a different character as a separator.</p>
-<p>A raw CSV file might look something like this:</p>
-<pre><code>Time,Country Name,Country Code,GDP (current US$) [NY.GDP.MKTP.CD],"Population, total [SP.POP.TOTL]","Life expectancy at birth, total (years) [SP.DYN.LE00.IN]"
-2014,Gabon,GAB,18203966896,1978399,66.07
-2014,"Gambia, The",GMB,1229461721,2164528,62.576
-2014,Georgia,GEO,17966015109,3719414,73.105
-...</code></pre>
-<p>In R, we can read such a file into our environment using the <code>read.csv()</code> function. Here’s how it might look:</p>
-<section id="challenge" class="level2">
-<h2 class="anchored" data-anchor-id="challenge">Challenge:</h2>
-<p>Write code to read in a file from a file named <code>mydata.csv</code> located in your project’s <code>data</code> folder.</p>
-<details>
-<summary>
-Solution
-</summary>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/mydata.csv"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<p>Let’s read in the World Development Indicators (WDI) data that’s available in the <a href="data.html">Data downloads</a> section. The file is named <code>wdi.csv</code>. Download it to your computer; for most people, the file will download to your Downloads folder.</p>
-<p>Before we proceed, let’s talk about using folders to organize the files in your R project (or any data analysis project). We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well. For example, your project might look like this:</p>
-<pre><code>├── wdi_analysis.R
-├── wdi_summary.R
-├── data
-│   ├── wdi.csv
-│   ├── another_data_file.csv
-├── plots
-│   ├── continents_gdp.pdf
-│   ├── gdp_longitudinal.pdf</code></pre>
-<p>etc.</p>
-<p>We can make folders programmatically in R, using the <code>dir.create()</code> function. Let’s create a <code>data</code> folder in your project:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">'data'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in dir.create("data"): 'data' already exists</code></pre>
-</div>
-</div>
-<p>Now, locate the <code>wdi.csv</code> file that you downloaded, and copy or move it to your RStudio project’s <code>data</code> folder.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/wdi.csv'</span>, <span class="at">na.strings =</span> <span class="st">".."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="what-are-packages" class="level1">
+<h1>What are packages?</h1>
+<p>R comes with a core set of functions that allow you to do basic things like read data, manipulate data, and make simple plots. But R’s real power comes from the thousands of packages that extend R’s capabilities. Packages are collections of functions, data, and documentation that others have written to solve specific problems or perform specific tasks.</p>
+</section>
+<section id="installing-packages" class="level1">
+<h1>Installing packages</h1>
+<p>To install a package, you can use the <code>install.packages()</code> function. For example, to install the <code>dplyr</code> package, you would run:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You only need to install a package once. After it’s installed, you can load it into your R session using the <code>library()</code> function:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You need to load the package every time you start a new R session and want to use it. So if you close RStudio and reopen it later, you’ll need to run all of the <code>library</code> statements in order to use the functions in those packages.</p>
+<section id="other-ways-of-installing-packages" class="level2">
+<h2 class="anchored" data-anchor-id="other-ways-of-installing-packages">Other ways of installing packages</h2>
+<p>When you install using <code>install.packages('somePackage')</code>, R will look for the package on CRAN (the Comprehensive R Archive Network). This is the most common way to install packages, but there are other ways as well:</p>
+<ul>
+<li><p><strong>GitHub</strong>: Some packages are hosted on GitHub rather than CRAN. You can install these packages using the <code>devtools</code> package. For example, to install the <code>ggplot2</code> package from GitHub, you would run:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)  <span class="co"># Install devtools if you haven't already</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"tidyverse/ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>You can even develop your own packages and load them from your local computer. This is a bit more advanced, but writing (and publishing) your own packages can be very useful and is a great way to share your work with others.</p></li>
+</ul>
 </section>
 </section>
-<section id="excel" class="level1">
-<h1>Excel</h1>
+<section id="loading-packages" class="level1">
+<h1>Loading packages</h1>
+<p>Once a package is installed, you can load it into your R session using the <code>library()</code> function. For example, to load the <code>dplyr</code> package, you would run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A very useful, and common style in R coding is to put all of your <code>library()</code> statements at the top of your script. This way, anyone reading your code can easily see which packages are required to run the code.</p>
 </section>
-<section id="other-statistical-software" class="level1">
-<h1>Other statistical software</h1>
+<section id="using-functions-from-packages" class="level1">
+<h1>Using functions from packages</h1>
+<p>Once a package is loaded, you can use its functions just like you would use any other R function. For example, the <code>dplyr</code> package provides a function called <code>filter()</code> that allows you to filter rows in a data frame based on certain conditions. Here’s an example of how to use it:</p>
+</section>
+<section id="finding-packages" class="level1">
+<h1>Finding packages</h1>
+<p>There are thousands of packages available for R, authored by many different people. Here are a few resources to help you find packages:</p>
+<ul>
+<li><p><strong>CRAN</strong>: The Comprehensive R Archive Network (CRAN) is the primary repository for R packages. You can browse and search for packages on the CRAN website: https://cran.r-project.org/web/packages/available_packages_by_name.html.</p></li>
+<li><p><strong>RDocumentation</strong>: RDocumentation is a website that provides documentation for R packages and functions. You can search for packages and functions on the RDocumentation website: https://www.rdocumentation.org/.</p></li>
+<li><p><strong>Runiverse</strong>: Runiverse is a website that provides a curated list of R packages for data science and machine learning. You can browse and search for packages on the Runiverse website: https://www.runiverse.com/</p></li>
+</ul>
 
 
 </section>

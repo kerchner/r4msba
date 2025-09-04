@@ -1,0 +1,24 @@
+---
+title: "Resources for getting help and learning more"
+format:
+  html:
+    toc: false
+---
+
+## Web resources
+
+[R Libguide \@ GW Libraries](https://libguides.gwu.edu/RStats){target="_blank"} - Dan's curated link of only the best R sites and resources
+
+## R Workshops:
+
+[Coding Workshops \@ GW Libraries](https://library.gwu.edu/events?field_tags[314]=314){target="_blank"}
+
+## Individualized consultations:
+
+[Coding Consultations](https://calendly.com/gwul-coding){target="_blank"} with a software developer librarian skilled in R or Python programming.
+
+[Data consultations](http://go.gwu.edu/dataconsulting){target="_blank"} with graduate students in Academic Commons who are skilled in statistics and statistical analysis using R, Python, SAS, SPSS, STATA, and Excel.
+
+## Community
+
+[GW Coders](https://gwcoders.github.io/studyGroup/){target="_blank"} - Bi-weekly presentations (often with free pizza!) and a super useful Slack community. Open to anyone at GW interested in learning about coding.

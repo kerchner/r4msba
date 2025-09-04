@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Importing and Exporting Data – R for MSBA</title>
+<title>Data Wrangling – R for MSBA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -114,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./import_export.html">Importing and Exporting Data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data_wrangling.html">Data wrangling</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -298,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./import_export.html" class="sidebar-item-text sidebar-link active">
+            <a href="./import_export.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Importing and Exporting Data</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -327,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./packages.qmd" class="sidebar-item-text sidebar-link">
+            <a href="./packages.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Packages in R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -336,19 +302,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.qmd#installing-packages" class="sidebar-item-text sidebar-link">
+  <a href="./packages.html#installing-packages" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Installing packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.qmd#loading-packages" class="sidebar-item-text sidebar-link">
+  <a href="./packages.html#loading-packages" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Loading packages</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./packages.qmd#using-functions-from-packages" class="sidebar-item-text sidebar-link">
+  <a href="./packages.html#using-functions-from-packages" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using functions from packages</span></a>
   </div>
 </li>
@@ -356,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./data_wrangling.html" class="sidebar-item-text sidebar-link">
+            <a href="./data_wrangling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data wrangling</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -365,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_wrangling.html" class="sidebar-item-text sidebar-link">
+  <a href="./data_wrangling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TBD</span></a>
   </div>
 </li>
@@ -417,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Importing and Exporting Data</h1>
+<h1 class="title">Data Wrangling</h1>
 </div>
 
 
@@ -434,57 +400,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="text-based-formats" class="level1">
-<h1>Text-based formats</h1>
-<p>Text-based data formats are very common, because they are human-readable, they don’t require any special software to read, and they can be read in by many different programming languages. Text-based formats include CSV (comma-separated values) and its variants such as TSV (tab-separated values), JSON (JavaScript Object Notation), YAML, and XML.</p>
-<p>We’re going to focus on tabular formats such as CSV; by tabular, we mean that the data represented in the file is in a table format, with rows and columns. In a CSV, values going across a row are separated by commas; there can be other variants (such as TSV) that use a different character as a separator.</p>
-<p>A raw CSV file might look something like this:</p>
-<pre><code>Time,Country Name,Country Code,GDP (current US$) [NY.GDP.MKTP.CD],"Population, total [SP.POP.TOTL]","Life expectancy at birth, total (years) [SP.DYN.LE00.IN]"
-2014,Gabon,GAB,18203966896,1978399,66.07
-2014,"Gambia, The",GMB,1229461721,2164528,62.576
-2014,Georgia,GEO,17966015109,3719414,73.105
-...</code></pre>
-<p>In R, we can read such a file into our environment using the <code>read.csv()</code> function. Here’s how it might look:</p>
-<section id="challenge" class="level2">
-<h2 class="anchored" data-anchor-id="challenge">Challenge:</h2>
-<p>Write code to read in a file from a file named <code>mydata.csv</code> located in your project’s <code>data</code> folder.</p>
-<details>
-<summary>
-Solution
-</summary>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read a CSV file</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/mydata.csv"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<p>Let’s read in the World Development Indicators (WDI) data that’s available in the <a href="data.html">Data downloads</a> section. The file is named <code>wdi.csv</code>. Download it to your computer; for most people, the file will download to your Downloads folder.</p>
-<p>Before we proceed, let’s talk about using folders to organize the files in your R project (or any data analysis project). We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well. For example, your project might look like this:</p>
-<pre><code>├── wdi_analysis.R
-├── wdi_summary.R
-├── data
-│   ├── wdi.csv
-│   ├── another_data_file.csv
-├── plots
-│   ├── continents_gdp.pdf
-│   ├── gdp_longitudinal.pdf</code></pre>
-<p>etc.</p>
-<p>We can make folders programmatically in R, using the <code>dir.create()</code> function. Let’s create a <code>data</code> folder in your project:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">'data'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in dir.create("data"): 'data' already exists</code></pre>
-</div>
-</div>
-<p>Now, locate the <code>wdi.csv</code> file that you downloaded, and copy or move it to your RStudio project’s <code>data</code> folder.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>wdi <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/wdi.csv'</span>, <span class="at">na.strings =</span> <span class="st">".."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="data-wrangling" class="level1">
+<h1>Data Wrangling</h1>
+<p>“Data wrangling” is the process of reshaping and/or restructuring data. The type of data wrangling you might do depends on what your next steps are. For example, data wrangling to produce a summary table might require a different target “shape” than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization. So, it all depends, and there is MUCH to talk about here. But it’s unusual to NOT have to do at least some data wrangling after you start with raw data.</p>
 </section>
-</section>
-<section id="excel" class="level1">
-<h1>Excel</h1>
-</section>
-<section id="other-statistical-software" class="level1">
-<h1>Other statistical software</h1>
+<section id="r-tools-for-data-wrangling" class="level1">
+<h1>R tools for data wrangling</h1>
+<p>Although we can do <em>some</em> data wrangling in “base R”, let’s go right to using some libraries that can make data wrangling much easier.</p>
+<p>We’re going to start with the <code>dplyr</code> package, which is part of the <code>tidyverse</code> set of packages, and it provides a “grammar” for data manipulation. The <code>tidyr</code> package (also part of the tidyverse) provides functions to help you “tidy” your data, which is a specific type of data wrangling. More on this to come.</p>
 
 
 </section>
