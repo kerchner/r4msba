@@ -111,6 +111,10 @@ website:
         contents:
           - href: data_cleaning.qmd#missing_data
             text: "Missing data"
+      - text: "Data analysis"
+        href: data_analysis.qmd
+      - text: "Data visualization"
+        href: data_visualization.qmd
       - text: "Data downloads"
         href: data.qmd
         contents:
