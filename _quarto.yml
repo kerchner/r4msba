@@ -7,6 +7,8 @@ format:
     logo: images/gw_horizontal_2c_rev.png
     theme: cosmo
     css: styles.css
+    include-before-body:
+      - scripts/default-dark.js
     include-after-body:
       - scripts/theme-toggle.js
       - scripts/sidebar-collapse.js
