@@ -322,5 +322,15 @@
     "crumbs": [
       "Functions"
     ]
+  },
+  {
+    "objectID": "functions.html#a-word-about-scope",
+    "href": "functions.html#a-word-about-scope",
+    "title": "Functions",
+    "section": "A word about scope",
+    "text": "A word about scope\nBy “scope” we mean where a variable is defined and can be accessed. Variables defined* inside a function ONLY exist within that function, and cannot be accessed outside the function.\nRemeber that within the code for the f2c function, we define a variable called temp_c. But if we try to access temp_c outside the f2c function, we get an error:\n\ntemp_c\n\nError: object 'temp_c' not found",
+    "crumbs": [
+      "Functions"
+    ]
   }
 ]

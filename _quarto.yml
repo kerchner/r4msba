@@ -82,7 +82,9 @@ website:
           - href: functions.qmd#using-functions
             text: "Using functions"
           - href: functions.qmd#making-your-own-functions
-            text: "Making your own functions"     
+            text: "Making your own functions" 
+          - href: functions.qmd#vectorized-functions-in-r
+            text: "Vectorized functions"
       - text: "Importing and Exporting Data"
         href: import_export.qmd
         contents:

@@ -74,6 +74,17 @@ By using the names of the parameters, we can pass them in any order.  For exampl
 f2c(round_digits = 3, temp_f = 100)
 ```
 
+## A word about scope
+
+By "scope" we mean where a variable is defined and can be accessed.  Variables defined* *inside* a function ONLY exist within that function, and cannot be accessed outside the function.
+
+Remeber that within the code for the `f2c` function, we define a variable called `temp_c`.  But if we try to access `temp_c` outside the `f2c` function, we get an error:
+
+```{r}
+#| error: true
+temp_c
+```
+
 ## Anonymous functions
 
 There are situations in R when you may want to define a small function locally.  In some languages, this is called a "lambda function" or an "anonymous function".  Notice that we never even give the function a name; it's only available in its limited local context:
