@@ -61,6 +61,8 @@ website:
             text: "Matrices"
           - href: data_types.qmd#mixing-types-in-vectors-or-matrices
             text: "Mixing types in vectors or matrices"
+          - href: data_types.qmd#coercion
+            text: "Coercion"
           - href: data_types.qmd#lists
             text: "Lists"
       - text: "Data Frames"

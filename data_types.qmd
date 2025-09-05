@@ -59,7 +59,7 @@ We see here (by the quotes) that all of the values were converted to `character`
 
 `logical >> integer >> numeric >> complex >> character`
 
-## Coercion
+# Coercion
 
 We've used the term "coercion" to describe when a value is forced to another data type.  R has many functions beginning with `as.` that you can use to coerce data to other types.
 
