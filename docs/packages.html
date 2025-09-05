@@ -275,12 +275,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_frames.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Section 1</span></a>
+  <a href="./data_frames.html#constructing-a-data-frame" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constructing a data frame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_frames.html#accessing-elements-of-a-data-frame" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing elements of a data frame</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_frames.html#binding-data-frames-together" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Binding data frames together</span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factors</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logical_tests.html" class="sidebar-item-text sidebar-link">
@@ -306,6 +324,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./functions.html#making-your-own-functions" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Making your own functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functions.html#vectorized-functions-in-r" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vectorized functions</span></a>
   </div>
 </li>
       </ul>
@@ -402,6 +426,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_analysis.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_visualization.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./data.html" class="sidebar-item-text sidebar-link">
@@ -480,12 +516,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="loading-packages" class="level1">
 <h1>Loading packages</h1>
 <p>Once a package is installed, you can load it into your R session using the <code>library()</code> function. For example, to load the <code>dplyr</code> package, you would run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>A very useful, and common style in R coding is to put all of your <code>library()</code> statements at the top of your script. This way, anyone reading your code can easily see which packages are required to run the code.</p>
+<pre><code>```r
+library(dplyr)
+```</code></pre>
+<p>A common style in R coding is to put all of your <code>library()</code> statements at the top of your script. This way, anyone reading your code can easily see which packages are required to run the code.</p>
 </section>
 <section id="using-functions-from-packages" class="level1">
 <h1>Using functions from packages</h1>
-<p>Once a package is loaded, you can use its functions just like you would use any other R function. For example, the <code>dplyr</code> package provides a function called <code>filter()</code> that allows you to filter rows in a data frame based on certain conditions. Here’s an example of how to use it:</p>
+<p>Once a package is loaded, you can use its functions just like you would use any other R function.</p>
+<p>If your package is installed but not loaded, you can still use its functions by using the <code>::</code> operator. For example, to use the <code>filter()</code> function from the <code>dplyr</code> package without loading the entire package, you would run:</p>
+<pre><code>  ```r
+  mydata %&gt;% dplyr::filter(variable == "value")
+  ```
+  </code></pre>
+<p>This can be useful if you only need to use a few functions from a package and don’t want to load the entire package into your R session.</p>
 </section>
 <section id="finding-packages" class="level1">
 <h1>Finding packages</h1>
