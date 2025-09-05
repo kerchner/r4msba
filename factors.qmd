@@ -5,6 +5,8 @@ format:
     toc: false
 ---
 
+# Categorical data
+
 A data variable can either be *continuous* or *categorical*. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.
 
 Let's look for a moment at different types and subtypes of variables that we might have:
@@ -13,15 +15,103 @@ Let's look for a moment at different types and subtypes of variables that we mig
 
 Let's focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:
 
-- Text variables representing categorical data could look like:
-   - `'control'`, `'treatment'`
-   - `'red'`, `'blue'`, `'green'`
-   - `'good'`, `'better'`, `'best'`
+-   Text variables representing categorical data could look like:
+    -   `'control'`, `'treatment'`
+    -   `'red'`, `'blue'`, `'green'`
+    -   `'good'`, `'better'`, `'best'`
+-   Numbers can also be used to represent categories:
+    -   `0`, `1` (e.g. for control and treatment)
+    -   `1`, `4`, `2` (e.g. for red, blue, green)
+    -   `1`, `2`, `3` (e.g. for good, better, best)
 
-- Numbers can also be used to represent categories:
-   - `0`, `1` (e.g. for control and treatment)
-   - `1`, `4`, `2` (e.g. for red, blue, green)
-   - `1`, `2`, `3` (e.g. for good, better, best)
+In R, categorical variables are called *factors*. Factors can be either *ordered* or *unordered*. So `'control'`, `'treatment'` would be an unordered factor, while `'good'`, `'better'`, `'best'` would be an ordered factor.
 
-In R, categorical variables are called *factors*. Factors can be either *ordered* or *unordered*.  So `'control'`, `'treatment'` would be an unordered factor, while `'good'`, `'better'`, `'best'` would be an ordered factor.
+# The `forcats` library ![](images/forcats.png){width="120"}
 
+The [`forcats`](https://forcats.tidyverse.org/){target="\"_blank"} library, which is part of `tidyverse`, provides a number of elegant and useful functions for working with factors. Let's load it now. We'll also need `dplyr` for data manipulation.
+
+```{r}
+library(forcats)
+library(dplyr)
+```
+
+Let's say we have a data frame that contains some categorical data, like this:
+
+```{r}
+corporations <- read.csv('data/corporations.csv')
+str(corporations)
+```
+
+At the moment, we see that all of the text columns are being treated as `character` data, but they're not factors... yet.
+
+Why would we want to use a factor variable instead of a character variable? There are a few reasons:
+
+1. **Memory efficiency**: Factors can be more memory efficient than character vectors, especially when there are many repeated values. This is because factors store the unique values (levels) only once and use integer codes to represent the actual data.
+2. **Statistical modeling**: Many statistical models in R treat factor variables differently than character variables. For example, when you include a factor variable in a linear model, R automatically creates dummy variables for each level of the factor, which is often what you want when modeling categorical data.
+3. **Data integrity**: Factors can help ensure data integrity by restricting the values that a variable can take. This can prevent errors and inconsistencies in your data.
+4. **Ordering**: Factors can be ordered, which is useful for ordinal data (e.g., "low", "medium", "high"). This allows for meaningful comparisons and analyses that take the order of the categories into account.
+5. **Data visualization**: Many plotting functions in R, especially those in the `ggplot2` package, handle factor variables in a way that is more suitable for categorical data. For example, when creating bar plots or box plots, using factors ensures that the categories are displayed correctly and in the desired order.
+
+Let's convert a some columns to factors using `mutate()`:
+
+```{r}
+corporations <- corporations%>%
+  mutate(
+    Corporation.Type = as_factor(Corporation.Type),
+    Public.or.Private = as_factor(Public.or.Private),
+    Industry = as_factor(Industry),
+    Tax.Treatment = as_factor(Tax.Treatment),
+    Governance.Structure = as_factor(Governance.Structure),
+    NAICS.Code = as_factor(NAICS.Code)
+  )
+```
+
+Notice that `NAICS.Code` is a number, but we're treating it as a factor because it's really a categorical variable.  NAICS Codes represent different industries, and while they are numeric, they don't have a meaningful numeric relationship with each other.
+
+We may also want to relabel some of the levels.  We can use `fct_recode()` to do this.  For example:
+
+```{r}
+corporations <- corporations %>%
+  mutate(
+    Corporation.Type = fct_recode(Corporation.Type,
+      "C Corp" = "C Corporation",
+      "S Corp" = "S Corporation",
+      "LLC"    = "LLC"
+    )
+  )
+```
+
+In this data set, none of the factors have inherent ordering, but if we had a factor that did, we could use `fct_relevel()` to set the order of the levels.  For example, if we had a factor with levels "low", "medium", and "high", we could set the order like this:
+
+```r
+# Example of reordering levels (not in the current dataset)
+df <- df %>%
+  mutate(
+    SomeOrderedFactor = fct_relevel(SomeOrderedFactor, "low", "medium", "high")
+  )
+```
+
+Now let's look at the structure of our data frame again:
+
+```{r}
+str(corporations)
+```
+
+Notice that `summary()` of this data frame lists the tally of the levels of each factor variable:
+
+```{r}
+summary(corporations)
+```
+
+Looking at `Governance.Structure`, we see that there are 6 levels, but three of them have only 1 observation.  We can use `fct_lump()` to lump together the least common levels into an "Other" category.  There are a few variants on `fct_lump()`; we'll use `fct_lump_min()` to keep only levels that have at least a minimum number of observations.
+
+```{r}
+corporations <- corporations %>%
+  mutate(
+    Governance.Structure = fct_lump_min(Governance.Structure,
+                                        min = 3,
+                                        other_level = "Other") # keep levels with at least 3 observations, lump the others together
+  )
+
+table(corporations$Governance.Structure)
+```

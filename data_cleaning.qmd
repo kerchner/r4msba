@@ -5,4 +5,7 @@ format:
     toc: false
 ---
 
-TBD
+TBD:
+
+- Text operations 
+(e.g. remove whitespace, change case, extract substrings, etc)

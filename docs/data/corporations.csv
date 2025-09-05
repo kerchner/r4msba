@@ -1,0 +1,32 @@
+Company Name,Industry,Corporation Type,Tax Treatment,Ownership Limits,Governance Structure,Public or Private,NAICS Code,2024 Estimated Revenue (USD),Number of Board Members
+"Apple Inc.","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",334111,391000000000,8
+"Microsoft Corp.","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",511210,245000000000,14
+"Walmart Inc.","Retail","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",452311,648100000000,12
+"JPMorgan Chase","Finance","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",522110,177556000000,12
+"Coca-Cola Company","Consumer Goods","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",312111,47060000000,14
+"Alphabet Inc. (Google)","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",519130,352000000000,11
+"Amazon.com Inc.","E-commerce","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",454110,620000000000,11
+"Tesla Inc.","Automotive","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",336111,117000000000,10
+"Bechtel Corporation","Engineering","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",541330,15900000000,10
+"Publix Super Markets","Retail","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",445110,59700000000,9
+"B&H Photo Video","Retail/E-commerce","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Owner-managed","Private",443142,500000000,1
+"WinCo Foods","Retail","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Employee-owned","Private",445110,8000000000,3
+"Cintas Corporation","Business Services","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Public",561720,9600000000,9
+"Westgate Resorts LLC","Hospitality","LLC","Pass-through or corporate","Flexible (members or managers)","Member-managed or Manager-managed","Private",721110,1200000000,6
+"Koch Industries LLC","Conglomerate","LLC","Pass-through or corporate","Flexible (family-owned)","Member-managed","Private",324110,32600000000,3
+"Bloomberg L.P.","Media/Finance","LLC","Pass-through or corporate","Flexible (privately held)","Member-managed","Private",523120,12500000000,7
+"Bain & Company","Consulting","LLC","Pass-through or corporate","Flexible (partner-owned)","Member-managed","Private",541611,6000000000,3
+"REI (Recreational Equipment Inc.)","Retail/Outdoor Gear","LLC","Pass-through or corporate","Co-op structure","Member-managed","Private",451110,3900000000,7
+"Vice Media LLC","Media","LLC","Pass-through or corporate","Flexible (venture-backed)","Manager-managed","Private",512110,600000000,4
+"Meta Platforms Inc.","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",519130,160000000000,11
+"UnitedHealth Group","Healthcare","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",524114,400000000000,12
+"Procter & Gamble","Consumer Goods","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",325611,85000000000,13
+"General Motors","Automotive","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",336111,170000000000,13
+"Costco Wholesale","Retail","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",452319,260000000000,13
+"SC Johnson & Son","Consumer Goods","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",325611,11000000000,8
+"Edward Jones","Finance","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",523120,12000000000,10
+"JM Family Enterprises","Automotive Services","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",441110,20000000000,9
+"Forever 21","Retail","LLC","Pass-through or corporate","Flexible (privately held)","Manager-managed","Private",448120,1600000000,5
+"Epic Games","Gaming/Software","LLC","Pass-through or corporate","Flexible (venture-backed)","Manager-managed","Private",511210,7000000000,6
+"Mars Inc.","Food & Beverage","LLC","Pass-through or corporate","Family-owned","Board of Directors","Private",311511,45000000000,6
+"Chick-fil-A","Hospitality","LLC","Pass-through or corporate","Family-owned","Board of Directors","Private",722511,21000000000,5

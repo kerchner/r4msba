@@ -11,4 +11,6 @@ format:
 |----------------|------------------------------|---------|-------------|
 | `wdi.csv` | World Development Indicators | CSV | <a href="data/wdi.csv" download>Download</a> |
 | `education.csv` | World Development Indicators, Education Spending | CSV | <a href="data/education.csv" download>Download</a> |
+| `corporations.csv` | Corporations data | CSV | <a href="data/corporations.csv" download>Download</a> |
+
 

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -462,6 +496,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="categorical-data" class="level1">
+<h1>Categorical data</h1>
 <p>A data variable can either be <em>continuous</em> or <em>categorical</em>. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.</p>
 <p>Let’s look for a moment at different types and subtypes of variables that we might have:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -486,8 +522,159 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 <p>In R, categorical variables are called <em>factors</em>. Factors can be either <em>ordered</em> or <em>unordered</em>. So <code>'control'</code>, <code>'treatment'</code> would be an unordered factor, while <code>'good'</code>, <code>'better'</code>, <code>'best'</code> would be an ordered factor.</p>
+</section>
+<section id="the-forcats-library" class="level1">
+<h1>The <code>forcats</code> library <img src="images/forcats.png" class="img-fluid" width="120"></h1>
+<p>The <a href="https://forcats.tidyverse.org/" target="&quot;_blank"><code>forcats</code></a> library, which is part of <code>tidyverse</code>, provides a number of elegant and useful functions for working with factors. Let’s load it now. We’ll also need <code>dplyr</code> for data manipulation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+</div>
+<p>Let’s say we have a data frame that contains some categorical data, like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>corporations <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/corporations.csv'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(corporations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   31 obs. of  10 variables:
+ $ Company.Name                 : chr  "Apple Inc." "Microsoft Corp." "Walmart Inc." "JPMorgan Chase" ...
+ $ Industry                     : chr  "Technology" "Technology" "Retail" "Finance" ...
+ $ Corporation.Type             : chr  "C Corporation" "C Corporation" "C Corporation" "C Corporation" ...
+ $ Tax.Treatment                : chr  "Corporate tax" "Corporate tax" "Corporate tax" "Corporate tax" ...
+ $ Ownership.Limits             : chr  "Unlimited shareholders" "Unlimited shareholders" "Unlimited shareholders" "Unlimited shareholders" ...
+ $ Governance.Structure         : chr  "Board of Directors" "Board of Directors" "Board of Directors" "Board of Directors" ...
+ $ Public.or.Private            : chr  "Public" "Public" "Public" "Public" ...
+ $ NAICS.Code                   : int  334111 511210 452311 522110 312111 519130 454110 336111 541330 445110 ...
+ $ X2024.Estimated.Revenue..USD.: num  3.91e+11 2.45e+11 6.48e+11 1.78e+11 4.71e+10 ...
+ $ Number.of.Board.Members      : int  8 14 12 12 14 11 11 10 10 9 ...</code></pre>
+</div>
+</div>
+<p>At the moment, we see that all of the text columns are being treated as <code>character</code> data, but they’re not factors… yet.</p>
+<p>Why would we want to use a factor variable instead of a character variable? There are a few reasons:</p>
+<ol type="1">
+<li><strong>Memory efficiency</strong>: Factors can be more memory efficient than character vectors, especially when there are many repeated values. This is because factors store the unique values (levels) only once and use integer codes to represent the actual data.</li>
+<li><strong>Statistical modeling</strong>: Many statistical models in R treat factor variables differently than character variables. For example, when you include a factor variable in a linear model, R automatically creates dummy variables for each level of the factor, which is often what you want when modeling categorical data.</li>
+<li><strong>Data integrity</strong>: Factors can help ensure data integrity by restricting the values that a variable can take. This can prevent errors and inconsistencies in your data.</li>
+<li><strong>Ordering</strong>: Factors can be ordered, which is useful for ordinal data (e.g., “low”, “medium”, “high”). This allows for meaningful comparisons and analyses that take the order of the categories into account.</li>
+<li><strong>Data visualization</strong>: Many plotting functions in R, especially those in the <code>ggplot2</code> package, handle factor variables in a way that is more suitable for categorical data. For example, when creating bar plots or box plots, using factors ensures that the categories are displayed correctly and in the desired order.</li>
+</ol>
+<p>Let’s convert a some columns to factors using <code>mutate()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>corporations <span class="ot">&lt;-</span> corporations<span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Corporation.Type =</span> <span class="fu">as_factor</span>(Corporation.Type),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Public.or.Private =</span> <span class="fu">as_factor</span>(Public.or.Private),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Industry =</span> <span class="fu">as_factor</span>(Industry),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Tax.Treatment =</span> <span class="fu">as_factor</span>(Tax.Treatment),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Governance.Structure =</span> <span class="fu">as_factor</span>(Governance.Structure),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">NAICS.Code =</span> <span class="fu">as_factor</span>(NAICS.Code)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that <code>NAICS.Code</code> is a number, but we’re treating it as a factor because it’s really a categorical variable. NAICS Codes represent different industries, and while they are numeric, they don’t have a meaningful numeric relationship with each other.</p>
+<p>We may also want to relabel some of the levels. We can use <code>fct_recode()</code> to do this. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>corporations <span class="ot">&lt;-</span> corporations <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Corporation.Type =</span> <span class="fu">fct_recode</span>(Corporation.Type,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">"C Corp"</span> <span class="ot">=</span> <span class="st">"C Corporation"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">"S Corp"</span> <span class="ot">=</span> <span class="st">"S Corporation"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"LLC"</span>    <span class="ot">=</span> <span class="st">"LLC"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this data set, none of the factors have inherent ordering, but if we had a factor that did, we could use <code>fct_relevel()</code> to set the order of the levels. For example, if we had a factor with levels “low”, “medium”, and “high”, we could set the order like this:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of reordering levels (not in the current dataset)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">SomeOrderedFactor =</span> <span class="fu">fct_relevel</span>(SomeOrderedFactor, <span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now let’s look at the structure of our data frame again:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(corporations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   31 obs. of  10 variables:
+ $ Company.Name                 : chr  "Apple Inc." "Microsoft Corp." "Walmart Inc." "JPMorgan Chase" ...
+ $ Industry                     : Factor w/ 19 levels "Technology","Retail",..: 1 1 2 3 4 1 5 6 7 2 ...
+ $ Corporation.Type             : Factor w/ 3 levels "C Corp","S Corp",..: 1 1 1 1 1 1 1 1 2 2 ...
+ $ Tax.Treatment                : Factor w/ 3 levels "Corporate tax",..: 1 1 1 1 1 1 1 1 2 2 ...
+ $ Ownership.Limits             : chr  "Unlimited shareholders" "Unlimited shareholders" "Unlimited shareholders" "Unlimited shareholders" ...
+ $ Governance.Structure         : Factor w/ 6 levels "Board of Directors",..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ Public.or.Private            : Factor w/ 2 levels "Public","Private": 1 1 1 1 1 1 1 1 2 2 ...
+ $ NAICS.Code                   : Factor w/ 25 levels "311511","312111",..: 5 15 12 18 2 17 14 6 21 9 ...
+ $ X2024.Estimated.Revenue..USD.: num  3.91e+11 2.45e+11 6.48e+11 1.78e+11 4.71e+10 ...
+ $ Number.of.Board.Members      : int  8 14 12 12 14 11 11 10 10 9 ...</code></pre>
+</div>
+</div>
+<p>Notice that <code>summary()</code> of this data frame lists the tally of the levels of each factor variable:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(corporations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Company.Name                 Industry  Corporation.Type
+ Length:31          Retail        : 5   C Corp:13       
+ Class :character   Technology    : 4   S Corp: 8       
+ Mode  :character   Consumer Goods: 3   LLC   :10       
+                    Finance       : 2                   
+                    Automotive    : 2                   
+                    Hospitality   : 2                   
+                    (Other)       :13                   
+                   Tax.Treatment Ownership.Limits  
+ Corporate tax            :13    Length:31         
+ Pass-through             : 8    Class :character  
+ Pass-through or corporate:10    Mode  :character  
+                                                   
+                                                   
+                                                   
+                                                   
+                        Governance.Structure Public.or.Private   NAICS.Code
+ Board of Directors               :21        Public :14        325611 : 2  
+ Owner-managed                    : 1        Private:17        336111 : 2  
+ Employee-owned                   : 1                          445110 : 2  
+ Member-managed or Manager-managed: 1                          511210 : 2  
+ Member-managed                   : 4                          519130 : 2  
+ Manager-managed                  : 3                          523120 : 2  
+                                                               (Other):19  
+ X2024.Estimated.Revenue..USD. Number.of.Board.Members
+ Min.   :5.000e+08             Min.   : 1.000         
+ 1st Qu.:8.800e+09             1st Qu.: 6.000         
+ Median :3.260e+10             Median : 9.000         
+ Mean   :1.271e+11             Mean   : 8.548         
+ 3rd Qu.:1.738e+11             3rd Qu.:11.500         
+ Max.   :6.481e+11             Max.   :14.000         
+                                                      </code></pre>
+</div>
+</div>
+<p>Looking at <code>Governance.Structure</code>, we see that there are 6 levels, but three of them have only 1 observation. We can use <code>fct_lump()</code> to lump together the least common levels into an “Other” category. There are a few variants on <code>fct_lump()</code>; we’ll use <code>fct_lump_min()</code> to keep only levels that have at least a minimum number of observations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>corporations <span class="ot">&lt;-</span> corporations <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Governance.Structure =</span> <span class="fu">fct_lump_min</span>(Governance.Structure,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">min =</span> <span class="dv">3</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">other_level =</span> <span class="st">"Other"</span>) <span class="co"># keep levels with at least 3 observations, lump the others together</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(corporations<span class="sc">$</span>Governance.Structure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Board of Directors     Member-managed    Manager-managed              Other 
+                21                  4                  3                  3 </code></pre>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
