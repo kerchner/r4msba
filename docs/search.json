@@ -298,7 +298,7 @@
     "href": "data_cleaning.html",
     "title": "Data Cleaning",
     "section": "",
-    "text": "TBD:\n\nText operations (e.g. remove whitespace, change case, extract substrings, etc)",
+    "text": "Cleaning up column names\nWhen you read in data, there may be columns that you don’t need. Of the columns that you do need, you may want to rename them to be more descriptive (or less verbose), or the column names may not be in a format that is easy to work with. For example, they may contain spaces or special characters.\nWe can use the dplyr package to select and rename columns. The select() function allows us to choose which columns to keep, and the rename() function allows us to change column names. We can essentially do both, within the select() function, by using the syntax new_name = old_name:\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n# \"Messy\" names\ndf &lt;- data.frame(\n  `Subject ID` = c('P001', 'P072', 'P213'),\n  `First Name` = c(\"Arul\", \"Zhe\", \"Skylar\"),\n  `Last Name` = c(\"Rao\", \"Liu\", \"Brown\"),\n  Age = c(28, 34, 45),\n  Height_cm = c(175, 160, 180),\n  check.names = FALSE\n)\n\ndf_clean &lt;- df %&gt;%\n  select(\n    subject_id = `Subject ID`,\n    first_name = `First Name`,\n    last_name = `Last Name`,\n    age = Age\n    # We're not interested in the height column\n  )\n\ndf_clean\n\n  subject_id first_name last_name age\n1       P001       Arul       Rao  28\n2       P072        Zhe       Liu  34\n3       P213     Skylar     Brown  45\n\n\nImportantly, we can use the - (minus) notation to specify only the columns that we don’t want to keep. Imagine if you have 100 columns and you only want to drop a few of them. You can do this:\n\ndf_no_HIPAA &lt;- df_clean %&gt;%\n  select(-ends_with('_name'))\n\ndf_no_HIPAA\n\n  subject_id age\n1       P001  28\n2       P072  34\n3       P213  45\n\n\nThe janitor package has a function clean_names() that can help with this.\nselect() works with a variety of helper functions to make selecting columns easier. For example:\n\nstarts_with(\"prefix\")\nends_with(\"suffix\")\ncontains(\"text\")\n\n\n\nMissing data\nTBD\nTo come:\n\nText operations (e.g. remove whitespace, change case, extract substrings, etc)",
     "crumbs": [
       "Data cleaning"
     ]
@@ -339,6 +339,36 @@
     "title": "Importing and Exporting Data",
     "section": "",
     "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)\n\nLet’s read in the World Development Indicators (WDI) data that’s available in the Data downloads section. The file is named wdi.csv. Download it to your computer; for most people, the file will download to your Downloads folder.\nBefore we proceed, let’s talk about using folders to organize the files in your R project (or any data analysis project). We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well. For example, your project might look like this:\n├── wdi_analysis.R\n├── wdi_summary.R\n├── data\n│   ├── wdi.csv\n│   ├── another_data_file.csv\n├── plots\n│   ├── continents_gdp.pdf\n│   ├── gdp_longitudinal.pdf\netc.\nWe can make folders programmatically in R, using the dir.create() function. Let’s create a data folder in your project:\n\ndir.create('data')\n\nWarning in dir.create(\"data\"): 'data' already exists\n\n\nNow, locate the wdi.csv file that you downloaded, and copy or move it to your RStudio project’s data folder.\n\nwdi &lt;- read.csv('data/wdi.csv', na.strings = \"..\")",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#missing-data-representation",
+    "href": "import_export.html#missing-data-representation",
+    "title": "Importing and Exporting Data",
+    "section": "Missing data representation",
+    "text": "Missing data representation\nWhen reading in data, you may need to customize the import process. For example, missing values may be represented by text such as . or NA depending on . We can tell R to treat these as NA (missing values) by using the na.strings argument:\ndf &lt;- read.csv('my_data.csv', na.strings = c('.', 'NA'))",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#specifying-column-types",
+    "href": "import_export.html#specifying-column-types",
+    "title": "Importing and Exporting Data",
+    "section": "Specifying column types",
+    "text": "Specifying column types\nread.csv() makes inferences about data types, but sometimes this differs from the data types that you may want to use. You can specify the column types using the colClasses argument. For example, if you want to ensure that a column named zip_code is read as a character, you can do:\ndf &lt;- read.csv('my_data.csv', colClasses = c(zip_code = 'character'))",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#handling-large-files",
+    "href": "import_export.html#handling-large-files",
+    "title": "Importing and Exporting Data",
+    "section": "Handling large files",
+    "text": "Handling large files\nFor very large files, you might want to consider using the data.table package’s fread() function, which is optimized for speed and memory efficiency:\nlibrary(data.table)\ndf &lt;- fread('large_data.csv')",
     "crumbs": [
       "Importing and Exporting Data"
     ]

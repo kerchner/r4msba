@@ -97,3 +97,45 @@ You can read in data files from the Stata, SPSS and SAS statistical packages usi
 -   SAS: `.sas7bdat` and `.sas7bcat` using `read_sas()`
 
 `haven` can also write out files in these formats, with the `write_dta()`, `write_sav()` and `write_xpt()` functions.
+
+# Customizing data import
+
+## Missing data representation
+
+When reading in data, you may need to customize the import process. For example, missing values may be represented by text such as `.` or `NA` depending on . We can tell R to treat these as `NA` (missing values) by using the `na.strings` argument:
+
+```r
+df <- read.csv('my_data.csv', na.strings = c('.', 'NA'))
+```
+
+## Specifying column types
+
+`read.csv()` makes inferences about data types, but sometimes this differs from the data types that you may want to use. You can specify the column types using the `colClasses` argument. For example, if you want to ensure that a column named `zip_code` is read as a character, you can do:
+
+```r
+df <- read.csv('my_data.csv', colClasses = c(zip_code = 'character'))
+```
+
+## Handling large files
+
+For very large files, you might want to consider using the `data.table` package's `fread()` function, which is optimized for speed and memory efficiency:
+
+```r
+library(data.table)
+df <- fread('large_data.csv')
+```
+
+# Exporting data
+
+You can write data frames to CSV files using the `write.csv()` function. For example, to write a data frame named `df` to a file named `output.csv`, you can do:
+
+```r
+write.csv(df, 'data/output.csv', row.names = FALSE)
+```
+
+The `row.names = FALSE` argument prevents R from writing row names (which are often just the row numbers) to the CSV file.
+
+If you wish to write data to an Excel file, you can use the `writexl` package.
+
+
+

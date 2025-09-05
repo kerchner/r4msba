@@ -5,7 +5,59 @@ format:
     toc: false
 ---
 
-TBD:
+# Cleaning up column names
+
+When you read in data, there may be columns that you don't need. Of the columns that you do need, you may want to rename them to be more descriptive (or less verbose), or the column names may not be in a format that is easy to work with. For example, they may contain spaces or special characters.
+
+We can use the `dplyr` package to select and rename columns. The `select()` function allows us to choose which columns to keep, and the `rename()` function allows us to change column names.  We can essentially do both, within the `select()` function, by using the syntax `new_name = old_name`:
+
+```{r}
+library(dplyr)
+
+# "Messy" names
+df <- data.frame(
+  `Subject ID` = c('P001', 'P072', 'P213'),
+  `First Name` = c("Arul", "Zhe", "Skylar"),
+  `Last Name` = c("Rao", "Liu", "Brown"),
+  Age = c(28, 34, 45),
+  Height_cm = c(175, 160, 180),
+  check.names = FALSE
+)
+
+df_clean <- df %>%
+  select(
+    subject_id = `Subject ID`,
+    first_name = `First Name`,
+    last_name = `Last Name`,
+    age = Age
+    # We're not interested in the height column
+  )
+
+df_clean
+```
+
+Importantly, we can use the `-` (minus) notation to specify only the columns that we *don't* want to keep.  Imagine if you have 100 columns and you only want to drop a few of them.  You can do this:
+
+```{r}
+df_no_HIPAA <- df_clean %>%
+  select(-ends_with('_name'))
+
+df_no_HIPAA
+```
+
+The `janitor` package has a function `clean_names()` that can help with this.
+
+[`select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} works with a variety of helper functions to make selecting columns easier. For example:
+
+- `starts_with("prefix")`
+- `ends_with("suffix")`
+- `contains("text")`
+
+# Missing data
+
+TBD
+
+To come:
 
 - Text operations 
 (e.g. remove whitespace, change case, extract substrings, etc)

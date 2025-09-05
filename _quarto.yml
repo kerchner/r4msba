@@ -101,6 +101,8 @@ website:
             text: "Excel"
           - href: import_export.qmd#other-statistical-software
             text: "Other Statistical Software"
+          - href: import_export.qmd#exporting-data
+            text: "Exporting data"
       - text: "Packages in R"
         href: packages.qmd
         contents:
@@ -110,20 +112,50 @@ website:
             text: "Loading packages"
           - href: packages.qmd#using-functions-from-packages
             text: "Using functions from packages"
-      - text: "Data wrangling"
-        href: data_wrangling.qmd
-        contents:
-          - href: data_wrangling.qmd
-            text: "TBD"
       - text: "Data cleaning"
         href: data_cleaning.qmd
         contents:
-          - href: data_cleaning.qmd#missing_data
+          - href: data_cleaning.qmd#cleaning-up-column-names
+            text: "Cleaning up column names"
+          - href: data_cleaning.qmd#missing-data
             text: "Missing data"
+      - text: "Data wrangling"
+        href: data_wrangling.qmd
+        contents:
+          - href: data_analysis.qmd#selecting-columns
+            text: "Selecting columns"
+          - href: data_analysis.qmd#filtering-rows
+            text: "Filtering rows"
+          - href: data_analysis.qmd#arranging-rows
+            text: "Arranging rows"
+          - href: data_analysis.qmd#mutating-columns
+            text: "Mutating columns"
+          - href: data_analysis.qmd#joining-data-frames
+            text: "Joining data frames"
+          - href: data_wrangling.qmd#pivoting
+            text: "Pivoting"
       - text: "Data analysis"
         href: data_analysis.qmd
+        contents:
+          - href: data_analysis.qmd#summary-statistics
+            text: "Summary statistics"
+          - href: data_analysis.qmd#grouped-summary-statistics
+            text: "Grouped summary statistics"
+          - href: data_analysis.qmd#statistical-tests
+            text: "Statistical tests"
       - text: "Data visualization"
         href: data_visualization.qmd
+        contents:
+          - href: data_visualization.qmd#the-grammar-of-graphics
+            text: "The grammar of graphics"
+          - href: data_visualization.qmd#common-geoms
+            text: "Common geoms"
+          - href: data_visualization.qmd#aesthetic-mappings
+            text: "Aesthetic mappings"
+          - href: data_visualization.qmd#faceting
+            text: "Faceting"
+          - href: data_visualization.qmd#themes
+            text: "Themes"
       - text: "Downloads - sample data"
         href: data.qmd
         contents:
