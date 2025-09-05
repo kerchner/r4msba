@@ -76,6 +76,11 @@ website:
             text: "Binding data frames together"
       - text: "Factors"
         href: factors.qmd
+        contents:
+          - href: factors.qmd#categorical-data
+          - text: "Categorical Data"
+          - href: factors.qmd#the-forcats-library
+            text: "The forcats library"
       - text: "Logical tests"
         href: logical_tests.qmd
       - text: "Functions"
