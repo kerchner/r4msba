@@ -45,7 +45,7 @@ website:
           - href: syntax.qmd#basics
             text: "Basics"
           - href: syntax.qmd#variables-a.k.a.-objects
-            text: "Assignments"
+            text: "Variables"
           - href: syntax.qmd#comments
             text: "Comments"
           - href: syntax.qmd#functions

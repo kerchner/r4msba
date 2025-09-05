@@ -23,3 +23,5 @@ I work as a Senior Software Developer for GW Libraries and Academic Innovation. 
 I maintain GW Libraries' "best-of" list of R resources, which you can find at [https://libguides.gwu.edu/Rstats](https://libguides.gwu.edu/Rstats){target="_blank"}. Let me know if you have any suggestions.
 
 # Workshop materials
+
+We will be using some files that can be downloaded from the [Downloads - sample data](data.html) page.

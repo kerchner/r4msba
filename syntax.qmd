@@ -47,4 +47,4 @@ We tend to use a lot of functions in R. Functions are blocks of code that perfor
 sum_of_two_numbers <- add_two_numbers(5, 9)
 ```
 
-Later we will explain how to create your very own functions!
+In the [Functions](functions.html) section, there is much more detail about functions, and we will explain how to create your very own functions!
