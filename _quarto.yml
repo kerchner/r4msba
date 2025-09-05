@@ -39,7 +39,7 @@ website:
             text: "Step 1: Make an RStudio Project"
           - href: preface.qmd#step-2-start-an-r-file
             text: "Step 2: Start an R File"            
-      - text: "Quick intro to R syntax"
+      - text: "R syntax"
         href: syntax.qmd
         contents:
           - href: syntax.qmd#basics
@@ -117,7 +117,7 @@ website:
         href: data_analysis.qmd
       - text: "Data visualization"
         href: data_visualization.qmd
-      - text: "Data downloads"
+      - text: "Downloads - sample data"
         href: data.qmd
         contents:
            - href: data.qmd#downloads-for-this-workshop

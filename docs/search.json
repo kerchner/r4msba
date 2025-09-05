@@ -4,9 +4,9 @@
     "href": "data.html",
     "title": "Data Downloads",
     "section": "",
-    "text": "Downloads for this workshop\n\n\n\n\n\n\n\n\n\nFile\nDescription\nFormat\nDownload\n\n\n\n\nwdi.csv\nWorld Development Indicators\nCSV\nDownload\n\n\nanalysis.R\nR script for the assignment\nR\nDownload",
+    "text": "Downloads for this workshop\n\n\n\n\n\n\n\n\n\nFile\nDescription\nFormat\nDownload\n\n\n\n\nwdi.csv\nWorld Development Indicators\nCSV\nDownload\n\n\neducation.csv\nWorld Development Indicators, Education Spending\nCSV\nDownload",
     "crumbs": [
-      "Data downloads"
+      "Downloads - sample data"
     ]
   },
   {
@@ -60,13 +60,53 @@
     ]
   },
   {
-    "objectID": "data_frames.html",
-    "href": "data_frames.html",
-    "title": "Data Frames",
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "Packages",
     "section": "",
-    "text": "Data frames in R represent tabular data, where each column can contain one type of variable (e.g., numeric, character, factor). Each column has a text-based name; rows can also have a name, although by default they are numbered.\n\nConstructing a data frame\nWe can either construct a data frame by using the data.frame() function, or we can also obtain a data frame as the result of a function that, for example, reads in a data file, such as read.csv().\nLet’s use data.frame() to create a simple data frame:\n\ndf &lt;- data.frame(\n  id = c('P01', 'P03', 'P04', 'P07'),\n  name = c(\"Alice\", \"Bob\", \"Charlie\", \"David\"),\n  age = c(25, 30, 35, 40),\n  score = c(90.5, 85.0, 88.5, 92.0)\n)\n\n# show the data frame\ndf\n\n   id    name age score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0\n\n\nWe can get information about the data frame’s structure using the str() function:\n\nstr(df)\n\n'data.frame':   4 obs. of  4 variables:\n $ id   : chr  \"P01\" \"P03\" \"P04\" \"P07\"\n $ name : chr  \"Alice\" \"Bob\" \"Charlie\" \"David\"\n $ age  : num  25 30 35 40\n $ score: num  90.5 85 88.5 92\n\n\nAnd we can get the names of the columns using the names() (or colnames()) function:\n\nnames(df)\n\n[1] \"id\"    \"name\"  \"age\"   \"score\"\n\n\nWe can also get the row names using the rownames() function:\n\nrownames(df)\n\n[1] \"1\" \"2\" \"3\" \"4\"\n\n\nWe can change the column or row names by assigning new values to them:\n\ncolnames(df) &lt;- c(\"ID\", \"Name\", \"Age\", \"Score\")\n\ndf\n\n   ID    Name Age Score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0\n\n\n…although generally it’s more convenient to use the dplyr::rename() function instead, as it allows you to rename specific columns without affecting the others.\n\n\nAccessing data frame elements\nWe can access elements of a data frame using the $ operator, which allows us to select a specific column by name. For example, to access the Age column:\n\ndf$Age\n\n[1] 25 30 35 40\n\n\nNote that each column of a data frame is an R vector, so when you access a column, you get back a vector.\n\n\n“Binding” data frames together\nWe can also combine data frames using the rbind() and cbind() functions. The rbind() (“row bind”) function combines data frames by rows (i.e., it adds more rows), while the cbind() (“column bind”) function combines data frames by columns (i.e., it adds more columns).\nNote that when using rbind(), the data frames must have the same columns (i.e., the same exact names and types), and when using cbind(), the data frames must have the same number of rows.\n\ndf1 &lt;- data.frame(\n  id = c('P01', 'P03'),\n  name = c(\"Alice\", \"Bob\"),\n  age = c(25, 30),\n  score = c(90.5, 85.0)\n)\ndf2 &lt;- data.frame(\n  id = c('P04', 'P07'),\n  name = c(\"Charlie\", \"David\"),\n  age = c(35, 40),\n  score = c(88.5, 92.0)\n)\n\ndf &lt;- rbind(df1, df2)\n\ndf\n\n   id    name age score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0",
+    "text": "R comes with a core set of functions that allow you to do basic things like read data, manipulate data, and make simple plots. But R’s real power comes from the thousands of packages that extend R’s capabilities. Packages are collections of functions, data, and documentation that others have written to solve specific problems or perform specific tasks.",
     "crumbs": [
-      "Data Frames"
+      "Packages in R"
+    ]
+  },
+  {
+    "objectID": "packages.html#other-ways-of-installing-packages",
+    "href": "packages.html#other-ways-of-installing-packages",
+    "title": "Packages",
+    "section": "Other ways of installing packages",
+    "text": "Other ways of installing packages\nWhen you install using install.packages('somePackage'), R will look for the package on CRAN (the Comprehensive R Archive Network). This is the most common way to install packages, but there are other ways as well:\n\nGitHub: Some packages are hosted on GitHub rather than CRAN. You can install these packages using the devtools package. For example, to install the ggplot2 package from GitHub, you would run:\ninstall.packages(\"devtools\")  # Install devtools if you haven't already\nlibrary(devtools)\ninstall_github(\"tidyverse/ggplot2\")\nYou can even develop your own packages and load them from your local computer. This is a bit more advanced, but writing (and publishing) your own packages can be very useful and is a great way to share your work with others.",
+    "crumbs": [
+      "Packages in R"
+    ]
+  },
+  {
+    "objectID": "logical_tests.html",
+    "href": "logical_tests.html",
+    "title": "Logical Tests",
+    "section": "",
+    "text": "Logical tests are used extensively in coding in general, and coding in R is no exception. By a logical test, we mean an expression that evaluates to either TRUE or FALSE (or sometimes NA).",
+    "crumbs": [
+      "Logical tests"
+    ]
+  },
+  {
+    "objectID": "logical_tests.html#comparison-operators",
+    "href": "logical_tests.html#comparison-operators",
+    "title": "Logical Tests",
+    "section": "Comparison operators",
+    "text": "Comparison operators\nCertain logical tests (but not all) involve the use of comparison operators. The most common comparison operators are:\n\nColumn details\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nResult\n\n\n\n\n==\nEqual to\nx == 5\nTRUE if x is 5, otherwise FALSE\n\n\n!=\nNot equal to\nx != 5\nTRUE if x is not 5, otherwise FALSE\n\n\n&lt;\nLess than\nx &lt; 5\nTRUE if x is less than 5, otherwise FALSE\n\n\n&gt;\nGreater than\nx &gt; 5\nTRUE if x is greater than 5, otherwise FALSE\n\n\n&lt;=\nLess than or equal to\nx &lt;= 5\nTRUE if x is less than or equal to 5, otherwise FALSE\n\n\n&gt;=\nGreater than or equal to\nx &gt;= 5\nTRUE if x is greater than or equal to 5, otherwise FALSE\n\n\n\nLet’s pick apart a few of these for a moment:\n== – Why can’t we just use =? Although we’ve been using &lt;- for assignment in R, but = can also be used for assignment. So, we need a different operator, ==, when we want to compare whether two values are equal.\n!= – This operator checks if two values are not equal. It is the opposite of ==. Notice that ! is used to indicate negation, and we can also use it to turn TRUE into FALSE and vice versa.\n&lt;, &gt;, &lt;=, &gt;= – These operators are used not only to compare numerical values, but they can also be used to compare character data (for example, 'aa' &lt; 'ab' is TRUE) and date values (for example, as.Date('2025-01-01') &gt; as.Date('2023-07-06') is TRUE)",
+    "crumbs": [
+      "Logical tests"
+    ]
+  },
+  {
+    "objectID": "logical_tests.html#logical-tests-on-vectors-and-matrices",
+    "href": "logical_tests.html#logical-tests-on-vectors-and-matrices",
+    "title": "Logical Tests",
+    "section": "Logical tests on vectors and matrices",
+    "text": "Logical tests on vectors and matrices\nWhen we use comparison operators on vectors or matrices, R will perform the comparison element-wise. For example:\n\n# Vector example\nx &lt;- c(1, 2, 3, 4, 5)\nx &gt; 3\n\n[1] FALSE FALSE FALSE  TRUE  TRUE\n\n\n\n# Matrix example - first create the matrix\nx &lt;- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2)\nx\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n# Matrix example - perform the test\nx &gt;= 4\n\n      [,1]  [,2] [,3]\n[1,] FALSE FALSE TRUE\n[2,] FALSE  TRUE TRUE\n\n\nThere’s also a special operator, %in%, that we can use to return a TRUE or FALSE depending on whether a particular value is or is not present in a vector or matrix:\n\nnames &lt;- c('Ali', 'Bob', 'Charlotta')\n'Divya' %in% names\n\n[1] FALSE\n\n\n\nThe many uses of logical tests\nLogical tests are used in conditional statements, such as if statements, and in loops, such as for and while loops. They are also used in subsetting data frames and vectors.",
+    "crumbs": [
+      "Logical tests"
     ]
   },
   {
@@ -180,6 +220,16 @@
     ]
   },
   {
+    "objectID": "data_visualization.html",
+    "href": "data_visualization.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "TBD",
+    "crumbs": [
+      "Data visualization"
+    ]
+  },
+  {
     "objectID": "commenting.html",
     "href": "commenting.html",
     "title": "About",
@@ -193,7 +243,7 @@
     "section": "",
     "text": "R code is composed of statements and expressions:\n\nStatements perform actions. The most common statements would be:\n\nAssignment statements, which assign values to variables. For example, the statement x &lt;- 5 assigns the value 5 to the variable x. Note that &lt;- is the assignment operator in R. It assigns the value on the right to the variable, or object, on the left. If x already had a value, that value will be replaced, or overwritten, by the new value.\nFunction calls, which execute functions. For example, the statement print(x) calls the print function to display the value of x. We’ll delve more into what functions look like shortly.\n\nExpressions are blocks of code that, when evaluated, have some value. For example, 3 + 4 is an expression that evaluates to 7. If x currently has the value of 2, then the expression x &gt; 1 evaluates to TRUE.\n\nExpressions are often embedded in assignment statements, such as in the assignment statement y &lt;- 3 + 4. When R sees an assignment statement, first it evaluates the right side, then it assigns that result to the variable named on the left. So in this case, R would evaluate the expression 3 + 4 to get 7, then it would assign that value to the variable y.\n\n\n\nVariables allow us to use names (such as x or patient_data) to refer to data that is stored in our R environment. The data that a variable or object name refers to can be of many different types, such as an individual number, a sequence of text values, a matrix of numbers, or a complicated structure that holds multiple types of data.\nVariable names can contain letters, numbers, periods, and underscores. They must start with a letter or a period (but not a period followed by a number). Variable names are case-sensitive, so year and Year would be considered different variables.\n\n\n\nComments are lines of text that are not executed as code. You can use them to explain and document the code, making it easier to understand. It can also be handy to “comment out” a line of code in order to temporarily disable it.\nIn R, comments start with the # symbol. Everything on a line after the # is considered a comment and is ignored by R when the code is run. So the entire line might start with #, or there might be code first and then a comment at the end of the line starting with #. For example:\n# This is a comment, but the next line is code that will run\nx &lt;- 5\n\ny &lt;- x + 2  # The code to the left will run, but everything after the # is a comment and will not be run\n\n\n\nWe tend to use a lot of functions in R. Functions are blocks of code that perform specific tasks. They take inputs (called arguments or parameters), process them, and usually* return an output (* some functions, by design, don’t return an output). A function might be used like this:\n# Call add_two_numbers and assign the result to sum_of_two_numbers\nsum_of_two_numbers &lt;- add_two_numbers(5, 9)\nLater we will explain how to create your very own functions!",
     "crumbs": [
-      "Quick intro to R syntax"
+      "R syntax"
     ]
   },
   {
@@ -203,7 +253,7 @@
     "section": "",
     "text": "R code is composed of statements and expressions:\n\nStatements perform actions. The most common statements would be:\n\nAssignment statements, which assign values to variables. For example, the statement x &lt;- 5 assigns the value 5 to the variable x. Note that &lt;- is the assignment operator in R. It assigns the value on the right to the variable, or object, on the left. If x already had a value, that value will be replaced, or overwritten, by the new value.\nFunction calls, which execute functions. For example, the statement print(x) calls the print function to display the value of x. We’ll delve more into what functions look like shortly.\n\nExpressions are blocks of code that, when evaluated, have some value. For example, 3 + 4 is an expression that evaluates to 7. If x currently has the value of 2, then the expression x &gt; 1 evaluates to TRUE.\n\nExpressions are often embedded in assignment statements, such as in the assignment statement y &lt;- 3 + 4. When R sees an assignment statement, first it evaluates the right side, then it assigns that result to the variable named on the left. So in this case, R would evaluate the expression 3 + 4 to get 7, then it would assign that value to the variable y.",
     "crumbs": [
-      "Quick intro to R syntax"
+      "R syntax"
     ]
   },
   {
@@ -213,7 +263,7 @@
     "section": "",
     "text": "Variables allow us to use names (such as x or patient_data) to refer to data that is stored in our R environment. The data that a variable or object name refers to can be of many different types, such as an individual number, a sequence of text values, a matrix of numbers, or a complicated structure that holds multiple types of data.\nVariable names can contain letters, numbers, periods, and underscores. They must start with a letter or a period (but not a period followed by a number). Variable names are case-sensitive, so year and Year would be considered different variables.",
     "crumbs": [
-      "Quick intro to R syntax"
+      "R syntax"
     ]
   },
   {
@@ -223,7 +273,7 @@
     "section": "",
     "text": "Comments are lines of text that are not executed as code. You can use them to explain and document the code, making it easier to understand. It can also be handy to “comment out” a line of code in order to temporarily disable it.\nIn R, comments start with the # symbol. Everything on a line after the # is considered a comment and is ignored by R when the code is run. So the entire line might start with #, or there might be code first and then a comment at the end of the line starting with #. For example:\n# This is a comment, but the next line is code that will run\nx &lt;- 5\n\ny &lt;- x + 2  # The code to the left will run, but everything after the # is a comment and will not be run",
     "crumbs": [
-      "Quick intro to R syntax"
+      "R syntax"
     ]
   },
   {
@@ -233,7 +283,7 @@
     "section": "",
     "text": "We tend to use a lot of functions in R. Functions are blocks of code that perform specific tasks. They take inputs (called arguments or parameters), process them, and usually* return an output (* some functions, by design, don’t return an output). A function might be used like this:\n# Call add_two_numbers and assign the result to sum_of_two_numbers\nsum_of_two_numbers &lt;- add_two_numbers(5, 9)\nLater we will explain how to create your very own functions!",
     "crumbs": [
-      "Quick intro to R syntax"
+      "R syntax"
     ]
   },
   {
@@ -254,53 +304,33 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "logical_tests.html",
-    "href": "logical_tests.html",
-    "title": "Logical Tests",
+    "objectID": "data_cleaning.html",
+    "href": "data_cleaning.html",
+    "title": "Data Cleaning",
     "section": "",
-    "text": "Logical tests are used extensively in coding in general, and coding in R is no exception. By a logical test, we mean an expression that evaluates to either TRUE or FALSE (or sometimes NA).",
+    "text": "TBD",
     "crumbs": [
-      "Logical tests"
+      "Data cleaning"
     ]
   },
   {
-    "objectID": "logical_tests.html#comparison-operators",
-    "href": "logical_tests.html#comparison-operators",
-    "title": "Logical Tests",
-    "section": "Comparison operators",
-    "text": "Comparison operators\nCertain logical tests (but not all) involve the use of comparison operators. The most common comparison operators are:\n\nColumn details\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nResult\n\n\n\n\n==\nEqual to\nx == 5\nTRUE if x is 5, otherwise FALSE\n\n\n!=\nNot equal to\nx != 5\nTRUE if x is not 5, otherwise FALSE\n\n\n&lt;\nLess than\nx &lt; 5\nTRUE if x is less than 5, otherwise FALSE\n\n\n&gt;\nGreater than\nx &gt; 5\nTRUE if x is greater than 5, otherwise FALSE\n\n\n&lt;=\nLess than or equal to\nx &lt;= 5\nTRUE if x is less than or equal to 5, otherwise FALSE\n\n\n&gt;=\nGreater than or equal to\nx &gt;= 5\nTRUE if x is greater than or equal to 5, otherwise FALSE\n\n\n\nLet’s pick apart a few of these for a moment:\n== – Why can’t we just use =? Although we’ve been using &lt;- for assignment in R, but = can also be used for assignment. So, we need a different operator, ==, when we want to compare whether two values are equal.\n!= – This operator checks if two values are not equal. It is the opposite of ==. Notice that ! is used to indicate negation, and we can also use it to turn TRUE into FALSE and vice versa.\n&lt;, &gt;, &lt;=, &gt;= – These operators are used not only to compare numerical values, but they can also be used to compare character data (for example, 'aa' &lt; 'ab' is TRUE) and date values (for example, as.Date('2025-01-01') &gt; as.Date('2023-07-06') is TRUE)",
-    "crumbs": [
-      "Logical tests"
-    ]
-  },
-  {
-    "objectID": "logical_tests.html#logical-tests-on-vectors-and-matrices",
-    "href": "logical_tests.html#logical-tests-on-vectors-and-matrices",
-    "title": "Logical Tests",
-    "section": "Logical tests on vectors and matrices",
-    "text": "Logical tests on vectors and matrices\nWhen we use comparison operators on vectors or matrices, R will perform the comparison element-wise. For example:\n\n# Vector example\nx &lt;- c(1, 2, 3, 4, 5)\nx &gt; 3\n\n[1] FALSE FALSE FALSE  TRUE  TRUE\n\n\n\n# Matrix example - first create the matrix\nx &lt;- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2)\nx\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n# Matrix example - perform the test\nx &gt;= 4\n\n      [,1]  [,2] [,3]\n[1,] FALSE FALSE TRUE\n[2,] FALSE  TRUE TRUE\n\n\nThere’s also a special operator, %in%, that we can use to return a TRUE or FALSE depending on whether a particular value is or is not present in a vector or matrix:\n\nnames &lt;- c('Ali', 'Bob', 'Charlotta')\n'Divya' %in% names\n\n[1] FALSE\n\n\n\nThe many uses of logical tests\nLogical tests are used in conditional statements, such as if statements, and in loops, such as for and while loops. They are also used in subsetting data frames and vectors.",
-    "crumbs": [
-      "Logical tests"
-    ]
-  },
-  {
-    "objectID": "packages.html",
-    "href": "packages.html",
-    "title": "Packages",
+    "objectID": "data_frames.html",
+    "href": "data_frames.html",
+    "title": "Data Frames",
     "section": "",
-    "text": "R comes with a core set of functions that allow you to do basic things like read data, manipulate data, and make simple plots. But R’s real power comes from the thousands of packages that extend R’s capabilities. Packages are collections of functions, data, and documentation that others have written to solve specific problems or perform specific tasks.",
+    "text": "Data frames in R represent tabular data, where each column can contain one type of variable (e.g., numeric, character, factor). Each column has a text-based name; rows can also have a name, although by default they are numbered.\n\nConstructing a data frame\nWe can either construct a data frame by using the data.frame() function, or we can also obtain a data frame as the result of a function that, for example, reads in a data file, such as read.csv().\nLet’s use data.frame() to create a simple data frame:\n\ndf &lt;- data.frame(\n  id = c('P01', 'P03', 'P04', 'P07'),\n  name = c(\"Alice\", \"Bob\", \"Charlie\", \"David\"),\n  age = c(25, 30, 35, 40),\n  score = c(90.5, 85.0, 88.5, 92.0)\n)\n\n# show the data frame\ndf\n\n   id    name age score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0\n\n\nWe can get information about the data frame’s structure using the str() function:\n\nstr(df)\n\n'data.frame':   4 obs. of  4 variables:\n $ id   : chr  \"P01\" \"P03\" \"P04\" \"P07\"\n $ name : chr  \"Alice\" \"Bob\" \"Charlie\" \"David\"\n $ age  : num  25 30 35 40\n $ score: num  90.5 85 88.5 92\n\n\nAnd we can get the names of the columns using the names() (or colnames()) function:\n\nnames(df)\n\n[1] \"id\"    \"name\"  \"age\"   \"score\"\n\n\nWe can also get the row names using the rownames() function:\n\nrownames(df)\n\n[1] \"1\" \"2\" \"3\" \"4\"\n\n\nWe can change the column or row names by assigning new values to them:\n\ncolnames(df) &lt;- c(\"ID\", \"Name\", \"Age\", \"Score\")\n\ndf\n\n   ID    Name Age Score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0\n\n\n…although generally it’s more convenient to use the dplyr::rename() function instead, as it allows you to rename specific columns without affecting the others.\n\n\nAccessing data frame elements\nWe can access elements of a data frame using the $ operator, which allows us to select a specific column by name. For example, to access the Age column:\n\ndf$Age\n\n[1] 25 30 35 40\n\n\nNote that each column of a data frame is an R vector, so when you access a column, you get back a vector.\n\n\n“Binding” data frames together\nWe can also combine data frames using the rbind() and cbind() functions. The rbind() (“row bind”) function combines data frames by rows (i.e., it adds more rows), while the cbind() (“column bind”) function combines data frames by columns (i.e., it adds more columns).\nNote that when using rbind(), the data frames must have the same columns (i.e., the same exact names and types), and when using cbind(), the data frames must have the same number of rows.\n\ndf1 &lt;- data.frame(\n  id = c('P01', 'P03'),\n  name = c(\"Alice\", \"Bob\"),\n  age = c(25, 30),\n  score = c(90.5, 85.0)\n)\ndf2 &lt;- data.frame(\n  id = c('P04', 'P07'),\n  name = c(\"Charlie\", \"David\"),\n  age = c(35, 40),\n  score = c(88.5, 92.0)\n)\n\ndf &lt;- rbind(df1, df2)\n\ndf\n\n   id    name age score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0",
     "crumbs": [
-      "Packages in R"
+      "Data Frames"
     ]
   },
   {
-    "objectID": "packages.html#other-ways-of-installing-packages",
-    "href": "packages.html#other-ways-of-installing-packages",
-    "title": "Packages",
-    "section": "Other ways of installing packages",
-    "text": "Other ways of installing packages\nWhen you install using install.packages('somePackage'), R will look for the package on CRAN (the Comprehensive R Archive Network). This is the most common way to install packages, but there are other ways as well:\n\nGitHub: Some packages are hosted on GitHub rather than CRAN. You can install these packages using the devtools package. For example, to install the ggplot2 package from GitHub, you would run:\ninstall.packages(\"devtools\")  # Install devtools if you haven't already\nlibrary(devtools)\ninstall_github(\"tidyverse/ggplot2\")\nYou can even develop your own packages and load them from your local computer. This is a bit more advanced, but writing (and publishing) your own packages can be very useful and is a great way to share your work with others.",
+    "objectID": "data_analysis.html",
+    "href": "data_analysis.html",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "TBD",
     "crumbs": [
-      "Packages in R"
+      "Data analysis"
     ]
   },
   {
