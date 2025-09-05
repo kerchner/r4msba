@@ -81,6 +81,13 @@ website:
           - text: "Categorical Data"
           - href: factors.qmd#the-forcats-library
             text: "The forcats library"
+      - text: "Dates"
+        href: dates.qmd
+        contents:
+          - href: dates.qmd#date-formats
+            text: "Date formats"
+          - href: dates.qmd#lubridate
+            text: "Lubridate"
       - text: "Logical tests"
         href: logical_tests.qmd
       - text: "Functions"
