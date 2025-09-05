@@ -649,6 +649,75 @@ window.Quarto = {
 <section id="lists" class="level1">
 <h1>Lists</h1>
 <p>Unlike vectors and matrices, lists allow mixing of types. Not only that, lists may have any structure that you like. For example, a list may contain vectors, matrices, and even other lists.</p>
+<p>Let’s make our own <code>list</code>s using the <code>list()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>apple_info <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">company =</span> <span class="st">"Apple"</span>, <span class="at">ticker_symbol =</span> <span class="st">"APPL"</span>,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">stock_price =</span> <span class="fl">170.33</span>,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">employees =</span> <span class="fu">c</span>(<span class="st">"Tim Cook"</span>, <span class="st">"Craig Federighi"</span>, <span class="st">"Jony Ive"</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">stock_history =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2024-06-01"</span>, <span class="st">"2024-06-02"</span>, <span class="st">"2024-06-03"</span>)),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">price =</span> <span class="fu">c</span>(<span class="fl">168.23</span>, <span class="fl">169.45</span>, <span class="fl">170.33</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>              ))</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>amazon_info <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">company =</span> <span class="st">"Amazon"</span>, <span class="at">ticker_symbol =</span> <span class="st">"AMZN"</span>,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">stock_price =</span> <span class="fl">135.67</span>,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">employees =</span> <span class="fu">c</span>(<span class="st">"Andy Jassy"</span>, <span class="st">"Werner Vogels"</span>, <span class="st">"Adam Selipsky"</span>),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">stock_history =</span> <span class="fu">data.frame</span>(</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>                     <span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2024-06-01"</span>, <span class="st">"2024-06-02"</span>, <span class="st">"2024-06-03"</span>)),</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">price =</span> <span class="fu">c</span>(<span class="fl">133.45</span>, <span class="fl">134.56</span>, <span class="fl">135.67</span>)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                   ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can combine <em>these</em> lists into a larger list:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>companies_info <span class="ot">&lt;-</span> <span class="fu">list</span>(apple_info,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                       amazon_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>How do we access elements of a list, where the elements aren’t named? In this case, each element is assigned a number, and we use double square brackets <code>[[ ]]</code> to access the elements. For example, to access the first element of <code>companies_info</code>, which is <code>apple_info</code>, we would use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>companies_info[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$company
+[1] "Apple"
+
+$ticker_symbol
+[1] "APPL"
+
+$stock_price
+[1] 170.33
+
+$employees
+[1] "Tim Cook"        "Craig Federighi" "Jony Ive"       
+
+$stock_history
+        date  price
+1 2024-06-01 168.23
+2 2024-06-02 169.45
+3 2024-06-03 170.33</code></pre>
+</div>
+</div>
+<p>Once we have the value of the 1st element of the list - which in our case is itself a list, we can use the <code>$</code> operator to access elements of that list. For example, to get the company name of the first element of <code>companies_info</code>, we would use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>companies_info[[<span class="dv">1</span>]]<span class="sc">$</span>company</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Apple"</code></pre>
+</div>
+</div>
+<p>A better practice would be to uniquely <em>name</em> each element of the list. For example, we could use the ticker symbol for each company as its index:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>companies_info <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">AAPL =</span> apple_info,</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">GOOG =</span> amazon_info)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we can access the elements by name:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>apple_stock_history <span class="ot">&lt;-</span> companies_info<span class="sc">$</span>AAPL<span class="sc">$</span>stock_history</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>apple_stock_history</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date  price
+1 2024-06-01 168.23
+2 2024-06-02 169.45
+3 2024-06-03 170.33</code></pre>
+</div>
+</div>
 
 
 </section>

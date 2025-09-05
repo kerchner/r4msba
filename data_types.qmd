@@ -105,4 +105,57 @@ m1**2 # square each element
 
 Unlike vectors and matrices, lists allow mixing of types.  Not only that, lists may have any structure that you like.  For example, a list may contain vectors, matrices, and even other lists.
 
+Let's make our own `list`s using the `list()` function:
+
+```{r}
+apple_info <- list(company = "Apple", ticker_symbol = "APPL",
+              stock_price = 170.33,
+              employees = c("Tim Cook", "Craig Federighi", "Jony Ive"),
+              stock_history = data.frame(
+                date = as.Date(c("2024-06-01", "2024-06-02", "2024-06-03")),
+                price = c(168.23, 169.45, 170.33)
+              ))
+              
+amazon_info <- list(company = "Amazon", ticker_symbol = "AMZN",
+                   stock_price = 135.67,
+                   employees = c("Andy Jassy", "Werner Vogels", "Adam Selipsky"),
+                   stock_history = data.frame(
+                     date = as.Date(c("2024-06-01", "2024-06-02", "2024-06-03")),
+                     price = c(133.45, 134.56, 135.67)
+                   ))
+```
+
+Now we can combine *these* lists into a larger list:
+
+```{r}
+companies_info <- list(apple_info,
+                       amazon_info)
+```
+
+How do we access elements of a list, where the elements aren't named?  In this case, each element is assigned a number, and we use double square brackets `[[ ]]` to access the elements.  For example, to access the first element of `companies_info`, which is `apple_info`, we would use:
+
+```{r}
+companies_info[[1]]
+```
+
+Once we have the value of the 1st element of the list - which in our case is itself a list, we can use the `$` operator to access elements of that list.  For example, to get the company name of the first element of `companies_info`, we would use:
+
+```{r}
+companies_info[[1]]$company
+```
+
+A better practice would be to uniquely *name* each element of the list.  For example, we could use the ticker symbol for each company as its index:
+
+```{r}
+companies_info <- list(AAPL = apple_info,
+                       GOOG = amazon_info)
+```
+
+Now we can access the elements by name:
+
+```{r}
+apple_stock_history <- companies_info$AAPL$stock_history
+apple_stock_history
+```
+
 
