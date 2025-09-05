@@ -200,13 +200,13 @@
     ]
   },
   {
-    "objectID": "data_wrangling.html",
-    "href": "data_wrangling.html",
-    "title": "Data Wrangling",
+    "objectID": "dates.html",
+    "href": "dates.html",
+    "title": "Dates",
     "section": "",
-    "text": "“Data wrangling” is the process of reshaping and/or restructuring data. The type of data wrangling you might do depends on what your next steps are. For example, data wrangling to produce a summary table might require a different target “shape” than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization. So, it all depends, and there is MUCH to talk about here. But it’s unusual to NOT have to do at least some data wrangling after you start with raw data.\n\nR tools for data wrangling\nAlthough we can do some data wrangling in “base R”, let’s go right to using some libraries that can make data wrangling much easier.\nWe’re going to start with the dplyr package, which is part of the tidyverse set of packages, and it provides a “grammar” for data manipulation. The tidyr package (also part of the tidyverse) provides functions to help you “tidy” your data, which is a specific type of data wrangling. More on this to come.",
+    "text": "Date Formats\n\n\nLubridate",
     "crumbs": [
-      "Data wrangling"
+      "Dates"
     ]
   },
   {
@@ -217,6 +217,16 @@
     "text": "TBD",
     "crumbs": [
       "Data visualization"
+    ]
+  },
+  {
+    "objectID": "data_wrangling.html",
+    "href": "data_wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "“Data wrangling” is the process of reshaping and/or restructuring data. The type of data wrangling you might do depends on what your next steps are. For example, data wrangling to produce a summary table might require a different target “shape” than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization. So, it all depends, and there is MUCH to talk about here. But it’s unusual to NOT have to do at least some data wrangling after you start with raw data.\n\nR tools for data wrangling\nAlthough we can do some data wrangling in “base R”, let’s go right to using some libraries that can make data wrangling much easier.\nWe’re going to start with the dplyr package, which is part of the tidyverse set of packages, and it provides a “grammar” for data manipulation. The tidyr package (also part of the tidyverse) provides functions to help you “tidy” your data, which is a specific type of data wrangling. More on this to come.",
+    "crumbs": [
+      "Data wrangling"
     ]
   },
   {
@@ -371,16 +381,6 @@
     "text": "Handling large files\nFor very large files, you might want to consider using the data.table package’s fread() function, which is optimized for speed and memory efficiency:\nlibrary(data.table)\ndf &lt;- fread('large_data.csv')",
     "crumbs": [
       "Importing and Exporting Data"
-    ]
-  },
-  {
-    "objectID": "dates.html",
-    "href": "dates.html",
-    "title": "Dates",
-    "section": "",
-    "text": "Date Formats\n\n\nLubridate",
-    "crumbs": [
-      "Dates"
     ]
   }
 ]
