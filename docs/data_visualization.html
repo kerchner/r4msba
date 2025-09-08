@@ -707,12 +707,87 @@ Attaching package: 'dplyr'</code></pre>
 <figcaption>Some commonly used aesthetics. Source: https://clauswilke.com/dataviz/aesthetic-mapping.html</figcaption>
 </figure>
 </div>
+<section id="the-ggplot2-library" class="level2">
+<h2 class="anchored" data-anchor-id="the-ggplot2-library">The ggplot2 library</h2>
+<p><code>ggplot2</code> is a library (within <code>tidyverse</code>) that implements this notion of aesthetic mappings. Each type of plot in <code>ggplot2</code> is implemented using a function starting with <code>geom_</code>.</p>
 </section>
-<section id="the-ggplot2-library" class="level1">
-<h1>The ggplot2 library</h1>
-<p><code>ggplot2</code> is a library (within <code>tidyverse</code>) that implements this notion of aesthetic mappings.</p>
+</section>
+<section id="common-geoms" class="level1">
+<h1>Common geoms</h1>
+<p>Common geoms include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Geom</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>geom_point</td>
+<td>Scatterplot</td>
+</tr>
+<tr class="even">
+<td>geom_boxplot</td>
+<td>Boxplot</td>
+</tr>
+<tr class="odd">
+<td>geom_bar and geom_col</td>
+<td>Bar plot</td>
+</tr>
+<tr class="even">
+<td>geom_histogram</td>
+<td>Histogram</td>
+</tr>
+<tr class="odd">
+<td>geom_density</td>
+<td>Kernel density plot</td>
+</tr>
+<tr class="even">
+<td>geom_jitter</td>
+<td>Scatterplot with random jitter</td>
+</tr>
+<tr class="odd">
+<td>geom_line.</td>
+<td>Line plot</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="aesthetic-mappings" class="level1">
+<h1>Aesthetic Mappings</h1>
+<p>In order to map variables in the data to aesthetic features, <code>ggplot2</code> provides the <code>aes()</code> function. For example to map a variable called <code>time</code> to the <code>x</code> position, we would specify <code>aes(x = time)</code>.</p>
+<section id="putting-it-all-together" class="level2">
+<h2 class="anchored" data-anchor-id="putting-it-all-together">Putting it all together</h2>
+<p>Here’s how it looks in practice:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">7</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">5</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">category =</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'b'</span>, <span class="st">'a'</span>))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> value, <span class="at">color =</span> category),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data_visualization_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice a few things:</p>
+<ul>
+<li>We added layers to the plot using the <code>+</code> symbol.</li>
+<li>We added an aesthetic, <code>size</code>, which is <em>not</em> mapped to data, by adding it as another parameter to <code>geom_point()</code> – but not as a parameter within the <code>aes()</code> mapping.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "data_visualization.html",
+    "href": "data_visualization.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Data visualization is about converting variable values associated with data points, or observations, into visual elements. We often refer to that conversion as mapping values to visual features which we call aesthetics.\nLet’s say we have a data set (the gapminder data set, in this case), where for each country, we have its population, the continent it’s on, mean life expectancy, and GDP (gross domestic product) per capita.\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gapminder)\nhead(gapminder::gapminder %&gt;% filter(year == 2007))\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       2007    43.8 31889923      975.\n2 Albania     Europe     2007    76.4  3600523     5937.\n3 Algeria     Africa     2007    72.3 33333216     6223.\n4 Angola      Africa     2007    42.7 12420476     4797.\n5 Argentina   Americas   2007    75.3 40301927    12779.\n6 Australia   Oceania    2007    81.2 20434176    34435.\n\n\nWe might opt to map variables as follows:\n\n\n\nVariable\nAesthetic\n\n\n\n\npopulation\nsize\n\n\ncontinent\ncolor\n\n\nlife expectancy\ny position\n\n\nGDP\nx position\n\n\n\n\n\n\nVisualization of GDP per capita versus Mean life expectancy\n\n\nOf course, the aesthetic elements that are available will depend on the particular style of plot.\n\n\n\nSome commonly used aesthetics. Source: https://clauswilke.com/dataviz/aesthetic-mapping.html\n\n\n\n\nggplot2 is a library (within tidyverse) that implements this notion of aesthetic mappings. Each type of plot in ggplot2 is implemented using a function starting with geom_.",
+    "crumbs": [
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "data_visualization.html#the-ggplot2-library",
+    "href": "data_visualization.html#the-ggplot2-library",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "ggplot2 is a library (within tidyverse) that implements this notion of aesthetic mappings. Each type of plot in ggplot2 is implemented using a function starting with geom_.",
+    "crumbs": [
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "data_visualization.html#putting-it-all-together",
+    "href": "data_visualization.html#putting-it-all-together",
+    "title": "Data Visualization",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nHere’s how it looks in practice:\n\nlibrary(ggplot2)\nlibrary(dplyr)\n\ndf &lt;- data.frame(time = c(1, 2, 4, 7),\n                 value = c(7, 4, 6, 5),\n                 category = c('a', 'b', 'b', 'a'))\n\ndf %&gt;%\n  ggplot() +\n  geom_point(mapping = aes(x = time, y = value, color = category),\n             size = 3)\n\n\n\n\n\n\n\n\nNotice a few things:\n\nWe added layers to the plot using the + symbol.\nWe added an aesthetic, size, which is not mapped to data, by adding it as another parameter to geom_point() – but not as a parameter within the aes() mapping.",
+    "crumbs": [
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "data_wrangling.html",
+    "href": "data_wrangling.html",
+    "title": "Data Wrangling",
+    "section": "",
+    "text": "“Data wrangling” is the process of reshaping and/or restructuring data. The type of data wrangling you might do depends on what your next steps are. For example, data wrangling to produce a summary table might require a different target “shape” than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization. So, it all depends, and there is MUCH to talk about here. But it’s unusual to NOT have to do at least some data wrangling after you start with raw data.",
+    "crumbs": [
+      "Data wrangling"
+    ]
+  },
+  {
+    "objectID": "data_wrangling.html#pivoting-from-wide-to-long",
+    "href": "data_wrangling.html#pivoting-from-wide-to-long",
+    "title": "Data Wrangling",
+    "section": "Pivoting from wide to long",
+    "text": "Pivoting from wide to long\nHere we’re starting with a “wide” data frame, meaning there are multiple observations of the same variable per row. In this example, we have a single row for each ticker symbol, and observations of that company’s stock price across three days:\n\nlibrary(tidyr)\n# Example data frame\ndf &lt;- data.frame(\n  ticker_symbol = c(\"AMZN\", \"AAPL\", \"MSFT\"),\n  day1 = c(10, 20, 30),\n  day2 = c(15, 25, 35),\n  day3 = c(18, 28, NA)\n)\ndf\n\n  ticker_symbol day1 day2 day3\n1          AMZN   10   15   18\n2          AAPL   20   25   28\n3          MSFT   30   35   NA\n\n\nWe’d like to reshape this data frame to be “long”, meaning we have a single observation of the variable (price) per row. We might want to do this to prepare the data for regression modeling or for visualization. We can use the pivot_longer() function to do this:\n\n# Pivoting from wide to long\ndf_long &lt;- pivot_longer(df,\n                        cols = starts_with(\"day\"),\n                        names_to = \"day\",\n                        values_to = \"price\")\n\ndf_long\n\n# A tibble: 9 × 3\n  ticker_symbol day   price\n  &lt;chr&gt;         &lt;chr&gt; &lt;dbl&gt;\n1 AMZN          day1     10\n2 AMZN          day2     15\n3 AMZN          day3     18\n4 AAPL          day1     20\n5 AAPL          day2     25\n6 AAPL          day3     28\n7 MSFT          day1     30\n8 MSFT          day2     35\n9 MSFT          day3     NA\n\n\nNow we have a data frame with three columns: ticker_symbol, day, and price. Each row represents a single observation of the stock price for a given ticker symbol on a specific day.",
+    "crumbs": [
+      "Data wrangling"
+    ]
+  },
+  {
+    "objectID": "data_wrangling.html#pivoting-from-long-to-wide",
+    "href": "data_wrangling.html#pivoting-from-long-to-wide",
+    "title": "Data Wrangling",
+    "section": "Pivoting from long to wide",
+    "text": "Pivoting from long to wide\nNow let’s say we have a “long” data frame and we want to reshape it to be “wide”. We can use the pivot_wider() function to do this. Here’s an example:\n\n# Example long data frame\ndf_long &lt;- data.frame(\n  ticker_symbol = c(\"AMZN\", \"AMZN\", \"AMZN\", \"AAPL\", \"AAPL\", \"AAPL\", \"MSFT\", \"MSFT\", \"MSFT\"),\n  day = c(\"day1\", \"day2\", \"day3\", \"day1\", \"day2\", \"day3\", \"day1\", \"day2\", \"day3\"),\n  price = c(10, 15, 18, 20, 25, 28, 30, 35, NA)\n)\n\n\ndf_long\n\n  ticker_symbol  day price\n1          AMZN day1    10\n2          AMZN day2    15\n3          AMZN day3    18\n4          AAPL day1    20\n5          AAPL day2    25\n6          AAPL day3    28\n7          MSFT day1    30\n8          MSFT day2    35\n9          MSFT day3    NA\n\n# Pivoting from long to wide\ndf_wide &lt;- pivot_wider(df_long,\n                       names_from = day,\n                       values_from = price)\ndf_wide\n\n# A tibble: 3 × 4\n  ticker_symbol  day1  day2  day3\n  &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 AMZN             10    15    18\n2 AAPL             20    25    28\n3 MSFT             30    35    NA\n\n\nNotice that pivot_longer() used the values in the day column as new column names. There’s a lot you can do to control the behavior of these functions, so check out the documentation for more details.",
+    "crumbs": [
+      "Data wrangling"
+    ]
+  }
+]
