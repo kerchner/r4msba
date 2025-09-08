@@ -65,7 +65,7 @@ The basic usage would be to specify all of the columns that you want to keep, by
 
 ```{r}
 df_no_HIPAA <- df_clean %>%
-  select(subject_id, age, height_cm)
+  select(subject_id, age)
 ```
 
 Importantly, we can use the `-` (minus) notation to specify only the columns that we *don't* want to keep. Imagine if you have 100 columns and you only want to drop a few of them - you certainly don't want to have to give a long list of the columns to keep.  Instead, you can use the `-` (minus) notation to specify *only* the columns that you don't want to keep. 
