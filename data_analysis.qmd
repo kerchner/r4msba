@@ -5,9 +5,7 @@ format:
     toc: false
 ---
 
-# Data Analysis
-
-Steps in data analysis include:
+Steps in data analysis can include:
 
 1. Data cleaning
 2. Data transformation
@@ -16,4 +14,14 @@ Steps in data analysis include:
 5. Interpretation
 6. Communication
 7. Reproducibility
+
+# Summary statistics
+
+`summary()`
+
+# Grouped summary statistics
+
+We may have categorical variables in our data that we wish to use for grouping, so that we can obtain summary statistics within each group.
+
+
 

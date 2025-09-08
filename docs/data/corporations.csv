@@ -1,0 +1,71 @@
+Company Name,Industry,Corporation Type,Tax Treatment,Ownership Limits,Governance Structure,Public or Private,NAICS Code,2024 Estimated Revenue (USD),Number of Board Members
+"Apple Inc.","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",334111,391000000000,8
+"Microsoft Corp.","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",511210,245000000000,14
+"Walmart Inc.","Retail","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",452311,648100000000,12
+"JPMorgan Chase","Finance","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",522110,177556000000,12
+"Coca-Cola Company","Consumer Goods","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",312111,47060000000,14
+"Alphabet Inc. (Google)","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",519130,352000000000,11
+"Amazon.com Inc.","E-commerce","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",454110,620000000000,11
+"Tesla Inc.","Automotive","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",336111,117000000000,10
+"Bechtel Corporation","Engineering","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",541330,15900000000,10
+"Publix Super Markets","Retail","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",445110,59700000000,9
+"B&H Photo Video","Retail/E-commerce","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Owner-managed","Private",443142,500000000,1
+"WinCo Foods","Retail","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Employee-owned","Private",445110,8000000000,3
+"Cintas Corporation","Business Services","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Public",561720,9600000000,9
+"Westgate Resorts LLC","Hospitality","LLC","Pass-through or corporate","Flexible (members or managers)","Member-managed or Manager-managed","Private",721110,1200000000,6
+"Koch Industries LLC","Conglomerate","LLC","Pass-through or corporate","Flexible (family-owned)","Member-managed","Private",324110,32600000000,3
+"Bloomberg L.P.","Media/Finance","LLC","Pass-through or corporate","Flexible (privately held)","Member-managed","Private",523120,12500000000,7
+"Bain & Company","Consulting","LLC","Pass-through or corporate","Flexible (partner-owned)","Member-managed","Private",541611,6000000000,3
+"REI (Recreational Equipment Inc.)","Retail/Outdoor Gear","LLC","Pass-through or corporate","Co-op structure","Member-managed","Private",451110,3900000000,7
+"Vice Media LLC","Media","LLC","Pass-through or corporate","Flexible (venture-backed)","Manager-managed","Private",512110,600000000,4
+"Meta Platforms Inc.","Technology","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",519130,160000000000,11
+"UnitedHealth Group","Healthcare","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",524114,400000000000,12
+"Procter & Gamble","Consumer Goods","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",325611,85000000000,13
+"General Motors","Automotive","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",336111,170000000000,13
+"Costco Wholesale","Retail","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",452319,260000000000,13
+"SC Johnson & Son","Consumer Goods","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",325611,11000000000,8
+"Edward Jones","Finance","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",523120,12000000000,10
+"JM Family Enterprises","Automotive Services","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",441110,20000000000,9
+"Forever 21","Retail","LLC","Pass-through or corporate","Flexible (privately held)","Manager-managed","Private",448120,1600000000,5
+"Epic Games","Gaming/Software","LLC","Pass-through or corporate","Flexible (venture-backed)","Manager-managed","Private",511210,7000000000,6
+"Mars Inc.","Food & Beverage","LLC","Pass-through or corporate","Family-owned","Board of Directors","Private",311511,45000000000,6
+"Chick-fil-A","Hospitality","LLC","Pass-through or corporate","Family-owned","Board of Directors","Private",722511,21000000000,5
+"Pfizer Inc.","Pharmaceuticals","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",325412,61000000000,12
+"Delta Air Lines","Aviation","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",481111,58000000000,13
+"Intel Corporation","Semiconductors","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",334413,54000000000,10
+"State Farm Mutual Auto Insurance","Insurance","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",524126,92000000000,11
+"Amway","Consumer Goods","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",325611,8000000000,8
+"McKinsey & Company","Consulting","LLC","Pass-through or corporate","Partner-owned","Member-managed","Private",541611,12000000000,6
+"Patagonia Inc.","Retail/Apparel","LLC","Pass-through or corporate","Privately held","Board of Directors","Private",448110,1000000000,5
+"SpaceX","Aerospace","LLC","Pass-through or corporate","Privately held","Board of Directors","Private",336414,9000000000,7
+"Trader Joe's","Retail/Grocery","LLC","Pass-through or corporate","Privately held","Manager-managed","Private",445110,16000000000,4
+"Edward Jones","Finance","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",523120,12000000000,10
+"SC Johnson & Son","Consumer Goods","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",325611,11000000000,8
+"JM Family Enterprises","Automotive Services","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",441110,20000000000,9
+"Amway","Consumer Goods","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",325611,8000000000,8
+"State Farm Mutual Auto Insurance","Insurance","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",524126,92000000000,11
+"Bob's Discount Furniture","Retail","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",442110,2500000000,6
+"Menards","Retail/Home Improvement","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",444110,13000000000,7
+"Roto-Rooter","Plumbing Services","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Private",238220,900000000,5
+"Fastenal Company","Industrial Supplies","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Public",423840,7300000000,9
+"WinCo Foods","Retail","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Employee-owned","Private",445110,8000000000,3
+"Airbnb Inc.","Hospitality/Tech","LLC","Pass-through or corporate","Flexible (venture-backed)","Board of Directors","Private",721310,10000000000,7
+"Vice Media LLC","Media","LLC","Pass-through or corporate","Flexible (venture-backed)","Manager-managed","Private",512110,600000000,4
+"Epic Games","Gaming/Software","LLC","Pass-through or corporate","Flexible (venture-backed)","Manager-managed","Private",511210,7000000000,6
+"Patagonia Inc.","Retail/Apparel","LLC","Pass-through or corporate","Privately held","Board of Directors","Private",448110,1000000000,5
+"SpaceX","Aerospace","LLC","Pass-through or corporate","Privately held","Board of Directors","Private",336414,9000000000,7
+"Trader Joe's","Retail/Grocery","LLC","Pass-through or corporate","Privately held","Manager-managed","Private",445110,16000000000,4
+"Pfizer Inc.","Pharmaceuticals","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",325412,61000000000,12
+"Delta Air Lines","Aviation","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",481111,58000000000,13
+"Intel Corporation","Semiconductors","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",334413,54000000000,10
+"General Electric","Conglomerate","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",335999,76000000000,11
+"Harley-Davidson Inc.","Automotive","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Public",336991,5900000000,11
+"Landec Corporation","Agriculture/Biotech","S Corporation","Pass-through","≤100 shareholders (U.S. only)","Board of Directors","Public",541714,600000000,6
+"Teradyne Inc.","Semiconductors","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",334413,3700000000,10
+"Herman Miller Inc.","Furniture/Design","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",337214,4600000000,11
+"Berkshire Hathaway","Conglomerate","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",551112,371400000000,14
+"ExxonMobil","Energy","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",324110,398700000000,11
+"CVS Health","Healthcare/Retail","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",446110,357800000000,13
+"Costco Wholesale","Retail","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",452319,260000000000,13
+"Cardinal Health","Healthcare Distribution","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",423450,181400000000,12
+"NVIDIA Corporation","Semiconductors/AI","C Corporation","Corporate tax","Unlimited shareholders","Board of Directors","Public",334413,44100000000,12

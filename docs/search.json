@@ -1,5 +1,215 @@
 [
   {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data Downloads",
+    "section": "",
+    "text": "Downloads for this workshop\n\n\n\n\n\n\n\n\n\nFile\nDescription\nFormat\nDownload\n\n\n\n\nwdi.csv\nWorld Development Indicators\nCSV\nDownload\n\n\neducation.csv\nWorld Development Indicators, Education Spending\nCSV\nDownload\n\n\ncorporations.csv\nCorporations data\nCSV\nDownload",
+    "crumbs": [
+      "Downloads - sample data"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources for getting help and learning more",
+    "section": "",
+    "text": "R Libguide @ GW Libraries - Dan’s curated link of only the best R sites and resources",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#web-resources",
+    "href": "resources.html#web-resources",
+    "title": "Resources for getting help and learning more",
+    "section": "",
+    "text": "R Libguide @ GW Libraries - Dan’s curated link of only the best R sites and resources",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#r-workshops",
+    "href": "resources.html#r-workshops",
+    "title": "Resources for getting help and learning more",
+    "section": "R Workshops:",
+    "text": "R Workshops:\nCoding Workshops @ GW Libraries",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#individualized-consultations",
+    "href": "resources.html#individualized-consultations",
+    "title": "Resources for getting help and learning more",
+    "section": "Individualized consultations:",
+    "text": "Individualized consultations:\nCoding Consultations with a software developer librarian skilled in R or Python programming.\nData consultations with graduate students in Academic Commons who are skilled in statistics and statistical analysis using R, Python, SAS, SPSS, STATA, and Excel.",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#community",
+    "href": "resources.html#community",
+    "title": "Resources for getting help and learning more",
+    "section": "Community",
+    "text": "Community\nGW Coders - Bi-weekly presentations (often with free pizza!) and a super useful Slack community. Open to anyone at GW interested in learning about coding.",
+    "crumbs": [
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "Packages",
+    "section": "",
+    "text": "R comes with a core set of functions that allow you to do basic things like read data, manipulate data, and make simple plots. But R’s real power comes from the thousands of packages that extend R’s capabilities. Packages are collections of functions, data, and documentation that others have written to solve specific problems or perform specific tasks.",
+    "crumbs": [
+      "Packages in R"
+    ]
+  },
+  {
+    "objectID": "packages.html#other-ways-of-installing-packages",
+    "href": "packages.html#other-ways-of-installing-packages",
+    "title": "Packages",
+    "section": "Other ways of installing packages",
+    "text": "Other ways of installing packages\nWhen you install using install.packages('somePackage'), R will look for the package on CRAN (the Comprehensive R Archive Network). This is the most common way to install packages, but there are other ways as well:\n\nGitHub: Some packages are hosted on GitHub rather than CRAN. You can install these packages using the devtools package. For example, to install the ggplot2 package from GitHub, you would run:\ninstall.packages(\"devtools\")  # Install devtools if you haven't already\nlibrary(devtools)\ninstall_github(\"tidyverse/ggplot2\")\nYou can even develop your own packages and load them from your local computer. This is a bit more advanced, but writing (and publishing) your own packages can be very useful and is a great way to share your work with others.",
+    "crumbs": [
+      "Packages in R"
+    ]
+  },
+  {
+    "objectID": "logical_tests.html",
+    "href": "logical_tests.html",
+    "title": "Logical Tests",
+    "section": "",
+    "text": "Logical tests are used extensively in coding in general, and coding in R is no exception. By a logical test, we mean an expression that evaluates to either TRUE or FALSE (or sometimes NA).",
+    "crumbs": [
+      "Logical tests"
+    ]
+  },
+  {
+    "objectID": "logical_tests.html#comparison-operators",
+    "href": "logical_tests.html#comparison-operators",
+    "title": "Logical Tests",
+    "section": "Comparison operators",
+    "text": "Comparison operators\nCertain logical tests (but not all) involve the use of comparison operators. The most common comparison operators are:\n\nColumn details\n\n\n\n\n\n\n\n\nOperator\nDescription\nExample\nResult\n\n\n\n\n==\nEqual to\nx == 5\nTRUE if x is 5, otherwise FALSE\n\n\n!=\nNot equal to\nx != 5\nTRUE if x is not 5, otherwise FALSE\n\n\n&lt;\nLess than\nx &lt; 5\nTRUE if x is less than 5, otherwise FALSE\n\n\n&gt;\nGreater than\nx &gt; 5\nTRUE if x is greater than 5, otherwise FALSE\n\n\n&lt;=\nLess than or equal to\nx &lt;= 5\nTRUE if x is less than or equal to 5, otherwise FALSE\n\n\n&gt;=\nGreater than or equal to\nx &gt;= 5\nTRUE if x is greater than or equal to 5, otherwise FALSE\n\n\n\nLet’s pick apart a few of these for a moment:\n== – Why can’t we just use =? Although we’ve been using &lt;- for assignment in R, but = can also be used for assignment. So, we need a different operator, ==, when we want to compare whether two values are equal.\n!= – This operator checks if two values are not equal. It is the opposite of ==. Notice that ! is used to indicate negation, and we can also use it to turn TRUE into FALSE and vice versa.\n&lt;, &gt;, &lt;=, &gt;= – These operators are used not only to compare numerical values, but they can also be used to compare character data (for example, 'aa' &lt; 'ab' is TRUE) and date values (for example, as.Date('2025-01-01') &gt; as.Date('2023-07-06') is TRUE)",
+    "crumbs": [
+      "Logical tests"
+    ]
+  },
+  {
+    "objectID": "logical_tests.html#logical-tests-on-vectors-and-matrices",
+    "href": "logical_tests.html#logical-tests-on-vectors-and-matrices",
+    "title": "Logical Tests",
+    "section": "Logical tests on vectors and matrices",
+    "text": "Logical tests on vectors and matrices\nWhen we use comparison operators on vectors or matrices, R will perform the comparison element-wise. For example:\n\n# Vector example\nx &lt;- c(1, 2, 3, 4, 5)\nx &gt; 3\n\n[1] FALSE FALSE FALSE  TRUE  TRUE\n\n\n\n# Matrix example - first create the matrix\nx &lt;- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2)\nx\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n[2,]    2    4    6\n\n\n\n# Matrix example - perform the test\nx &gt;= 4\n\n      [,1]  [,2] [,3]\n[1,] FALSE FALSE TRUE\n[2,] FALSE  TRUE TRUE\n\n\nThere’s also a special operator, %in%, that we can use to return a TRUE or FALSE depending on whether a particular value is or is not present in a vector or matrix:\n\nnames &lt;- c('Ali', 'Bob', 'Charlotta')\n'Divya' %in% names\n\n[1] FALSE\n\n\n\nThe many uses of logical tests\nLogical tests are used in conditional statements, such as if statements, and in loops, such as for and while loops. They are also used in subsetting data frames and vectors.",
+    "crumbs": [
+      "Logical tests"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Beginning a Project",
+    "section": "",
+    "text": "If you’re working on your laptop, you have a few choices for apps that you can use to develop code:\n\nRStudio Desktop. RStudio is probably the most widely-used app for R coding at the moment.\nPositron. Positron is new, it’s free, and it describes itself as a data science IDE. It also works well with Python.\nNotebooks such as Jupyter (for example, running with Anaconda) or Google Colab\nDataSpell. Free for students, teachers, and community, but not for others.\nOther software development apps such as VSCode\n\nYou can also use a web-based R environment. Choices include:\n\nposit.cloud. There are limitations with the free version; you can pay more for more projects, more space, more computing power, etc.\nIf you (or your institution/orgainzation) has a web server, you can install RStudio Server and access it through the web browser. You would then only be limited by the size of the server it’s running on.\n\nIf you’re aware of other good options, please let me know!",
+    "crumbs": [
+      "Beginning a Project"
+    ]
+  },
+  {
+    "objectID": "preface.html#in-rstudio-always-use-projects",
+    "href": "preface.html#in-rstudio-always-use-projects",
+    "title": "Beginning a Project",
+    "section": "In RStudio, always use projects!",
+    "text": "In RStudio, always use projects!\nI cannot emphasize this enough. RStudio projects allow you to keep each project separate from your other projects.\n\nBenefits of using projects\n\nYour project has its own folder, so your files don’t mix with other projects.\nYour code’s context is this folder, so file paths can be relative, not absolute. For example, this will allow you to read a file from data/myfile.csv rather than from /Users/dan/projects/project1/data/myfile.csv. This way, it doesn’t matter where your project folder is located within your computer – or the computer of anyone else who might use your code.\nRstudio remembers your open files, plots, and environment when you close a project. When you reopen it, everything is right where you left off.\nYou’ll be able to make your project a Git project/repository, because Git also assumes that each project is in its own folder.\n\nThere are other benefits as well, but these alone should sufficiently convince you to always use projects in RStudio! There should be a similar notion in other apps you might use to write your code.\n\n\nHow to make an RStudio project\nFrom the File menu, select New Project... RStudio will then ask you whether to start a project in a new directory, an existing directory, or to check out a project from a version control repository (such as GitHub).\n\n\n\nCreate New Project Wizard\n\n\nNow you’ll select which type of project to create. There is a long list here worth exploring! But for today, we’ll select the first option, New Project since we’ll be using R to focus on data analysis and visualization.\n\n\n\nNew Project Type Wizard\n\n\nBefore RStudio creates the new folder for your project, it asks you where to create the new folder on your computer. Since we don’t have any pre-existing assets for this project, choose New Directory. Here you get to choose the parent folder inside which the new project folder will be created. Which parent folder you choose really depends on how you like to organize your projects on your computer.\n\n\n\nNew Project Location Wizard\n\n\nEnter the name of the project, which will be the name of the new directory (folder), in the Directory name: box.\nClick the Browse... button to select a different parent folder. ~ represents your home folder, which will usually be something like /Users/YourName or C:\\User\\YourName depending on your operating system.",
+    "crumbs": [
+      "Beginning a Project"
+    ]
+  },
+  {
+    "objectID": "factors.html",
+    "href": "factors.html",
+    "title": "Factor Variables",
+    "section": "",
+    "text": "Categorical data\nA data variable can either be continuous or categorical. Continuous variables can take on any value within a range, while categorical variables can only take on a limited number of values.\nLet’s look for a moment at different types and subtypes of variables that we might have:\n\n\n\nData Types. Source: https://bookdown.org/ejvanholm/Textbook/displaying-data.html\n\n\nLet’s focus for a moment on Categorical data. Categorical data might have values that are either text or numeric:\n\nText variables representing categorical data could look like:\n\n'control', 'treatment'\n'red', 'blue', 'green'\n'good', 'better', 'best'\n\nNumbers can also be used to represent categories:\n\n0, 1 (e.g. for control and treatment)\n1, 4, 2 (e.g. for red, blue, green)\n1, 2, 3 (e.g. for good, better, best)\n\n\nIn R, categorical variables are called factors. Factors can be either ordered or unordered. So 'control', 'treatment' would be an unordered factor, while 'good', 'better', 'best' would be an ordered factor.\n\n\nThe forcats library \nThe forcats library, which is part of tidyverse, provides a number of elegant and useful functions for working with factors. Let’s load it now. We’ll also need dplyr for data manipulation.\n\nlibrary(forcats)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nLet’s say we have a data frame that contains some categorical data, like this:\n\ncorporations &lt;- read.csv('data/corporations.csv')\nstr(corporations)\n\n'data.frame':   70 obs. of  10 variables:\n $ Company.Name                 : chr  \"Apple Inc.\" \"Microsoft Corp.\" \"Walmart Inc.\" \"JPMorgan Chase\" ...\n $ Industry                     : chr  \"Technology\" \"Technology\" \"Retail\" \"Finance\" ...\n $ Corporation.Type             : chr  \"C Corporation\" \"C Corporation\" \"C Corporation\" \"C Corporation\" ...\n $ Tax.Treatment                : chr  \"Corporate tax\" \"Corporate tax\" \"Corporate tax\" \"Corporate tax\" ...\n $ Ownership.Limits             : chr  \"Unlimited shareholders\" \"Unlimited shareholders\" \"Unlimited shareholders\" \"Unlimited shareholders\" ...\n $ Governance.Structure         : chr  \"Board of Directors\" \"Board of Directors\" \"Board of Directors\" \"Board of Directors\" ...\n $ Public.or.Private            : chr  \"Public\" \"Public\" \"Public\" \"Public\" ...\n $ NAICS.Code                   : int  334111 511210 452311 522110 312111 519130 454110 336111 541330 445110 ...\n $ X2024.Estimated.Revenue..USD.: num  3.91e+11 2.45e+11 6.48e+11 1.78e+11 4.71e+10 ...\n $ Number.of.Board.Members      : int  8 14 12 12 14 11 11 10 10 9 ...\n\n\nAt the moment, we see that all of the text columns are being treated as character data, but they’re not factors… yet.\nWhy would we want to use a factor variable instead of a character variable? There are a few reasons:\n\nMemory efficiency: Factors can be more memory efficient than character vectors, especially when there are many repeated values. This is because factors store the unique values (levels) only once and use integer codes to represent the actual data.\nStatistical modeling: Many statistical models in R treat factor variables differently than character variables. For example, when you include a factor variable in a linear model, R automatically creates dummy variables for each level of the factor, which is often what you want when modeling categorical data.\nData integrity: Factors can help ensure data integrity by restricting the values that a variable can take. This can prevent errors and inconsistencies in your data.\nOrdering: Factors can be ordered, which is useful for ordinal data (e.g., “low”, “medium”, “high”). This allows for meaningful comparisons and analyses that take the order of the categories into account.\nData visualization: Many plotting functions in R, especially those in the ggplot2 package, handle factor variables in a way that is more suitable for categorical data. For example, when creating bar plots or box plots, using factors ensures that the categories are displayed correctly and in the desired order.\n\nLet’s convert a some columns to factors using mutate():\n\ncorporations &lt;- corporations%&gt;%\n  mutate(\n    Corporation.Type = as_factor(Corporation.Type),\n    Public.or.Private = as_factor(Public.or.Private),\n    Industry = as_factor(Industry),\n    Tax.Treatment = as_factor(Tax.Treatment),\n    Governance.Structure = as_factor(Governance.Structure),\n    NAICS.Code = as_factor(NAICS.Code)\n  )\n\nNotice that NAICS.Code is a number, but we’re treating it as a factor because it’s really a categorical variable. NAICS Codes represent different industries, and while they are numeric, they don’t have a meaningful numeric relationship with each other.\nWe may also want to relabel some of the levels. We can use fct_recode() to do this. For example:\n\ncorporations &lt;- corporations %&gt;%\n  mutate(\n    Corporation.Type = fct_recode(Corporation.Type,\n      \"C Corp\" = \"C Corporation\",\n      \"S Corp\" = \"S Corporation\",\n      \"LLC\"    = \"LLC\"\n    )\n  )\n\nIn this data set, none of the factors have inherent ordering, but if we had a factor that did, we could use fct_relevel() to set the order of the levels. For example, if we had a factor with levels “low”, “medium”, and “high”, we could set the order like this:\n# Example of reordering levels (not in the current dataset)\ndf &lt;- df %&gt;%\n  mutate(\n    SomeOrderedFactor = fct_relevel(SomeOrderedFactor, \"low\", \"medium\", \"high\")\n  )\nNow let’s look at the structure of our data frame again:\n\nstr(corporations)\n\n'data.frame':   70 obs. of  10 variables:\n $ Company.Name                 : chr  \"Apple Inc.\" \"Microsoft Corp.\" \"Walmart Inc.\" \"JPMorgan Chase\" ...\n $ Industry                     : Factor w/ 36 levels \"Technology\",\"Retail\",..: 1 1 2 3 4 1 5 6 7 2 ...\n $ Corporation.Type             : Factor w/ 3 levels \"C Corp\",\"S Corp\",..: 1 1 1 1 1 1 1 1 2 2 ...\n $ Tax.Treatment                : Factor w/ 3 levels \"Corporate tax\",..: 1 1 1 1 1 1 1 1 2 2 ...\n $ Ownership.Limits             : chr  \"Unlimited shareholders\" \"Unlimited shareholders\" \"Unlimited shareholders\" \"Unlimited shareholders\" ...\n $ Governance.Structure         : Factor w/ 6 levels \"Board of Directors\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ Public.or.Private            : Factor w/ 2 levels \"Public\",\"Private\": 1 1 1 1 1 1 1 1 2 2 ...\n $ NAICS.Code                   : Factor w/ 43 levels \"238220\",\"311511\",..: 7 29 25 32 3 31 27 10 36 20 ...\n $ X2024.Estimated.Revenue..USD.: num  3.91e+11 2.45e+11 6.48e+11 1.78e+11 4.71e+10 ...\n $ Number.of.Board.Members      : int  8 14 12 12 14 11 11 10 10 9 ...\n\n\nNotice that summary() of this data frame lists the tally of the levels of each factor variable:\n\nsummary(corporations)\n\n Company.Name                 Industry  Corporation.Type\n Length:70          Retail        : 8   C Corp:28       \n Class :character   Consumer Goods: 6   S Corp:22       \n Mode  :character   Technology    : 4   LLC   :20       \n                    Finance       : 3                   \n                    Automotive    : 3                   \n                    Conglomerate  : 3                   \n                    (Other)       :43                   \n                   Tax.Treatment Ownership.Limits  \n Corporate tax            :28    Length:70         \n Pass-through             :22    Class :character  \n Pass-through or corporate:20    Mode  :character  \n                                                   \n                                                   \n                                                   \n                                                   \n                        Governance.Structure Public.or.Private   NAICS.Code\n Board of Directors               :54        Public :32        325611 : 5  \n Owner-managed                    : 1        Private:38        445110 : 5  \n Employee-owned                   : 2                          334413 : 4  \n Member-managed or Manager-managed: 1                          511210 : 3  \n Member-managed                   : 5                          523120 : 3  \n Manager-managed                  : 7                          324110 : 2  \n                                                               (Other):48  \n X2024.Estimated.Revenue..USD. Number.of.Board.Members\n Min.   :5.000e+08             Min.   : 1.0           \n 1st Qu.:7.475e+09             1st Qu.: 6.0           \n Median :1.600e+10             Median : 9.0           \n Mean   :9.068e+10             Mean   : 8.7           \n 3rd Qu.:9.025e+10             3rd Qu.:11.0           \n Max.   :6.481e+11             Max.   :14.0           \n                                                      \n\n\nLooking at Governance.Structure, we see that there are 6 levels, but three of them have only 1 observation. We can use fct_lump() to lump together the least common levels into an “Other” category. There are a few variants on fct_lump(); we’ll use fct_lump_min() to keep only levels that have at least a minimum number of observations.\n\ncorporations &lt;- corporations %&gt;%\n  mutate(\n    Governance.Structure = fct_lump_min(Governance.Structure,\n                                        min = 3,\n                                        other_level = \"Other\") # keep levels with at least 3 observations, lump the others together\n  )\n\ntable(corporations$Governance.Structure)\n\n\nBoard of Directors     Member-managed    Manager-managed              Other \n                54                  5                  7                  4",
+    "crumbs": [
+      "Factors"
+    ]
+  },
+  {
+    "objectID": "data_types.html",
+    "href": "data_types.html",
+    "title": "Data Types and Data Structures",
+    "section": "",
+    "text": "Basic data types\nR has the following basic data types:\n\nNumeric to represent numbers that may contain decimal points\nInteger to represent integer (whole number) values\nComplex to represent numbers with both a real and imaginary part: for example, 5 + 3i where i = \\sqrt{-1}\nLogical to represent TRUE and FALSE\nCharacter to represent text data: for example, \"abc\" or '123'. Note that the single or double quotes aren’t part of the value, but they are used to enclose character values to ensure they are interpreted as data rather than code, and as text rather than numbers.\n\n\n\nVectors\nA vector is an ordered collection of data values that are all the same data type.\nWe can use the c() (“combine”) function in R to combine a sequence of values into a vector. For example:\n\nvector1 &lt;- c(5, 5, 9)\nvector1\n\n[1] 5 5 9\n\n\nBy default, the index of each item is its numbered position (i.e.). But if we want, we can also label each position as well:\n\nvector2 &lt;- c(a = 5, b = 5, c = 9)\nvector2\n\na b c \n5 5 9 \n\n\nRemember that vectors contain values that are all the same type. What happens if we try to combine differently-typed values into a vector using c()?\n\n\nMatrices\nA matrix is a 2-dimensional structure that contains data that are all the same data type.\nWe can use the matrix() function in R to create a matrix from a sequence of values. For example:\n\nmatrix1 &lt;- matrix(c(5, 5, 9, 7, NA, 3), nrow = 3, ncol = 2)\nmatrix1\n\n     [,1] [,2]\n[1,]    5    7\n[2,]    5   NA\n[3,]    9    3\n\n\n\n\nMixing types in Vectors or Matrices\nWhat happens if we try to create a vector or matrix with mixed types?\n\nvector2 &lt;- c('a', 1, TRUE)\nvector2\n\n[1] \"a\"    \"1\"    \"TRUE\"\n\n\nWe see here (by the quotes) that all of the values were converted to character (text) type. When you try to mix types, R will coerce all of the values to the “least restrictive” type that can accommodate all of the values. The order of coercion would be:\nlogical &gt;&gt; integer &gt;&gt; numeric &gt;&gt; complex &gt;&gt; character\n\n\nCoercion\nWe’ve used the term “coercion” to describe when a value is forced to another data type. R has many functions beginning with as. that you can use to coerce data to other types.\nFor example, to coerce any value to text, we can use as.character. For example:\n\nas.character(32.5)\n\n[1] \"32.5\"\n\n\nWhen feasible, we can also convert data to more restrictive types. So for example, we can convert 0s and 1s to logical, using as.logical():\n\nas.logical(c(1, 0, 0, NA, 1, 2))\n\n[1]  TRUE FALSE FALSE    NA  TRUE  TRUE\n\n\nNotice in this case that any number other than 0 becomes TRUE.\nAnother example:\n\nas.numeric(c('32.5', '-5', 'some text'))\n\nWarning: NAs introduced by coercion\n\n\n[1] 32.5 -5.0   NA\n\n\nNote the warning, caused by the fact that 'some text' cannot be converted to numeric.\n\n\nVector and Matrix operations\nVectors and matrices allow us to perform mathematical operations on entire sets of values at once. For example:\n\nv1 &lt;- c(1, 2, 3)\nv2 &lt;- c(4, 5, 6)\nv1 + v2\n\n[1] 5 7 9\n\n\nor for a matrix:\n\nm1 &lt;- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3)\nm1**2 # square each element\n\n     [,1] [,2] [,3]\n[1,]    1    9   25\n[2,]    4   16   36\n\n\n\n\nLists\nUnlike vectors and matrices, lists allow mixing of types. Not only that, lists may have any structure that you like. For example, a list may contain vectors, matrices, and even other lists.\nLet’s make our own lists using the list() function:\n\napple_info &lt;- list(company = \"Apple\", ticker_symbol = \"APPL\",\n              stock_price = 170.33,\n              employees = c(\"Tim Cook\", \"Craig Federighi\", \"Jony Ive\"),\n              stock_history = data.frame(\n                date = as.Date(c(\"2024-06-01\", \"2024-06-02\", \"2024-06-03\")),\n                price = c(168.23, 169.45, 170.33)\n              ))\n              \namazon_info &lt;- list(company = \"Amazon\", ticker_symbol = \"AMZN\",\n                   stock_price = 135.67,\n                   employees = c(\"Andy Jassy\", \"Werner Vogels\", \"Adam Selipsky\"),\n                   stock_history = data.frame(\n                     date = as.Date(c(\"2024-06-01\", \"2024-06-02\", \"2024-06-03\")),\n                     price = c(133.45, 134.56, 135.67)\n                   ))\n\nNow we can combine these lists into a larger list:\n\ncompanies_info &lt;- list(apple_info,\n                       amazon_info)\n\nHow do we access elements of a list, where the elements aren’t named? In this case, each element is assigned a number, and we use double square brackets [[ ]] to access the elements. For example, to access the first element of companies_info, which is apple_info, we would use:\n\ncompanies_info[[1]]\n\n$company\n[1] \"Apple\"\n\n$ticker_symbol\n[1] \"APPL\"\n\n$stock_price\n[1] 170.33\n\n$employees\n[1] \"Tim Cook\"        \"Craig Federighi\" \"Jony Ive\"       \n\n$stock_history\n        date  price\n1 2024-06-01 168.23\n2 2024-06-02 169.45\n3 2024-06-03 170.33\n\n\nOnce we have the value of the 1st element of the list - which in our case is itself a list, we can use the $ operator to access elements of that list. For example, to get the company name of the first element of companies_info, we would use:\n\ncompanies_info[[1]]$company\n\n[1] \"Apple\"\n\n\nA better practice would be to uniquely name each element of the list. For example, we could use the ticker symbol for each company as its index:\n\ncompanies_info &lt;- list(AAPL = apple_info,\n                       GOOG = amazon_info)\n\nNow we can access the elements by name:\n\napple_stock_history &lt;- companies_info$AAPL$stock_history\napple_stock_history\n\n        date  price\n1 2024-06-01 168.23\n2 2024-06-02 169.45\n3 2024-06-03 170.33",
+    "crumbs": [
+      "Data Types and Data Structures"
+    ]
+  },
+  {
+    "objectID": "functions.html",
+    "href": "functions.html",
+    "title": "Functions",
+    "section": "",
+    "text": "R can be described as primarily (but not entirely) a “functional” programming language. Most of what you will typically do in R involves using functions, and that is the usual style of R coding. Functional programming can also be a good way to approach data analysis.\n\n\nA function consists of the name of the function, followed by parentheses (), which may contain arguments (also called parameters). For example, here is a function call to the mean function, which computes the mean of a numeric vector:\n\nmy_numbers &lt;- c(-50, 1, 2, 3, 4, 5, 100, 101, 600)\nmean(my_numbers)\n\n[1] 85.11111\n\n\nFunctions may have many parameters, in which case we generally name the parameters when we call the function. For example, the mean function has a second parameter called trim, which specifies how much of the data to “trim” from each end before computing the mean. The default value is 0, meaning no trimming. But we can specify a different value if we want:\n\nmean(my_numbers, trim = 0.2)\n\n[1] 30.85714\n\n\nParameters are implicitly passed “in order” based on the way the function is defined, which you can see in the documentation (see the next section!). So if you don’t name the parameters, you have to pass them in the correct order. For example, this is equivalent to the previous call:\n\nmean(my_numbers, 0.2)\n\n[1] 30.85714\n\n\nHowever, it’s usually better style to name the parameters, especially if there are many of them.\n\n\n\nAt the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "functions.html#what-does-a-function-look-like",
+    "href": "functions.html#what-does-a-function-look-like",
+    "title": "Functions",
+    "section": "",
+    "text": "A function consists of the name of the function, followed by parentheses (), which may contain arguments (also called parameters). For example, here is a function call to the mean function, which computes the mean of a numeric vector:\n\nmy_numbers &lt;- c(-50, 1, 2, 3, 4, 5, 100, 101, 600)\nmean(my_numbers)\n\n[1] 85.11111\n\n\nFunctions may have many parameters, in which case we generally name the parameters when we call the function. For example, the mean function has a second parameter called trim, which specifies how much of the data to “trim” from each end before computing the mean. The default value is 0, meaning no trimming. But we can specify a different value if we want:\n\nmean(my_numbers, trim = 0.2)\n\n[1] 30.85714\n\n\nParameters are implicitly passed “in order” based on the way the function is defined, which you can see in the documentation (see the next section!). So if you don’t name the parameters, you have to pass them in the correct order. For example, this is equivalent to the previous call:\n\nmean(my_numbers, 0.2)\n\n[1] 30.85714\n\n\nHowever, it’s usually better style to name the parameters, especially if there are many of them.",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "functions.html#how-can-i-learn-more-about-a-function",
+    "href": "functions.html#how-can-i-learn-more-about-a-function",
+    "title": "Functions",
+    "section": "",
+    "text": "At the Console, you can type ? followed by the name of the function (with no space in between) to bring up the help documentation for a function. For example, ?mean will bring up the help page for the mean function.",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "functions.html#a-word-about-scope",
+    "href": "functions.html#a-word-about-scope",
+    "title": "Functions",
+    "section": "A word about scope",
+    "text": "A word about scope\nBy “scope” we mean where a variable is defined and can be accessed. Variables defined* inside a function ONLY exist within that function, and cannot be accessed outside the function.\nRemeber that within the code for the f2c function, we define a variable called temp_c. But if we try to access temp_c outside the f2c function, we get an error:\n\ntemp_c\n\nError: object 'temp_c' not found",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "functions.html#anonymous-functions",
+    "href": "functions.html#anonymous-functions",
+    "title": "Functions",
+    "section": "Anonymous functions",
+    "text": "Anonymous functions\nThere are situations in R when you may want to define a small function locally. In some languages, this is called a “lambda function” or an “anonymous function”. Notice that we never even give the function a name; it’s only available in its limited local context:\ndo_something(some_data, function = function(x) x*3)",
+    "crumbs": [
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "dates.html",
+    "href": "dates.html",
+    "title": "Dates",
+    "section": "",
+    "text": "Date Formats\n\n\nLubridate",
+    "crumbs": [
+      "Dates"
+    ]
+  },
+  {
     "objectID": "data_visualization.html",
     "href": "data_visualization.html",
     "title": "Data Visualization",
@@ -57,6 +267,160 @@
     "text": "Pivoting from long to wide\nNow let’s say we have a “long” data frame and we want to reshape it to be “wide”. We can use the pivot_wider() function to do this. Here’s an example:\n\n# Example long data frame\ndf_long &lt;- data.frame(\n  ticker_symbol = c(\"AMZN\", \"AMZN\", \"AMZN\", \"AAPL\", \"AAPL\", \"AAPL\", \"MSFT\", \"MSFT\", \"MSFT\"),\n  day = c(\"day1\", \"day2\", \"day3\", \"day1\", \"day2\", \"day3\", \"day1\", \"day2\", \"day3\"),\n  price = c(10, 15, 18, 20, 25, 28, 30, 35, NA)\n)\n\n\ndf_long\n\n  ticker_symbol  day price\n1          AMZN day1    10\n2          AMZN day2    15\n3          AMZN day3    18\n4          AAPL day1    20\n5          AAPL day2    25\n6          AAPL day3    28\n7          MSFT day1    30\n8          MSFT day2    35\n9          MSFT day3    NA\n\n# Pivoting from long to wide\ndf_wide &lt;- pivot_wider(df_long,\n                       names_from = day,\n                       values_from = price)\ndf_wide\n\n# A tibble: 3 × 4\n  ticker_symbol  day1  day2  day3\n  &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 AMZN             10    15    18\n2 AAPL             20    25    28\n3 MSFT             30    35    NA\n\n\nNotice that pivot_longer() used the values in the day column as new column names. There’s a lot you can do to control the behavior of these functions, so check out the documentation for more details.",
     "crumbs": [
       "Data wrangling"
+    ]
+  },
+  {
+    "objectID": "commenting.html",
+    "href": "commenting.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "syntax.html",
+    "href": "syntax.html",
+    "title": "Quick intro to R syntax",
+    "section": "",
+    "text": "R code is composed of statements and expressions:\n\nStatements perform actions. The most common statements would be:\n\nAssignment statements, which assign values to variables. For example, the statement x &lt;- 5 assigns the value 5 to the variable x. Note that &lt;- is the assignment operator in R. It assigns the value on the right to the variable, or object, on the left. If x already had a value, that value will be replaced, or overwritten, by the new value.\nFunction calls, which execute functions. For example, the statement print(x) calls the print function to display the value of x. We’ll delve more into what functions look like shortly.\n\nExpressions are blocks of code that, when evaluated, have some value. For example, 3 + 4 is an expression that evaluates to 7. If x currently has the value of 2, then the expression x &gt; 1 evaluates to TRUE.\n\nExpressions are often embedded in assignment statements, such as in the assignment statement y &lt;- 3 + 4. When R sees an assignment statement, first it evaluates the right side, then it assigns that result to the variable named on the left. So in this case, R would evaluate the expression 3 + 4 to get 7, then it would assign that value to the variable y.\n\n\n\nVariables allow us to use names (such as x or patient_data) to refer to data that is stored in our R environment. The data that a variable or object name refers to can be of many different types, such as an individual number, a sequence of text values, a matrix of numbers, or a complicated structure that holds multiple types of data.\nVariable names can contain letters, numbers, periods, and underscores. They must start with a letter or a period (but not a period followed by a number). Variable names are case-sensitive, so year and Year would be considered different variables.\n\n\n\nComments are lines of text that are not executed as code. You can use them to explain and document the code, making it easier to understand. It can also be handy to “comment out” a line of code in order to temporarily disable it.\nIn R, comments start with the # symbol. Everything on a line after the # is considered a comment and is ignored by R when the code is run. So the entire line might start with #, or there might be code first and then a comment at the end of the line starting with #. For example:\n# This is a comment, but the next line is code that will run\nx &lt;- 5\n\ny &lt;- x + 2  # The code to the left will run, but everything after the # is a comment and will not be run\n\n\n\nWe tend to use a lot of functions in R. Functions are blocks of code that perform specific tasks. They take inputs (called arguments or parameters), process them, and usually* return an output (* some functions, by design, don’t return an output). A function might be used like this:\n# Call add_two_numbers and assign the result to sum_of_two_numbers\nsum_of_two_numbers &lt;- add_two_numbers(5, 9)\nIn the Functions section, there is much more detail about functions, and we will explain how to create your very own functions!",
+    "crumbs": [
+      "R syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#basics",
+    "href": "syntax.html#basics",
+    "title": "Quick intro to R syntax",
+    "section": "",
+    "text": "R code is composed of statements and expressions:\n\nStatements perform actions. The most common statements would be:\n\nAssignment statements, which assign values to variables. For example, the statement x &lt;- 5 assigns the value 5 to the variable x. Note that &lt;- is the assignment operator in R. It assigns the value on the right to the variable, or object, on the left. If x already had a value, that value will be replaced, or overwritten, by the new value.\nFunction calls, which execute functions. For example, the statement print(x) calls the print function to display the value of x. We’ll delve more into what functions look like shortly.\n\nExpressions are blocks of code that, when evaluated, have some value. For example, 3 + 4 is an expression that evaluates to 7. If x currently has the value of 2, then the expression x &gt; 1 evaluates to TRUE.\n\nExpressions are often embedded in assignment statements, such as in the assignment statement y &lt;- 3 + 4. When R sees an assignment statement, first it evaluates the right side, then it assigns that result to the variable named on the left. So in this case, R would evaluate the expression 3 + 4 to get 7, then it would assign that value to the variable y.",
+    "crumbs": [
+      "R syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#variables-a.k.a.-objects",
+    "href": "syntax.html#variables-a.k.a.-objects",
+    "title": "Quick intro to R syntax",
+    "section": "",
+    "text": "Variables allow us to use names (such as x or patient_data) to refer to data that is stored in our R environment. The data that a variable or object name refers to can be of many different types, such as an individual number, a sequence of text values, a matrix of numbers, or a complicated structure that holds multiple types of data.\nVariable names can contain letters, numbers, periods, and underscores. They must start with a letter or a period (but not a period followed by a number). Variable names are case-sensitive, so year and Year would be considered different variables.",
+    "crumbs": [
+      "R syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#comments",
+    "href": "syntax.html#comments",
+    "title": "Quick intro to R syntax",
+    "section": "",
+    "text": "Comments are lines of text that are not executed as code. You can use them to explain and document the code, making it easier to understand. It can also be handy to “comment out” a line of code in order to temporarily disable it.\nIn R, comments start with the # symbol. Everything on a line after the # is considered a comment and is ignored by R when the code is run. So the entire line might start with #, or there might be code first and then a comment at the end of the line starting with #. For example:\n# This is a comment, but the next line is code that will run\nx &lt;- 5\n\ny &lt;- x + 2  # The code to the left will run, but everything after the # is a comment and will not be run",
+    "crumbs": [
+      "R syntax"
+    ]
+  },
+  {
+    "objectID": "syntax.html#functions",
+    "href": "syntax.html#functions",
+    "title": "Quick intro to R syntax",
+    "section": "",
+    "text": "We tend to use a lot of functions in R. Functions are blocks of code that perform specific tasks. They take inputs (called arguments or parameters), process them, and usually* return an output (* some functions, by design, don’t return an output). A function might be used like this:\n# Call add_two_numbers and assign the result to sum_of_two_numbers\nsum_of_two_numbers &lt;- add_two_numbers(5, 9)\nIn the Functions section, there is much more detail about functions, and we will explain how to create your very own functions!",
+    "crumbs": [
+      "R syntax"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Welcome to R for MSBA!\nThis is a 2-half-day course designed to prepare you with the R skills that you will need to begin the GW Master of Science in Business Analytics program.\nTo maximize your learning in this workshop, I recommend that you spend most of your time in RStudio trying to replicate the code that I’m showing you, and of course trying the coding challenges. The value of this site is mainly for you to have something to refer back to later.\n\n\nInstructor\n\nDan Kerchner\nI work as a Senior Software Developer for GW Libraries and Academic Innovation. I’m also a PhD student in the GW Milken School of Public Health, in the Health Data Science, Bioinformatics program.\n\n\n\nOther resources\nI maintain GW Libraries’ “best-of” list of R resources, which you can find at https://libguides.gwu.edu/Rstats. Let me know if you have any suggestions.\n\n\nWorkshop materials\nWe will be using some files that can be downloaded from the Downloads - sample data page.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "data_cleaning.html",
+    "href": "data_cleaning.html",
+    "title": "Data Cleaning",
+    "section": "",
+    "text": "Data cleaning steps\nData cleaning (but not data wrangling) might include steps such as:\n\nRenaming columns\nSelecting a subset of columns\nFiltering rows\nChanging/fixing data types\nHandling missing data\nRemoving duplicates\nStandardizing text (e.g. changing case, removing whitespace, etc)\nParsing dates\nLooking for and fixing inconsistencies in categorical variables\nValidating data (e.g. checking ranges, formats, etc)\nIdentifying and handling outliers\n\nThere’s no one-size-fits-all approach to data cleaning. The steps you take will depend on the specific dataset and the analysis you plan to do. The goal is to make the data as clean and consistent as possible so that your analysis is accurate and reliable.\n\n\nCleaning up column names\nWhen you read in data, there may be columns that you don’t need. Of the columns that you do need, you may want to rename them to be more descriptive (or less verbose), or the column names may not be in a format that is easy to work with. For example, they may contain spaces or special characters.\nWe can use the dplyr package to select and rename columns. The select() function allows us to choose which columns to keep, and the rename() function allows us to change column names. We can essentially do both, within the select() function, by using the syntax new_name = old_name:\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n# \"Messy\" names\ndf &lt;- data.frame(\n  `Subject ID` = c('P001', 'P072', 'P213'),\n  `First Name` = c(\"Arul\", \"Zhe\", \"Skylar\"),\n  `Last Name` = c(\"Rao\", \"Liu\", \"Brown\"),\n  Age = c(28, 34, 45),\n  Height_cm = c(175, 160, 180),\n  check.names = FALSE\n)\n\ndf_clean &lt;- df %&gt;%\n  select(\n    subject_id = `Subject ID`,\n    first_name = `First Name`,\n    last_name = `Last Name`,\n    age = Age\n    # We're not interested in the height column\n  )\n\ndf_clean\n\n  subject_id first_name last_name age\n1       P001       Arul       Rao  28\n2       P072        Zhe       Liu  34\n3       P213     Skylar     Brown  45\n\n\nThe janitor package has a function clean_names() that can help with this.\n\n\nSelecting columns to keep\nWith dplyr we can use the select() function to choose which columns to keep.\nThe basic usage would be to specify all of the columns that you want to keep, by name:\n\ndf_no_HIPAA &lt;- df_clean %&gt;%\n  select(subject_id, age)\n\nImportantly, we can use the - (minus) notation to specify only the columns that we don’t want to keep. Imagine if you have 100 columns and you only want to drop a few of them - you certainly don’t want to have to give a long list of the columns to keep. Instead, you can use the - (minus) notation to specify only the columns that you don’t want to keep.\n\ndf_no_HIPAA &lt;- df_clean %&gt;%\n  select(-first_name, -last_name)\n\nselect() also works with a variety of helper functions to make selecting columns easier. For example:\n\nstarts_with(\"prefix\")\nends_with(\"suffix\")\ncontains(\"text\")\n\nThese enable you to specify patterns in column names or even column data types, rather than listing them all out. For example, if you wanted to drop all columns that end with _name, you could do this:\n\ndf_no_HIPAA &lt;- df_clean %&gt;%\n  select(-ends_with('_name'))\n\ndf_no_HIPAA\n\n  subject_id age\n1       P001  28\n2       P072  34\n3       P213  45\n\n\n\n\nMissing data\nTBD\nTo come:\n\nText operations (e.g. remove whitespace, change case, extract substrings, etc)",
+    "crumbs": [
+      "Data cleaning"
+    ]
+  },
+  {
+    "objectID": "data_frames.html",
+    "href": "data_frames.html",
+    "title": "Data Frames",
+    "section": "",
+    "text": "Data frames in R represent tabular data, where each column can contain one type of variable (e.g., numeric, character, factor). Each column has a text-based name; rows can also have a name, although by default they are numbered.\n\nConstructing a data frame\nWe can either construct a data frame by using the data.frame() function, or we can also obtain a data frame as the result of a function that, for example, reads in a data file, such as read.csv().\nLet’s use data.frame() to create a simple data frame:\n\ndf &lt;- data.frame(\n  id = c('P01', 'P03', 'P04', 'P07'),\n  name = c(\"Alice\", \"Bob\", \"Charlie\", \"David\"),\n  age = c(25, 30, 35, 40),\n  score = c(90.5, 85.0, 88.5, 92.0)\n)\n\n# show the data frame\ndf\n\n   id    name age score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0\n\n\nWe can get information about the data frame’s structure using the str() function:\n\nstr(df)\n\n'data.frame':   4 obs. of  4 variables:\n $ id   : chr  \"P01\" \"P03\" \"P04\" \"P07\"\n $ name : chr  \"Alice\" \"Bob\" \"Charlie\" \"David\"\n $ age  : num  25 30 35 40\n $ score: num  90.5 85 88.5 92\n\n\nAnd we can get the names of the columns using the names() (or colnames()) function:\n\nnames(df)\n\n[1] \"id\"    \"name\"  \"age\"   \"score\"\n\n\nWe can also get the row names using the rownames() function:\n\nrownames(df)\n\n[1] \"1\" \"2\" \"3\" \"4\"\n\n\nWe can change the column or row names by assigning new values to them:\n\ncolnames(df) &lt;- c(\"ID\", \"Name\", \"Age\", \"Score\")\n\ndf\n\n   ID    Name Age Score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0\n\n\n…although generally it’s more convenient to use the dplyr::rename() function instead, as it allows you to rename specific columns without affecting the others.\n\n\nAccessing data frame elements\nWe can access elements of a data frame using the $ operator, which allows us to select a specific column by name. For example, to access the Age column:\n\ndf$Age\n\n[1] 25 30 35 40\n\n\nNote that each column of a data frame is an R vector, so when you access a column, you get back a vector.\n\n\n“Binding” data frames together\nWe can also combine data frames using the rbind() and cbind() functions. The rbind() (“row bind”) function combines data frames by rows (i.e., it adds more rows), while the cbind() (“column bind”) function combines data frames by columns (i.e., it adds more columns).\nNote that when using rbind(), the data frames must have the same columns (i.e., the same exact names and types), and when using cbind(), the data frames must have the same number of rows.\n\ndf1 &lt;- data.frame(\n  id = c('P01', 'P03'),\n  name = c(\"Alice\", \"Bob\"),\n  age = c(25, 30),\n  score = c(90.5, 85.0)\n)\ndf2 &lt;- data.frame(\n  id = c('P04', 'P07'),\n  name = c(\"Charlie\", \"David\"),\n  age = c(35, 40),\n  score = c(88.5, 92.0)\n)\n\ndf &lt;- rbind(df1, df2)\n\ndf\n\n   id    name age score\n1 P01   Alice  25  90.5\n2 P03     Bob  30  85.0\n3 P04 Charlie  35  88.5\n4 P07   David  40  92.0",
+    "crumbs": [
+      "Data Frames"
+    ]
+  },
+  {
+    "objectID": "data_analysis.html",
+    "href": "data_analysis.html",
+    "title": "Data Analysis",
+    "section": "",
+    "text": "Steps in data analysis can include:\n\nData cleaning\nData transformation\nData visualization\nModeling\nInterpretation\nCommunication\nReproducibility\n\n\nSummary statistics\nsummary()\n\n\nGrouped summary statistics\nWe may have categorical variables in our data that we wish to use for grouping, so that we can obtain summary statistics within each group.",
+    "crumbs": [
+      "Data analysis"
+    ]
+  },
+  {
+    "objectID": "import_export.html",
+    "href": "import_export.html",
+    "title": "Importing and Exporting Data",
+    "section": "",
+    "text": "Text-based data formats are very common, because they are human-readable, they don’t require any special software to read, and they can be read in by many different programming languages. Text-based formats include CSV (comma-separated values) and its variants such as TSV (tab-separated values), JSON (JavaScript Object Notation), YAML, and XML.\nWe’re going to focus on tabular formats such as CSV; by tabular, we mean that the data represented in the file is in a table format, with rows and columns. In a CSV, values going across a row are separated by commas; there can be other variants (such as TSV) that use a different character as a separator.\nA raw CSV file might look something like this:\nTime,Country Name,Country Code,GDP (current US$) [NY.GDP.MKTP.CD],\"Population, total [SP.POP.TOTL]\",\"Life expectancy at birth, total (years) [SP.DYN.LE00.IN]\"\n2014,Gabon,GAB,18203966896,1978399,66.07\n2014,\"Gambia, The\",GMB,1229461721,2164528,62.576\n2014,Georgia,GEO,17966015109,3719414,73.105\n...\nIn R, we can read such a file into our environment using the read.csv() function. Here’s how it might look:\n\n\nWrite code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)\n\nLet’s read in the World Development Indicators (WDI) data that’s available in the Data downloads section. The file is named wdi.csv. Download it to your computer; for most people, the file will download to your Downloads folder.\nBefore we proceed, let’s talk about using folders to organize the files in your R project (or any data analysis project). We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well. For example, your project might look like this:\n├── wdi_analysis.R\n├── wdi_summary.R\n├── data\n│   ├── wdi.csv\n│   ├── another_data_file.csv\n├── plots\n│   ├── continents_gdp.pdf\n│   ├── gdp_longitudinal.pdf\netc.\nWe can make folders programmatically in R, using the dir.create() function. Let’s create a data folder in your project:\n\ndir.create('data')\n\nWarning in dir.create(\"data\"): 'data' already exists\n\n\nNow, locate the wdi.csv file that you downloaded, and copy or move it to your RStudio project’s data folder.\n\nwdi &lt;- read.csv('data/wdi.csv', na.strings = \"..\")",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#challenge",
+    "href": "import_export.html#challenge",
+    "title": "Importing and Exporting Data",
+    "section": "",
+    "text": "Write code to read in a file from a file named mydata.csv located in your project’s data folder.\n\n\nSolution\n\n# Read a CSV file\ndata &lt;- read.csv(\"data/mydata.csv\")\nhead(data)\n\nLet’s read in the World Development Indicators (WDI) data that’s available in the Data downloads section. The file is named wdi.csv. Download it to your computer; for most people, the file will download to your Downloads folder.\nBefore we proceed, let’s talk about using folders to organize the files in your R project (or any data analysis project). We can keep things organized by creating separate folders for data, plots, and perhaps one for other results as well. For example, your project might look like this:\n├── wdi_analysis.R\n├── wdi_summary.R\n├── data\n│   ├── wdi.csv\n│   ├── another_data_file.csv\n├── plots\n│   ├── continents_gdp.pdf\n│   ├── gdp_longitudinal.pdf\netc.\nWe can make folders programmatically in R, using the dir.create() function. Let’s create a data folder in your project:\n\ndir.create('data')\n\nWarning in dir.create(\"data\"): 'data' already exists\n\n\nNow, locate the wdi.csv file that you downloaded, and copy or move it to your RStudio project’s data folder.\n\nwdi &lt;- read.csv('data/wdi.csv', na.strings = \"..\")",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#missing-data-representation",
+    "href": "import_export.html#missing-data-representation",
+    "title": "Importing and Exporting Data",
+    "section": "Missing data representation",
+    "text": "Missing data representation\nWhen reading in data, you may need to customize the import process. For example, missing values may be represented by text such as . or NA depending on . We can tell R to treat these as NA (missing values) by using the na.strings argument:\ndf &lt;- read.csv('my_data.csv', na.strings = c('.', 'NA'))",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#specifying-column-types",
+    "href": "import_export.html#specifying-column-types",
+    "title": "Importing and Exporting Data",
+    "section": "Specifying column types",
+    "text": "Specifying column types\nread.csv() makes inferences about data types, but sometimes this differs from the data types that you may want to use. You can specify the column types using the colClasses argument. For example, if you want to ensure that a column named zip_code is read as a character, you can do:\ndf &lt;- read.csv('my_data.csv', colClasses = c(zip_code = 'character'))",
+    "crumbs": [
+      "Importing and Exporting Data"
+    ]
+  },
+  {
+    "objectID": "import_export.html#handling-large-files",
+    "href": "import_export.html#handling-large-files",
+    "title": "Importing and Exporting Data",
+    "section": "Handling large files",
+    "text": "Handling large files\nFor very large files, you might want to consider using the data.table package’s fread() function, which is optimized for speed and memory efficiency:\nlibrary(data.table)\ndf &lt;- fread('large_data.csv')",
+    "crumbs": [
+      "Importing and Exporting Data"
     ]
   }
 ]
