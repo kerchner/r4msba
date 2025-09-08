@@ -5,4 +5,15 @@ format:
     toc: false
 ---
 
-TBD
+# Data Analysis
+
+Steps in data analysis include:
+
+1. Data cleaning
+2. Data transformation
+3. Data visualization
+4. Modeling
+5. Interpretation
+6. Communication
+7. Reproducibility
+

@@ -686,7 +686,7 @@ Attaching package: 'dplyr'</code></pre>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>corporations <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'data/corporations.csv'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(corporations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   31 obs. of  10 variables:
+<pre><code>'data.frame':   70 obs. of  10 variables:
  $ Company.Name                 : chr  "Apple Inc." "Microsoft Corp." "Walmart Inc." "JPMorgan Chase" ...
  $ Industry                     : chr  "Technology" "Technology" "Retail" "Finance" ...
  $ Corporation.Type             : chr  "C Corporation" "C Corporation" "C Corporation" "C Corporation" ...
@@ -742,15 +742,15 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(corporations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   31 obs. of  10 variables:
+<pre><code>'data.frame':   70 obs. of  10 variables:
  $ Company.Name                 : chr  "Apple Inc." "Microsoft Corp." "Walmart Inc." "JPMorgan Chase" ...
- $ Industry                     : Factor w/ 19 levels "Technology","Retail",..: 1 1 2 3 4 1 5 6 7 2 ...
+ $ Industry                     : Factor w/ 36 levels "Technology","Retail",..: 1 1 2 3 4 1 5 6 7 2 ...
  $ Corporation.Type             : Factor w/ 3 levels "C Corp","S Corp",..: 1 1 1 1 1 1 1 1 2 2 ...
  $ Tax.Treatment                : Factor w/ 3 levels "Corporate tax",..: 1 1 1 1 1 1 1 1 2 2 ...
  $ Ownership.Limits             : chr  "Unlimited shareholders" "Unlimited shareholders" "Unlimited shareholders" "Unlimited shareholders" ...
  $ Governance.Structure         : Factor w/ 6 levels "Board of Directors",..: 1 1 1 1 1 1 1 1 1 1 ...
  $ Public.or.Private            : Factor w/ 2 levels "Public","Private": 1 1 1 1 1 1 1 1 2 2 ...
- $ NAICS.Code                   : Factor w/ 25 levels "311511","312111",..: 5 15 12 18 2 17 14 6 21 9 ...
+ $ NAICS.Code                   : Factor w/ 43 levels "238220","311511",..: 7 29 25 32 3 31 27 10 36 20 ...
  $ X2024.Estimated.Revenue..USD.: num  3.91e+11 2.45e+11 6.48e+11 1.78e+11 4.71e+10 ...
  $ Number.of.Board.Members      : int  8 14 12 12 14 11 11 10 10 9 ...</code></pre>
 </div>
@@ -760,36 +760,36 @@ Attaching package: 'dplyr'</code></pre>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(corporations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Company.Name                 Industry  Corporation.Type
- Length:31          Retail        : 5   C Corp:13       
- Class :character   Technology    : 4   S Corp: 8       
- Mode  :character   Consumer Goods: 3   LLC   :10       
-                    Finance       : 2                   
-                    Automotive    : 2                   
-                    Hospitality   : 2                   
-                    (Other)       :13                   
+ Length:70          Retail        : 8   C Corp:28       
+ Class :character   Consumer Goods: 6   S Corp:22       
+ Mode  :character   Technology    : 4   LLC   :20       
+                    Finance       : 3                   
+                    Automotive    : 3                   
+                    Conglomerate  : 3                   
+                    (Other)       :43                   
                    Tax.Treatment Ownership.Limits  
- Corporate tax            :13    Length:31         
- Pass-through             : 8    Class :character  
- Pass-through or corporate:10    Mode  :character  
+ Corporate tax            :28    Length:70         
+ Pass-through             :22    Class :character  
+ Pass-through or corporate:20    Mode  :character  
                                                    
                                                    
                                                    
                                                    
                         Governance.Structure Public.or.Private   NAICS.Code
- Board of Directors               :21        Public :14        325611 : 2  
- Owner-managed                    : 1        Private:17        336111 : 2  
- Employee-owned                   : 1                          445110 : 2  
- Member-managed or Manager-managed: 1                          511210 : 2  
- Member-managed                   : 4                          519130 : 2  
- Manager-managed                  : 3                          523120 : 2  
-                                                               (Other):19  
+ Board of Directors               :54        Public :32        325611 : 5  
+ Owner-managed                    : 1        Private:38        445110 : 5  
+ Employee-owned                   : 2                          334413 : 4  
+ Member-managed or Manager-managed: 1                          511210 : 3  
+ Member-managed                   : 5                          523120 : 3  
+ Manager-managed                  : 7                          324110 : 2  
+                                                               (Other):48  
  X2024.Estimated.Revenue..USD. Number.of.Board.Members
- Min.   :5.000e+08             Min.   : 1.000         
- 1st Qu.:8.800e+09             1st Qu.: 6.000         
- Median :3.260e+10             Median : 9.000         
- Mean   :1.271e+11             Mean   : 8.548         
- 3rd Qu.:1.738e+11             3rd Qu.:11.500         
- Max.   :6.481e+11             Max.   :14.000         
+ Min.   :5.000e+08             Min.   : 1.0           
+ 1st Qu.:7.475e+09             1st Qu.: 6.0           
+ Median :1.600e+10             Median : 9.0           
+ Mean   :9.068e+10             Mean   : 8.7           
+ 3rd Qu.:9.025e+10             3rd Qu.:11.0           
+ Max.   :6.481e+11             Max.   :14.0           
                                                       </code></pre>
 </div>
 </div>
@@ -806,7 +806,7 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Board of Directors     Member-managed    Manager-managed              Other 
-                21                  4                  3                  3 </code></pre>
+                54                  5                  7                  4 </code></pre>
 </div>
 </div>
 

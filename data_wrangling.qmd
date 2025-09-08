@@ -5,11 +5,70 @@ format:
     toc: false
 ---
 
-"Data wrangling" is the process of reshaping and/or restructuring data.  The type of data wrangling you might do depends on what your next steps are.  For example, data wrangling to produce a summary table might require a different target "shape" than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization.  So, it all depends, and there is MUCH to talk about here.  But it's unusual to NOT have to do at least some data wrangling after you start with raw data.
+"Data wrangling" is the process of reshaping and/or restructuring data. The type of data wrangling you might do depends on what your next steps are. For example, data wrangling to produce a summary table might require a different target "shape" than if you wanted to perform statistical data analysis, or if you wanted to perform data visualization. So, it all depends, and there is MUCH to talk about here. But it's unusual to NOT have to do at least some data wrangling after you start with raw data.
 
 # R tools for data wrangling
 
-Although we can do _some_ data wrangling in "base R", let's go right to using some libraries that can make data wrangling much easier.
+Although we can do *some* data wrangling in "base R", let's go right to using some libraries that can make data wrangling much easier.
 
-We're going to start with the `dplyr` package, which is part of the `tidyverse` set of packages, and it provides a "grammar" for data manipulation.  The `tidyr` package (also part of the tidyverse) provides functions to help you "tidy" your data, which is a specific type of data wrangling.  More on this to come.
+We're going to start with the `dplyr` package, which is part of the `tidyverse` set of packages, and it provides a "grammar" for data manipulation. The `tidyr` package (also part of the tidyverse) provides functions to help you "tidy" your data, which is a specific type of data wrangling. More on this to come.
+
+# Data wrangling maneuvers
+
+# Pivoting data frames
+
+One of the most common data wrangling maneuvers is "pivoting" a data frame. This means changing the shape of the data frame from "wide" to "long" or vice versa. The `pivot_longer()` and `pivot_wider()` functions from the `tidyr` package are used for this purpose.
+
+## Pivoting from wide to long
+
+Here we're starting with a "wide" data frame, meaning there are multiple observations of the same variable per row.  In this example, we have a single row for each ticker symbol, and observations of that company's stock price across three days:
+
+```{r}
+library(tidyr)
+# Example data frame
+df <- data.frame(
+  ticker_symbol = c("AMZN", "AAPL", "MSFT"),
+  day1 = c(10, 20, 30),
+  day2 = c(15, 25, 35),
+  day3 = c(18, 28, NA)
+)
+df
+```
+
+We'd like to reshape this data frame to be "long", meaning we have a single observation of the variable (price) per row.  We might want to do this to prepare the data for regression modeling or for visualization.  We can use the `pivot_longer()` function to do this:
+
+```{r}
+# Pivoting from wide to long
+df_long <- pivot_longer(df,
+                        cols = starts_with("day"),
+                        names_to = "day",
+                        values_to = "price")
+
+df_long
+```
+
+Now we have a data frame with three columns: `ticker_symbol`, `day`, and `price`. Each row represents a single observation of the stock price for a given ticker symbol on a specific day.
+
+## Pivoting from long to wide
+
+Now let's say we have a "long" data frame and we want to reshape it to be "wide".  We can use the `pivot_wider()` function to do this.  Here's an example:
+```{r}
+# Example long data frame
+df_long <- data.frame(
+  ticker_symbol = c("AMZN", "AMZN", "AMZN", "AAPL", "AAPL", "AAPL", "MSFT", "MSFT", "MSFT"),
+  day = c("day1", "day2", "day3", "day1", "day2", "day3", "day1", "day2", "day3"),
+  price = c(10, 15, 18, 20, 25, 28, 30, 35, NA)
+)
+```
+
+```{r}
+df_long
+# Pivoting from long to wide
+df_wide <- pivot_wider(df_long,
+                       names_from = day,
+                       values_from = price)
+df_wide
+```
+
+Notice that `pivot_longer()` used the values in the `day` column as new column names.  There's a lot you can do to control the behavior of these functions, so check out the documentation for more details.
 

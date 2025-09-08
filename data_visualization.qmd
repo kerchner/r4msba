@@ -5,4 +5,33 @@ format:
     toc: false
 ---
 
-TBD
+# The grammar of graphics
+
+Data visualization is about converting variable values associated with data points, or observations, into visual elements. We often refer to that conversion as *mapping* values to visual features which we call *aesthetics*.
+
+Let's say we have a data set (the `gapminder` data set, in this case), where for each country, we have its population, the continent it's on, mean life expectancy, and GDP (gross domestic product) per capita.
+
+```{r}
+library(dplyr)
+library(gapminder)
+head(gapminder::gapminder %>% filter(year == 2007))
+```
+
+We might opt to map variables as follows:
+
+| Variable        | Aesthetic  |
+|-----------------|------------|
+| population      | size       |
+| continent       | color      |
+| life expectancy | y position |
+| GDP             | x position |
+
+![Visualization of GDP per capita versus Mean life expectancy](images/gapminder.png){width="551"}
+
+Of course, the aesthetic elements that are available will depend on the particular style of plot.
+
+![Some commonly used aesthetics. Source: https://clauswilke.com/dataviz/aesthetic-mapping.html](images/aesthetics.png){width="449"}
+
+# The ggplot2 library
+
+`ggplot2` is a library (within `tidyverse`) that implements this notion of aesthetic mappings.

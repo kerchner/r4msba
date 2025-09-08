@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -599,9 +633,87 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TBD</p>
+<section id="the-grammar-of-graphics" class="level1">
+<h1>The grammar of graphics</h1>
+<p>Data visualization is about converting variable values associated with data points, or observations, into visual elements. We often refer to that conversion as <em>mapping</em> values to visual features which we call <em>aesthetics</em>.</p>
+<p>Let’s say we have a data set (the <code>gapminder</code> data set, in this case), where for each country, we have its population, the continent it’s on, mean life expectancy, and GDP (gross domestic product) per capita.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder<span class="sc">::</span>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  country     continent  year lifeExp      pop gdpPercap
+  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+1 Afghanistan Asia       2007    43.8 31889923      975.
+2 Albania     Europe     2007    76.4  3600523     5937.
+3 Algeria     Africa     2007    72.3 33333216     6223.
+4 Angola      Africa     2007    42.7 12420476     4797.
+5 Argentina   Americas   2007    75.3 40301927    12779.
+6 Australia   Oceania    2007    81.2 20434176    34435.</code></pre>
+</div>
+</div>
+<p>We might opt to map variables as follows:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Aesthetic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>population</td>
+<td>size</td>
+</tr>
+<tr class="even">
+<td>continent</td>
+<td>color</td>
+</tr>
+<tr class="odd">
+<td>life expectancy</td>
+<td>y position</td>
+</tr>
+<tr class="even">
+<td>GDP</td>
+<td>x position</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gapminder.png" class="img-fluid figure-img" width="551"></p>
+<figcaption>Visualization of GDP per capita versus Mean life expectancy</figcaption>
+</figure>
+</div>
+<p>Of course, the aesthetic elements that are available will depend on the particular style of plot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/aesthetics.png" class="img-fluid figure-img" width="449"></p>
+<figcaption>Some commonly used aesthetics. Source: https://clauswilke.com/dataviz/aesthetic-mapping.html</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-ggplot2-library" class="level1">
+<h1>The ggplot2 library</h1>
+<p><code>ggplot2</code> is a library (within <code>tidyverse</code>) that implements this notion of aesthetic mappings.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

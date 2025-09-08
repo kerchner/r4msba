@@ -5,11 +5,29 @@ format:
     toc: false
 ---
 
+# Data cleaning steps
+
+Data cleaning (but not data wrangling) might include steps such as:
+
+-   Renaming columns
+-   Selecting a subset of columns
+-   Filtering rows
+-   Changing/fixing data types
+-   Handling missing data
+-   Removing duplicates
+-   Standardizing text (e.g. changing case, removing whitespace, etc)
+-   Parsing dates
+-   Looking for and fixing inconsistencies in categorical variables
+-   Validating data (e.g. checking ranges, formats, etc)
+-   Identifying and handling outliers
+
+There's no one-size-fits-all approach to data cleaning. The steps you take will depend on the specific dataset and the analysis you plan to do. The goal is to make the data as clean and consistent as possible so that your analysis is accurate and reliable.
+
 # Cleaning up column names
 
 When you read in data, there may be columns that you don't need. Of the columns that you do need, you may want to rename them to be more descriptive (or less verbose), or the column names may not be in a format that is easy to work with. For example, they may contain spaces or special characters.
 
-We can use the `dplyr` package to select and rename columns. The `select()` function allows us to choose which columns to keep, and the `rename()` function allows us to change column names.  We can essentially do both, within the `select()` function, by using the syntax `new_name = old_name`:
+We can use the `dplyr` package to select and rename columns. The `select()` function allows us to choose which columns to keep, and the `rename()` function allows us to change column names. We can essentially do both, within the `select()` function, by using the syntax `new_name = old_name`:
 
 ```{r}
 library(dplyr)
@@ -35,8 +53,35 @@ df_clean <- df %>%
 
 df_clean
 ```
+The `janitor` package has a function `clean_names()` that can help with this.
 
-Importantly, we can use the `-` (minus) notation to specify only the columns that we *don't* want to keep.  Imagine if you have 100 columns and you only want to drop a few of them.  You can do this:
+
+
+# Selecting columns to keep
+
+With `dplyr` we can use the `select()` function to choose which columns to keep.
+
+The basic usage would be to specify all of the columns that you want to keep, by name:
+
+```{r}
+df_no_HIPAA <- df_clean %>%
+  select(subject_id, age, height_cm)
+```
+
+Importantly, we can use the `-` (minus) notation to specify only the columns that we *don't* want to keep. Imagine if you have 100 columns and you only want to drop a few of them - you certainly don't want to have to give a long list of the columns to keep.  Instead, you can use the `-` (minus) notation to specify *only* the columns that you don't want to keep. 
+
+```{r}
+df_no_HIPAA <- df_clean %>%
+  select(-first_name, -last_name)
+```
+
+[`select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} also works with a variety of helper functions to make selecting columns easier. For example:
+
+-   `starts_with("prefix")`
+-   `ends_with("suffix")`
+-   `contains("text")`
+
+These enable you to specify patterns in column names or even column data types, rather than listing them all out. For example, if you wanted to drop all columns that end with `_name`, you could do this:
 
 ```{r}
 df_no_HIPAA <- df_clean %>%
@@ -45,13 +90,6 @@ df_no_HIPAA <- df_clean %>%
 df_no_HIPAA
 ```
 
-The `janitor` package has a function `clean_names()` that can help with this.
-
-[`select()`](https://dplyr.tidyverse.org/reference/select.html){target="_blank"} works with a variety of helper functions to make selecting columns easier. For example:
-
-- `starts_with("prefix")`
-- `ends_with("suffix")`
-- `contains("text")`
 
 # Missing data
 
@@ -59,5 +97,4 @@ TBD
 
 To come:
 
-- Text operations 
-(e.g. remove whitespace, change case, extract substrings, etc)
+-   Text operations (e.g. remove whitespace, change case, extract substrings, etc)
